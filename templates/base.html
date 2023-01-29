@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-----  Google Font ----->
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
     <!----- CSS Stylesheet ----->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -49,39 +49,18 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-dark pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-4 my-auto py-1 py-lg-0"></div>
-            <div class="col-12 col-4 my-auto py-1 py-lg-0 text-center">
-                <a href="{% url 'home' %}" class="nav-link">
-                    <h2 class="my-0">Flash Empire Apparel</h2>
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <div class="col-12 col-4 my-auto py-1 py-lg-0">
+                <a href="{% url 'home' %}" class="navbar-brand">
+                    <img src="media/FLASH-BADGE-LOGO.png" width="75" height="75" class="m-2 d-inline-block"
+                        alt="logo">
+                       <span class="brand-titles">Flash Empire Apparel</span>
                 </a>
             </div>
             <div class="col-12 col-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center my-0">
-                    <li class="list-inline-item">
-                        <a class="nav-link" href="#" id="user-options" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                            href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                    £{{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                    £0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+
+            </div>
+            <div class="col-12 col-4 my-auto py-1 py-lg-0">
             </div>
         </div>
     </header>

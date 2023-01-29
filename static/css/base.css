@@ -3,11 +3,17 @@ html {
 }
 
 body {
-    background: url(/media/FLASH-BANNER.jpg) no-repeat center center fixed;
+    background: url('') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
-    font-family:'Michroma', sans-serif;
+    color: #222;
+    font-family: 'Carattere', cursive;
+}
+
+.brand-titles {
+    letter-spacing: 2px;
+    font-size: 40px;
+    color: #222;
 }
 
 /* from Bulma */
