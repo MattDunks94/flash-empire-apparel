@@ -34,7 +34,20 @@
     <title>Flash Empire Apparel {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid fixed-top">
+        <div class="row">
+            <div class="col-12 col-4 my-auto py-1 py-lg-0"></div>
+            <div class="col-12 col-4 my-auto py-1 py-lg-0 text-center">
+                <a href="{% url 'home' %}" class="nav-link"><h2 class="my-0">Flash Empire Apparel</h2></a>
+            </div>
+            <div class="col-12 col-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center my-0">
+                    <li class="list-inline-item"></li>
+                    <li class="list-inline-item"></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
     {% if messages %}
     <div class="message-container"></div>
