@@ -1,1 +1,1 @@
-web: flash_empire_apparel.wsgi:application
+web: gunicorn flash_empire_apparel.wsgi:application
