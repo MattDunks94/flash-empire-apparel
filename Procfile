@@ -1,0 +1,1 @@
+web: flash_empire_apparel.wsgi:application
