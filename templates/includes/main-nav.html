@@ -1,6 +1,24 @@
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'home' %}">
-     
-      Flash Empire Apparel
-    </a>
-  </nav>
+<div class="collapse navbar-collapse" id="main-nav">
+  <ul class="nav w-auto mx-auto justify-content-center">
+    <li class="nav-item mr-5">
+      <a class="nav-link lttr-space text-red hover-underline-animation" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link mr-5 lttr-space text-red hover-underline-animation" href="#">All Products</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link mr-5 lttr-space text-red dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
+      <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+        <!-- Sorts product search via price, rating, category in ascending or descending order.(all_products view) -->
+        <a href="" class="dropdown-item">T-Shirts</a>
+        <a href="" class="dropdown-item">Jumpers</a>
+        <a href="" class="dropdown-item ">Joggers</a>
+        <a href="" class="dropdown-item ">Caps</a>
+        <a href="" class="dropdown-item ">Bags</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link mr-5 lttr-space text-red" id="sale" href="#" tabindex="-1" aria-disabled="true">SALE</a>
+    </li>
+  </ul>
+</div>
