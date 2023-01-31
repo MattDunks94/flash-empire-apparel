@@ -1,23 +1,17 @@
 <div class="collapse navbar-collapse" id="main-nav">
   <ul class="navbar-nav w-auto mx-auto">
     <!----------------------------- All Products Dropdown -->
-    <!-- Home link only viewed on small screen sizes. -->
-    <li class="nav-item d-block d-md-none">
-      <a class="nav-link lttr-space text-red hover-underline-animation mr-5" href="{% url 'home' %}" id="home-link">
-        Home
-      </a>
-    </li>
     <!-- Links for all screen sizes. -->
-    <li class="nav-item dropdown">
+    <li class="nav-item my-2">
       <a class="nav-link lttr-space text-red hover-underline-animation mr-5" href="#" id="all-products-link"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         All Products
       </a>
     </li>
     <!-- Clothing Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link lttr-space text-red hover-underline-animation mr-5" href="#" id="clothing-link" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item dropdown my-2">
+      <a class="nav-link lttr-space text-red hover-underline-animation mr-5" href="#" id="clothing-link"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Categories
       </a>
       <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
@@ -31,11 +25,46 @@
       </div>
     </li>
     <!-- Special Offers Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link lttr-space" href="#" id="sale" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item my-2">
+      <a class="nav-link lttr-space text-center" href="#" id="sale" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
         SALE
       </a>
+    </li>
+    <li class="list-inline-item dropdown d-sm-block d-lg-none my-2">
+      <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div>
+          <p class="text-earth lttr-space my-0">My Account</p>
+        </div>
+      </a>
+      <div class="dropdown-menu border-0" aria-labelledby="user-options">
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a href="" class="dropdown-item">Product Management</a>
+        {% endif %}
+        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+        {% endif %}
+      </div>
+    </li>
+    <li class="list-inline-item d-sm-block d-lg-none my-2">
+      <div class="my-auto py-1">
+        <form method="GET" action="">
+          <div class="input-group w-100">
+            <input class="lttr-space form-control rounded-3" type="text" name="q" placeholder="Search Flash Empire">
+            <div class="input-group-append">
+              <button class="form-control btn bg-none border-white" type="submit">
+                <span class="icon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </li>
   </ul>
 </div>

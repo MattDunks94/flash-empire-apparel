@@ -121,8 +121,8 @@ body {
     -o-transform: skew(-14deg, 0deg);
     -ms-transform: skew(-14deg, 0deg);
     transform: skew(-14deg, 0deg);
-    padding: 2px;
-    width: fit-content;
+    padding: 2px 3px;
+    width: 70px;
     }
 
 #sale:hover {
@@ -153,6 +153,11 @@ body {
     .header-container {
         padding-top: 160px;
     }
+
+    .nav-link:hover {
+        color: #A40303;
+    }
+    
 }
 
 @media (max-width: 992px) {
