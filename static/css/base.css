@@ -168,4 +168,17 @@ body {
     .navbar a {
         color: white;
     }
+
+    #search-bar {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+
+/* For screen width 450px  */
+@media (max-width: 450px) {
+    #search-bar {
+        width: 100%;
+    }
 }

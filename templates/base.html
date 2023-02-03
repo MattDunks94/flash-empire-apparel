@@ -96,11 +96,11 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        <a class="{% if grand_total %}text-earth {% else %}text-white{% endif %} nav-link"
                             href="">
                             <div class="text-center">
                                 <div class="icon"><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="text-earth lttr-space my-0">
+                                <p class="lttr-space my-0">
                                     {% if grand_total %}
                                     <!-- Displays users basket total to 2 decimal places. -->
                                     £{{ grand_total|floatformat:2 }}
