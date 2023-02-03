@@ -2,19 +2,19 @@
   <ul class="navbar-nav w-auto mx-auto">
     <!----------------------------- All Products Dropdown -->
     <!-- Links for all screen sizes. -->
-    <li class="nav-item my-2">
+    <li class="nav-item my-2 font-25">
       <a class="nav-link lttr-space text-red hover-underline-animation mr-5" href="#" id="all-products-link"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         All Products
       </a>
     </li>
     <!-- Clothing Dropdown -->
-    <li class="nav-item dropdown my-2">
+    <li class="nav-item dropdown my-2 font-25">
       <a class="nav-link lttr-space text-red hover-underline-animation mr-5" href="#" id="categories-link"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Categories
       </a>
-      <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+      <div class="dropdown-menu border-0 lttr-space" aria-labelledby="clothing-link">
         <a href="" class="dropdown-item">T-Shirts</a>
         <a href="" class="dropdown-item">Sweatshirts</a>
         <a href="" class="dropdown-item">Joggers</a>
@@ -23,7 +23,7 @@
       </div>
     </li>
     <!-- Special Offers Dropdown -->
-    <li class="nav-item my-2">
+    <li class="nav-item my-2 font-25">
       <a class="nav-link lttr-space text-center" href="#" id="sale" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         SALE
@@ -32,10 +32,10 @@
     <li class="list-inline-item dropdown d-sm-block d-lg-none my-2">
       <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div>
-          <p class="text-earth lttr-space my-0">My Account</p>
+          <p class="font-25 text-earth lttr-space my-0">My Account</p>
         </div>
       </a>
-      <div class="dropdown-menu border-0" aria-labelledby="user-options">
+      <div class="dropdown-menu border-0 font-25" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <a href="" class="dropdown-item">Product Management</a>

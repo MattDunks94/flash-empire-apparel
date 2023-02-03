@@ -37,6 +37,14 @@ body {
     margin: 2px;
 }
 
+.font-25 {
+    font-size: 25px;
+}
+
+.dropdown-menu a {
+    font-size: 20px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -67,8 +75,6 @@ body {
     background-color: #D5A761;
     transition: 0.3s;
 }
-
-
 
 .btn-black {
     background: black;
@@ -173,6 +179,16 @@ body {
         width: 50%;
         margin: auto;
     }
+
+    .dropdown-menu {
+        width: fit-content;
+    }
+
+    .dropdown-menu a {
+        color: #000;
+    }
+
+    
 }
 
 
