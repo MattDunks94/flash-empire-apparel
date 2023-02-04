@@ -64,7 +64,7 @@ body {
 }
 
 .shop-now-button {
-    background: black;
+    background: #A40303;
     color: white;
     min-width: 200px;
     font-size: 1.5em;
@@ -188,9 +188,16 @@ body {
         color: #000;
     }
 
-    
-}
+    body {
+        background-size: cover;
+        background-position-x: left;
+        background-position-y: 80px;
+    }
 
+    #subtitle {
+        margin-top: 80px;
+    }
+}
 
 /* For screen width 450px  */
 @media (max-width: 450px) {
