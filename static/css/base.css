@@ -189,9 +189,8 @@ body {
     }
 
     body {
+        background: url('/media/FLASH-SM-BANNER.png') no-repeat center center fixed;
         background-size: cover;
-        background-position-x: left;
-        background-position-y: 80px;
     }
 
     #subtitle {
@@ -203,5 +202,9 @@ body {
 @media (max-width: 450px) {
     #search-bar {
         width: 100%;
+    }
+
+    body {
+        background-position-y: 170px;
     }
 }
