@@ -85,9 +85,9 @@ body {
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-  }
-  
-  .hover-underline-animation::after {
+}
+
+.hover-underline-animation::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -98,12 +98,12 @@ body {
     background-color: #A40303;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
-  }
-  
-  .hover-underline-animation:hover::after {
+}
+
+.hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
+}
 
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -129,7 +129,7 @@ body {
     transform: skew(-14deg, 0deg);
     padding: 2px 3px;
     width: 70px;
-    }
+}
 
 #sale:hover {
     background-color: #D5A761;
@@ -141,9 +141,9 @@ body {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* fixed top navbar only on medium and up */
@@ -163,13 +163,14 @@ body {
     .nav-link:hover {
         color: #A40303;
     }
-    
+
 }
 
+/* For screen width of 992px and less  */
 @media (max-width: 992px) {
     .navbar {
         background-color: #000;
-    } 
+    }
 
     .navbar a {
         color: white;
@@ -191,20 +192,36 @@ body {
     body {
         background: url('/media/FLASH-SM-BANNER.png') no-repeat center center fixed;
         background-size: cover;
+        background-position-y: 70px;
     }
 
     #subtitle {
-        margin-top: 80px;
+        margin-top: 320px;
+        border-radius: 3px;
+    }
+
+    #subtitle h1 {
+        font-size: 90px;
     }
 }
 
-/* For screen width 450px  */
+/* For screen width 450px and less  */
 @media (max-width: 450px) {
     #search-bar {
         width: 100%;
     }
 
     body {
-        background-position-y: 170px;
+        background-size: cover;
+        background-position-y: 70px;
+        background-position-x: left;
+    }
+
+    #subtitle {
+        margin-top: 240px;
+    }
+
+    #subtitle h1 {
+        font-size: 3rem;
     }
 }
