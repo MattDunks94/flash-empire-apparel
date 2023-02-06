@@ -37,6 +37,10 @@ body {
     margin: 2px;
 }
 
+.main-nav {
+    background: #fff;
+}
+
 .font-25 {
     font-size: 25px;
 }
@@ -53,10 +57,6 @@ body {
     height: 1.5rem;
     width: 1.5rem;
     color: #D5A761;
-}
-
-.logo-font {
-    text-transform: uppercase;
 }
 
 .main-logo-link {
@@ -109,7 +109,7 @@ body {
     color: white;
 }
 
-/* ----- Product.html ----- */
+/* ----------------------------- Product.html ----- */
 /* White background overlay */
 .overlay {
     height: 100%;
