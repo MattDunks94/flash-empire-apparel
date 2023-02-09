@@ -18,19 +18,23 @@
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row">
-                <div class="col text-center mt-5">
-                    <h2 class="logo-font">Products</h2>
+                <div class="col text-center my-5">
+                    <h2 class="lttr-space logo-font">- Products -</h2>
                 </div>
             </div>
             <div class="row">
                 {% for product in product %}
                 <div class="col-4">
-                    <div class="card h-100 border-0">
+                    <div class="card h-100 border-0 m-3">
                         {% if product.image %}
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                         {% else %}
-                        <img src="{{ MEDIA_URL }}noimage.png" alt="">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         {% endif %}
+                        <div class="card-body pb-0">
+                            <h5 class="lttr-space">{{ product.name }}</h5>
+                            <p class="font-25 text-red">£{{ product.price }}</p>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}

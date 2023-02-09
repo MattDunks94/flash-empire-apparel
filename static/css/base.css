@@ -32,6 +32,10 @@ body {
     color: #A40303;
 }
 
+.navbar {
+    padding: 0;
+}
+
 .nav-link {
     padding: 2px;
     margin: 2px;
