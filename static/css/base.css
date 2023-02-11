@@ -20,6 +20,10 @@ body {
     color: rgb(243, 239, 239);
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 .lttr-space {
     letter-spacing: 2px;
 }
@@ -30,6 +34,14 @@ body {
 
 .text-red {
     color: #A40303;
+}
+
+.text-black {
+    color: #000;
+}
+
+.no-underline:hover {
+    text-decoration: none;
 }
 
 .navbar {
