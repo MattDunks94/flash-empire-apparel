@@ -182,12 +182,15 @@ body {
     .nav-link:hover {
         color: #A40303;
     }
-
 }
 
 /* For screen width of 992px and less  */
 @media (max-width: 992px) {
     .navbar {
+        background-color: #000;
+    }
+
+    .navbar-nav {
         background-color: #000;
     }
 
@@ -232,7 +235,7 @@ body {
 
     body {
         background-size: cover;
-        background-position-y: 70px;
+        background-position-y: 65px;
         background-position-x: left;
     }
 
