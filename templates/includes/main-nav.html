@@ -15,11 +15,11 @@
         Categories
       </a>
       <div class="dropdown-menu border-0 lttr-space" aria-labelledby="clothing-link">
-        <a href="" class="dropdown-item">T-Shirts</a>
-        <a href="" class="dropdown-item">Sweatshirts</a>
-        <a href="" class="dropdown-item">Joggers</a>
-        <a href="" class="dropdown-item">Headwear</a>
-        <a href="" class="dropdown-item">Bags</a>
+        <a href="{% url 'products' %}?category=t-shirts" class="dropdown-item">T-Shirts</a>
+        <a href="{% url 'products' %}?category=sweatshirts" class="dropdown-item">Sweatshirts</a>
+        <a href="{% url 'products' %}?category=joggers" class="dropdown-item">Joggers</a>
+        <a href="{% url 'products' %}?category=headwear" class="dropdown-item">Headwear</a>
+        <a href="{% url 'products' %}?category=bags" class="dropdown-item">Bags</a>
       </div>
     </li>
     <!-- Special Offers Dropdown -->
