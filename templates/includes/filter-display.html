@@ -1,5 +1,5 @@
-<ul class="list-group list-group-horizontal">
-  <li class="dropdown nav-link">
+<ul class="list-group list-group-horizontal list-unstyled">
+  <li class="dropdown">
     <a class="nav-link text-black font-25 dropdown-toggle" href="#" id="all-products-link"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Sort By
@@ -7,12 +7,10 @@
     <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
       <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">Price, low to high</a>
       <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item">Price, high to low</a>
-      <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-      <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
     </div>
   </li>
 
-  <li class="nav-link dropdown">
+  <li class="dropdown">
     <a class="nav-link text-black font-25 dropdown-toggle ml-4" href="#" id="clothing-link" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
       Colour
