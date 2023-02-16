@@ -22,23 +22,36 @@
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row">
-                <div class="col text-center my-5">
-                    <h2 class="uppercase lttr-space logo-font">- All Products -</h2>
+                <div class="col mt-5">
+                    <h2 class="uppercase h1 lttr-space logo-font text-black">All Products</h2>
+                    <p class="font-25 text-red">Discover our range of tattoo inspired streetwear clothing. Flash Empire
+                        Apparel was founded by a one man army
+                        and inspired by self-expression. We offer alternative clothing to the everyday. From graphic
+                        t-shirts, sweatshirts, joggers, caps and bags.</p>
+                    <hr>
                 </div>
             </div>
+            <div class="row">
+                <div class="col mb-4">
+                    {% include 'includes/filter-display.html' %}
+                </div>
             <div class="row">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="card h-100 border-0 m-3">
                         {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid"
+                                src="{{ product.image.url }}" alt="{{ product.name }}"></a>
                         {% else %}
-                        <a href="#"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"></a>
+                        <a href="#"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ product.name }}"></a>
                         {% endif %}
                         <div class="card-body pb-0">
                             <hr>
                             <h5 class="lttr-space text-black uppercase">{{ product.name }}</h5>
-                            <a class="card-link" href="#"><p class="text-earth lttr-space ">{{ product.category }}</p></a>
+                            <a class="card-link" href="#">
+                                <p class="text-earth lttr-space ">{{ product.category }}</p>
+                            </a>
                             <p class="font-25 text-red">£{{ product.price }}</p>
                         </div>
                     </div>
