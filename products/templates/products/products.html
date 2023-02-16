@@ -49,8 +49,8 @@
                         <div class="card-body pb-0">
                             <hr>
                             <h5 class="lttr-space text-black uppercase">{{ product.name }}</h5>
-                            <a class="card-link" href="#">
-                                <p class="text-earth lttr-space ">{{ product.category }}</p>
+                            <a class="card-link" href="{% url 'products' %}?category={{ product.category }}">
+                                <p class="text-earth lttr-space ">{{ product.category.friendly_name }}</p>
                             </a>
                             <p class="font-25 text-red">£{{ product.price }}</p>
                         </div>
