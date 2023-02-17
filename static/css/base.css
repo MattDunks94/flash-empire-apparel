@@ -44,6 +44,10 @@ body {
     text-decoration: none;
 }
 
+.hover-red:hover {
+    color: #A40303;
+}
+
 .navbar {
     padding: 0;
 }

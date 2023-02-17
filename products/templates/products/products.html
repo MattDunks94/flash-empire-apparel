@@ -35,32 +35,32 @@
                 <div class="col mb-4">
                     {% include 'includes/filter-display.html' %}
                 </div>
-            <div class="row">
-                {% for product in products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                    <div class="card h-100 border-0 m-3">
-                        {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid"
-                                src="{{ product.image.url }}" alt="{{ product.name }}"></a>
-                        {% else %}
-                        <a href="#"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ product.name }}"></a>
-                        {% endif %}
-                        <div class="card-body pb-0">
-                            <hr>
-                            <h5 class="lttr-space text-black uppercase">{{ product.name }}</h5>
-                            <a class="card-link" href="{% url 'products' %}?category={{ product.category }}">
-                                <p class="text-earth lttr-space ">{{ product.category.friendly_name }}</p>
-                            </a>
-                            <p class="font-25 text-red">£{{ product.price }}</p>
+                <div class="row">
+                    {% for product in products %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <div class="card h-100 border-0 m-3">
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid"
+                                    src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                            {% else %}
+                            <a href="#"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ product.name }}"></a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <hr>
+                                <h5 class="lttr-space text-black uppercase">{{ product.name }}</h5>
+                                <a class="card-link" href="{% url 'products' %}?category={{ product.category }}">
+                                    <p class="text-earth lttr-space ">{{ product.category.friendly_name }}</p>
+                                </a>
+                                <p class="font-25 text-red">£{{ product.price }}</p>
+                            </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
-</div>
 
 
-{% endblock %}
+    {% endblock %}

@@ -23,4 +23,13 @@
       {% endfor %}
     </div>
   </li>
+  <p class="ml-5">
+    {% if search_term or current_categories or current_sorting != 'None_None' %}
+    <span class="small text-red"><a href="{% url 'products' %}"
+            class="text-black no-underline hover-red">All Products</a> | </span>
+    {% endif %}
+    <span class="font-25">{{ products|length }}</span> Products{% if search_term %} found for
+    <strong>"{{ search_term }}"</strong>{% endif %}
+  </p>
 </ul>
+
