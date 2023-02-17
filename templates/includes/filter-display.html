@@ -5,10 +5,10 @@
       Sort By
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-      <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">Price (low to high)</a>
-      <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item">Price (high to low)</a>
-      <a href="{% url 'products' %}?sort=product_name&direction=asc" class="dropdown-item">Name (A-Z)</a>
-      <a href="{% url 'products' %}?sort=product_name&direction=desc" class="dropdown-item">Name (Z-A)</a>
+      <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item {% if current_sorting == 'price_asc' %}text-red{% endif %}">Price (low to high)</a>
+      <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item {% if current_sorting == 'price_desc' %}text-red{% endif %}">Price (high to low)</a>
+      <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item {% if current_sorting == 'name_asc' %}text-red{% endif %}">Name (A-Z)</a>
+      <a href="{% url 'products' %}?sort=name&direction=desc" class="dropdown-item {% if current_sorting == 'name_desc' %}text-red{% endif %}">Name (Z-A)</a>
     </div>
   </li>
 
@@ -17,7 +17,7 @@
       aria-haspopup="true" aria-expanded="false">
       Colour
     </a>
-    <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+    <div class="dropdown-menu border-0" id="colour-selector" aria-labelledby="clothing-link">
       {% for colour in colours %}
       <a href="?colour_id={{ colour.id }}" class="dropdown-item">{{ colour.colour }}</a>
       {% endfor %}

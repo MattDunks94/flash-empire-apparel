@@ -36,7 +36,7 @@
             <div class="product-detail-container ml-lg-5 p-1">
                 <h1 class="lttr-space text-black uppercase">{{ product.name }}</h1>
                 <a class="card-link" href="{% url 'products' %}?category={{ product.category }}">
-                    <p class="text-earth lttr-space ">{{ product.category.friendly_name }}</p>
+                    <p class="text-earth lttr-space slanted-bg-earth">{{ product.category.friendly_name }}</p>
                 </a>
                 <p class="lttr-space text-red h1 mt-3">£{{ product.price }}</p>
                 <p class="font-25 text-black mt-5">{{ product.description }}</p>
