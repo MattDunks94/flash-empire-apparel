@@ -32,8 +32,18 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col mb-4">
+                <div class="col-8 mb-4">
                     {% include 'includes/filter-display.html' %}
+                </div>
+                <div class="col-4 d-none d-sm-block">
+                    <p class="text-right">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <span class="small text-red"><a href="{% url 'products' %}"
+                                class="text-black no-underline hover-red">All Products</a> | </span>
+                        {% endif %}
+                        <span class="font-25 text-red">{{ products|length }}</span> Products{% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
                 </div>
                 <div class="row">
                     {% for product in products %}
@@ -50,7 +60,8 @@
                                 <hr>
                                 <h5 class="lttr-space text-black uppercase">{{ product.name }}</h5>
                                 <a class="card-link" href="{% url 'products' %}?category={{ product.category }}">
-                                    <p class="text-earth lttr-space ">{{ product.category.friendly_name }}</p>
+                                    <p class="text-black lttr-space slanted-bg-earth">{{ product.category.friendly_name }}
+                                    </p>
                                 </a>
                                 <p class="font-25 text-red">£{{ product.price }}</p>
                             </div>

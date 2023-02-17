@@ -6,7 +6,6 @@ body {
     background: url('/media/FLASH-BANNER.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #D5A761;
     font-family: 'Big Shoulders Display', cursive;
 }
 
@@ -29,7 +28,7 @@ body {
 }
 
 .text-earth {
-    color: rgb(205, 169, 26);
+    color: #D5A761;
 }
 
 .text-red {
@@ -94,6 +93,18 @@ body {
     color: #000;
     background-color: #D5A761;
     transition: 0.3s;
+}
+
+.slanted-bg-earth {
+    -moz-transform: skew(-14deg, 0deg);
+    -webkit-transform: skew(-14deg, 0deg);
+    -o-transform: skew(-14deg, 0deg);
+    -ms-transform: skew(-14deg, 0deg);
+    transform: skew(-14deg, 0deg);
+    padding: 2px 3px;
+    background-color: #D5A761;
+    color: #000;
+    width: fit-content;
 }
 
 /* ----- Hover Underline Animation ----- */
@@ -256,10 +267,16 @@ body {
     }
 
     #subtitle {
-        margin-top: 240px;
+        margin-top: 180px;
     }
 
     #subtitle h1 {
         font-size: 3rem;
+    }
+}
+
+@media (max-width: 375px) {
+    #subtitle {
+        margin-top: 100px;
     }
 }
