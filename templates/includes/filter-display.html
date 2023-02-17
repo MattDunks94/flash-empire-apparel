@@ -5,8 +5,10 @@
       Sort By
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-      <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">Price, low to high</a>
-      <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item">Price, high to low</a>
+      <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">Price (low to high)</a>
+      <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item">Price (high to low)</a>
+      <a href="{% url 'products' %}?sort=product_name&direction=asc" class="dropdown-item">Name (A-Z)</a>
+      <a href="{% url 'products' %}?sort=product_name&direction=desc" class="dropdown-item">Name (Z-A)</a>
     </div>
   </li>
 
@@ -16,9 +18,9 @@
       Colour
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-      <a href="{% url 'products' %}" class="dropdown-item">Black</a>
-      <a href="{% url 'products' %}" class="dropdown-item">Grey</a>
-      <a href="{% url 'products' %}" class="dropdown-item">White</a>
+      {% for colour in colours %}
+      <a href="?colour_id={{ colour.id }}" class="dropdown-item">{{ colour.colour }}</a>
+      {% endfor %}
     </div>
   </li>
 </ul>

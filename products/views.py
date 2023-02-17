@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, Colour
 
 # Create your views here.
 
@@ -10,6 +10,7 @@ def all_products(request):
     """ A view for viewing all products, including sorting and search queries """
 
     products = Product.objects.all()
+    colours = Colour.objects.all()
     search_query = None
     categories = None
     sort = None
@@ -20,10 +21,12 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            # Sorting by name.
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
+            # Sorting by name.
+            if sortkey == 'product_name':
+                sortkey = 'name'
             # Sorting direction.
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -53,11 +56,17 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    # Colour filter.
+    colour_id = request.GET.get('colour_id')
+    if colour_id:
+        products = Product.objects.filter(colour=colour_id)
+
     context = {
         'products': products,
         'search_term': search_query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'colours': colours,
     }
     return render(request, 'products/products.html', context)
 
