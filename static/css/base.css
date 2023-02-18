@@ -39,6 +39,10 @@ body {
     color: #000;
 }
 
+.bg-earth {
+    background-color: #D5A761;
+}
+
 .no-underline:hover {
     text-decoration: none;
 }
@@ -89,21 +93,21 @@ body {
     font-size: 1.5em;
 }
 
-.shop-now-button:hover {
+.shop-now-button:hover,
+.shop-now-button:focus,
+.shop-now-button:active {
     color: #000;
     background-color: #D5A761;
     transition: 0.3s;
 }
 
-.slanted-bg-earth {
+.slanted-div {
     -moz-transform: skew(-14deg, 0deg);
     -webkit-transform: skew(-14deg, 0deg);
     -o-transform: skew(-14deg, 0deg);
     -ms-transform: skew(-14deg, 0deg);
     transform: skew(-14deg, 0deg);
     padding: 2px 3px;
-    background-color: #D5A761;
-    color: #000;
     width: fit-content;
 }
 
@@ -129,15 +133,6 @@ body {
 .hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
-
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
 }
 
 /* ----------------------------- Products.html ----- */
@@ -169,6 +164,18 @@ body {
 
 /* ---------------------- Product-detail.html ----- */
 
+#add-to-bag-btn {
+    background-color: #A40303;
+    color: #fff;
+}
+
+#add-to-bag-btn:hover,
+#add-to-bag-btn:active,
+#add-to-bag-btn:focus {
+    background-color: #D5A761;
+    color: #000;
+}
+
 /* ----- Sale Btn ----- */
 #sale {
     background-color: #A40303;
@@ -182,7 +189,9 @@ body {
     width: 70px;
 }
 
-#sale:hover {
+#sale:hover,
+#sale:focus,
+#sale:active {
     background-color: #D5A761;
     color: #000;
     transition: 0.3s;
