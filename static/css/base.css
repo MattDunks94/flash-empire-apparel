@@ -152,6 +152,21 @@ body {
     position: fixed;
 }
 
+/* Back to top btn */
+.btt-button {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #000;
+    border-radius: 100%;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* ---------------------- Product-detail.html ----- */
 
 /* ----- Sale Btn ----- */
