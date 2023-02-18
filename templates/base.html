@@ -95,9 +95,10 @@
                             {% endif %}
                         </div>
                     </li>
+                    <!----- Shopping Bag ----->
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-earth {% else %}text-white{% endif %} nav-link"
-                            href="">
+                            href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div class="icon"><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="lttr-space my-0">
