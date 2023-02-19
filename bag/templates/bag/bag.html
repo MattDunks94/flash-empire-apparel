@@ -48,7 +48,7 @@
                             <p class="font-25 my-0 lttr-space">£{{ item.product.price }}</p>
                         </td>
                         <td class="w-25 py-3">
-                            <p class="font-25 my-0 lttr-space">{{ item.quantity }}</p>
+                            <p class="font-25 my-0 lttr-space">{% include 'bag/quantity-form.html' %}</p>
                         </td>
                         <td>
                             <p class="font-25 my-0 lttr-space">£{{ item.product.price }}</p>
@@ -107,5 +107,12 @@
         </div>
     </div>
 </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+{% include 'bag/includes/quantity-input-script.html' %}
 
 {% endblock %}
