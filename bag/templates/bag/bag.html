@@ -63,9 +63,9 @@
                             {% if free_delivery_delta > 0 %}
                                 £{{ delivery|floatformat:2 }}
                             {% else %}
-                            <span class="text-red">FREE</span>
+                            <span class="text-red font-25">FREE</span>
                             {% endif %}</h6>
-                            <h3 class="mt-4 lttr-space">Grand Total: <span class="text-red">£{{ grand_total|floatformat:2 }}</span></h3>
+                            <h3 class="mt-4 lttr-space">Total: <span class="text-red">£{{ grand_total|floatformat:2 }}</span></h3>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-red">
                                 You could get free delivery by spending <span class="font-25">£{{ free_delivery_delta }}</span>
