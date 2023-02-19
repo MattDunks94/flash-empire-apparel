@@ -58,7 +58,12 @@
                         <td colspan="5" class="pt-5 text-right">
                             <hr>
                             <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                            <h6>Delivery: 
+                            {% if free_delivery_delta > 0 %}
+                                £{{ delivery|floatformat:2 }}
+                            {% else %}
+                            FREE
+                            {% endif %}</h6>
                             <h3 class="mt-4 lttr-space">Grand Total: <span class="text-red">£{{ grand_total|floatformat:2 }}</span></h3>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-red">
