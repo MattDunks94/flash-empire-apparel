@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -63,7 +64,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="update-item p-1 btt-link">
+                                    <a class="p-1 btt-link update-qty">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                 </li>
@@ -135,7 +136,7 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-item').click(function(e) {
+    $('.update-qty').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
