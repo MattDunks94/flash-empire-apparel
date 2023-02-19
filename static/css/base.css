@@ -176,6 +176,11 @@ body {
     color: #000;
 }
 
+/* ----------------------- Bag.html ----- */
+th {
+    font-size: 20px;
+}
+
 /* ----- Sale Btn ----- */
 #sale {
     background-color: #A40303;

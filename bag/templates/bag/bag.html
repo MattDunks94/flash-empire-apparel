@@ -21,7 +21,73 @@
     <div class="row">
         <div class="col">
             {% if bag_items %}
-
+            <div class="table-responsive table-sm">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Product Info</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="w-25 p-4">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img class="img-fluid" src="{{ item.product.image.url}}" alt="{{ item.product.name }}">
+                            </a>
+                        </td>
+                        <td class="py-3">
+                            <p class="font-25 my-0 lttr-space">{{ item.product.name }}</p>
+                            <p class="text-red">{{ item.product.sku|upper }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="font-25 my-0 lttr-space">£{{ item.product.price }}</p>
+                        </td>
+                        <td class="w-25 py-3">
+                            <p class="font-25 my-0 lttr-space">{{ item.quantity }}</p>
+                        </td>
+                        <td>
+                            <p class="font-25 my-0 lttr-space">£{{ item.product.price }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            <hr>
+                            <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                            <h3 class="mt-4 lttr-space">Grand Total: <span class="text-red">£{{ grand_total|floatformat:2 }}</span></h3>
+                            {% if free_delivery_delta > 0 %}
+                            <p class="mb-1 text-red">
+                                You could get free delivery by spending <span class="font-25">£{{ free_delivery_delta }}</span>
+                                more!
+                            </p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left text-red"></i>
+                                </span>
+                                <span class="lttr-space">Keep Shopping</span>
+                            </a>
+                        </td>
+                        <td colspan="5" class="text-right">
+                            <a href="" class="btn btn-black rounded-0 btn-lg slanted-div bg-earth">
+                                <span class="text-uppercase lttr-space">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock text-black"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             {% else %}
             <p class="font-25">Your bag is empty</p>
             <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">

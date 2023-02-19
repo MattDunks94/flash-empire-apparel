@@ -18,7 +18,7 @@ def bag_contents(request):
         bag_items.append({
             'item_id': item_id,
             'quantity': quantity,
-            'product': product,            
+            'product': product,
         })
 
     # if total is less than free delivery threshold, calculate delivery charge.

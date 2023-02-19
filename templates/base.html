@@ -97,10 +97,10 @@
                     </li>
                     <!----- Shopping Bag ----->
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-earth {% else %}text-white{% endif %} nav-link"
+                        <a class="{% if grand_total %}text-white{% else %}text-earth{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div class="icon"><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <div class="icon {% if grand_total %}text-white{% else %}text-earth{% endif %}"><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="lttr-space my-0">
                                     {% if grand_total %}
                                     <!-- Displays users basket total to 2 decimal places. -->
