@@ -57,22 +57,14 @@
                         <td class="w-25 py-3">
                             <p class="font-25 my-0 lttr-space">{% include 'bag/quantity-form.html' %}</p>
                         </td>
-                        <td>
-                            <p class="font-25 my-0 lttr-space">£{{ item.product.price | calc_subtotal:item.quantity  }}</p>
+                        <td class="py-3">
+                            <p class="font-25 my-0 lttr-space">£{{ item.product.price | calc_subtotal:item.quantity  }}
+                            </p>
                         </td>
-                        <td>
-                            <ul class="list-unstyled p-1">
-                                <li class="mb-4">
-                                    <a class="remove-item p-1 btt-link" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
-                                        <i class="fa-solid fa-trash fa-lg text-red"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="p-1 btt-link update-qty">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                        <td class="py-4">
+                            <a class="remove-item p-1 btt-link" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
+                                <i class="fa-solid fa-trash fa-lg text-red"></i>
+                            </a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -90,8 +82,10 @@
                                     class="text-red">£{{ grand_total|floatformat:2 }}</span></h3>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-red">
-                                FREE delivery on orders over <span class="font-25">£{{ free_delivery_threshold }}</span>.<br>
-                                Spend a further <span class="font-25">{{ free_delivery_delta }}</span> to get FREE delivery.
+                                FREE delivery on orders over <span
+                                    class="font-25">£{{ free_delivery_threshold }}</span>.<br>
+                                Spend a further <span class="font-25">{{ free_delivery_delta }}</span> to get FREE
+                                delivery.
                             </p>
                             {% endif %}
                         </td>
@@ -139,13 +133,13 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-qty').click(function(e) {
-        var form = $(this).prev('.update-form');
+    $('.update-qty').click(function (e) {
+        var form = $('.update-form');
         form.submit();
     })
 
     // Remove item on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
@@ -156,12 +150,11 @@
         };
 
         $.post(url, data)
-            .done(function() {
+            .done(function () {
                 location.reload();
             })
 
     })
-
 </script>
 
 {% endblock %}
