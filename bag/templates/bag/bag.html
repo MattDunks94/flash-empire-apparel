@@ -73,7 +73,7 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5" class="pt-5 text-right">
+                        <td colspan="6" class="pt-5 text-right">
                             <hr>
                             <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                             <h6><i class="fa-solid fa-truck"></i> Delivery:
@@ -86,9 +86,8 @@
                                     class="text-red">£{{ grand_total|floatformat:2 }}</span></h3>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-red">
-                                You could get free delivery by spending <span
-                                    class="font-25">£{{ free_delivery_delta }}</span>
-                                more!
+                                FREE delivery on orders over <span class="font-25">£{{ free_delivery_threshold }}</span>.<br>
+                                Spend a further <span class="font-25">{{ free_delivery_delta }}</span> to get FREE delivery.
                             </p>
                             {% endif %}
                         </td>
