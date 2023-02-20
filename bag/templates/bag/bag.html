@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_title %}
 | Shopping Bag
@@ -57,12 +58,12 @@
                             <p class="font-25 my-0 lttr-space">{% include 'bag/quantity-form.html' %}</p>
                         </td>
                         <td>
-                            <p class="font-25 my-0 lttr-space">£{{ item.product.price }}</p>
+                            <p class="font-25 my-0 lttr-space">£{{ item.product.price | calc_subtotal:item.quantity  }}</p>
                         </td>
                         <td>
                             <ul class="list-unstyled p-1">
                                 <li class="mb-4">
-                                    <a class="remove-item p-1 btt-link" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                    <a class="remove-item p-1 btt-link" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
                                         <i class="fa-solid fa-trash fa-lg text-red"></i>
                                     </a>
                                 </li>
@@ -148,7 +149,7 @@
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
-        var url = `/bag/remove/${itemId}`;
+        var url = `/bag/remove/${itemId}/`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
             'product_size': size
