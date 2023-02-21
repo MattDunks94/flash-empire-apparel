@@ -19,6 +19,10 @@ body {
     color: rgb(243, 239, 239);
 }
 
+#subtitle h1 {
+    text-shadow: 1.5px 1.5px 1px #000;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
