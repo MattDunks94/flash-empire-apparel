@@ -138,8 +138,8 @@ body {
 /* ----------------------------- Toasts ----- */
 .message-container {
     position: fixed;
-    top: 72px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     z-index: 99999999999;
 }
 
@@ -149,6 +149,10 @@ body {
 
 .toast-capper {
     height: 2px;
+}
+
+.checkout-btn {
+    background-color: rgb(62, 198, 62);
 }
 
 /* ----------------------------- Products.html ----- */
