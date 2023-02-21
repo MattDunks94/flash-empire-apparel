@@ -155,6 +155,13 @@ body {
     background-color: rgb(62, 198, 62);
 }
 
+/* Turns scrollable when height exceeds 150px */
+.bag-notification-wrapper {
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* ----------------------------- Products.html ----- */
 /* White background overlay */
 .overlay {
