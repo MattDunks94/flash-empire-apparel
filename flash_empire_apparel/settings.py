@@ -84,6 +84,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
             ],
+            # Crispy forms tags
             'builtins': [
                 'cripsy_forms.templatetags.crispy_forms_tags',
                 'cripsy_forms.templatetags.crispy_forms_field',
