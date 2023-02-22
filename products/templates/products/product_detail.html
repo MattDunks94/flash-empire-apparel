@@ -39,6 +39,7 @@
                     <p class="text-black lttr-space slanted-div bg-earth">{{ product.category.friendly_name }}</p>
                 </a>
                 <p class="lttr-space text-red h1 mt-3">£{{ product.price }}</p>
+                <p>Colour: <span class="text-red">{{ product.colour }}</span></p>
                 <p class="font-25 text-black mt-5">{{ product.description }}</p>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
