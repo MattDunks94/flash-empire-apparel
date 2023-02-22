@@ -43,7 +43,7 @@
                     <!---- Item Details (Name, Colour, Size, Qty) ------>
                     <div class="col-6">
                         <p class="h4">{{ item.product.name }}</p>
-                        <p class="small">Colour: <span class="text-red">{{ item.product.colour }}</span></p>
+                        <p>Colour: <span class="text-red">{{ item.product.colour }}</span></p>
                         <p>Size: {% if item.product.has_size %}
                             <span class="text-red">{{ item.size | upper }}</span>
                             {% else %}
