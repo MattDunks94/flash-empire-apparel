@@ -241,6 +241,12 @@ th {
     overflow-y: auto;
 }
 
+#submit-btn:hover {
+    background-color: #000;
+    color: #D5A761;
+    transition: 0.3s;
+}
+
 /* ------------------------ Media Queries -----*/
 
 /* Slightly larger container on xl screens */

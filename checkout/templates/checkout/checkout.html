@@ -68,7 +68,7 @@
                         <p>Order Subtotal:</p>
                         <p>Delivery:</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 text-right">
                         <p>£{{ total | floatformat:2 }}</p>
                         <p>£{{ delivery | floatformat:2 }}</p>
                     </div>
@@ -84,7 +84,7 @@
                         <p class="h4">Order Total:</p>
                     </div>
                     <div class="col-6 lttr-space">
-                        <p class="h4 lttr-space text-red">£{{ grand_total | floatformat:2 }}</p>
+                        <p class="h4 lttr-space text-red text-right">£{{ grand_total | floatformat:2 }}</p>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                         <label class="form-check-label" for="id-save-info">
                             <a class="text-red hover-red" href="{% url 'account_signup' %}">Create an account</a> or
                             <a class="text-red hover-red" href="{% url 'account_login' %}">login</a> to save this
-                            information
+                            information.
                         </label>
                         {% endif %}
                 </fieldset>
@@ -132,6 +132,16 @@
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
+                <!----- Submit Payment Btn ----->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mt-3 mb-5">
+                            <button id="submit-btn" class="btn w-100 rounded-0 slanted-div bg-earth">
+                                <span class="font-25 lttr-space">Complete Order</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
