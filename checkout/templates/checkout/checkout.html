@@ -24,8 +24,44 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-12 col-lg-6 order-lg-last">
+            <h3 class="lttr-space mb-4">Your Bag:</h3>
+            <div class="shopping-bag-wrapper">
+                {% for item in bag_items %}
+                <div class="row">
+                    <div class="col-3 mb-5">
+                        <a href="{% url 'product_detail' item.product.id %}">
+                            {% if item.product.image %}
+                            <img src="{{ item.product.image.url }}" class="w-100" alt="{{ item.product.name }}">
+                            {% else %}
+                            <img src="{{ MEDIA_URL }}noimage.png" class="w-100" alt="{{ item.product.name }}">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <p class="h4">{{ item.product.name }}</p>
+                        <p class="small">Colour: <span class="text-red">{{ item.product.colour }}</span></p>
+                        <p>Size: {% if item.product.has_size %}
+                            <span class="text-red">{{ item.size | upper }}</span>
+                            {% else %}
+                            <span class="text-red">One Size</span>
+                            {% endif %}</p>
+                        <p>Qty: <span class="text-red">{{ item.quantity }}</span></p>
+                    </div>
+                    <div class="col-2 text-right h4 lttr-space">
+                        £{{ item.product.price | calc_subtotal:item.quantity }}
+                    </div>
+                    <div class="col-1">
+                        <a href="{% url 'view_bag' %}" class="text-red hover-red">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
         <div class="col-12 col-lg-6">
-            <p>Please fill out the form below to complete your order.</p>
+            <p class="text-red">Please fill out the form below to complete your order.</p>
             <form action="{% url 'checkout' %}">
                 {% csrf_token %}
                 <fieldset class="mb-3">
@@ -50,9 +86,18 @@
                         {% else %}
                         <label class="form-check-label" for="id-save-info">
                             <a class="text-red hover-red" href="{% url 'account_signup' %}">Create an account</a> or
-                            <a class="text-red hover-red" href="{% url 'account_login' %}">login</a> to save this information
+                            <a class="text-red hover-red" href="{% url 'account_login' %}">login</a> to save this
+                            information
                         </label>
                         {% endif %}
+                </fieldset>
+                <fieldset>
+                    <legend class="fieldset-label text-black w-auto h3">Payment:</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
             </form>
         </div>

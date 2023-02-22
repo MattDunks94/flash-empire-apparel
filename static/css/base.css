@@ -166,7 +166,7 @@ body {
     overflow-y: auto;
 }
 
-/* ----------------------------- Products.html ----- */
+/* ------------------------ Products.html ----- */
 /* White background overlay */
 .overlay {
     height: 100%;
@@ -193,7 +193,7 @@ body {
     cursor: pointer;
 }
 
-/* ---------------------- Product-detail.html ----- */
+/* ----------- Product-detail.html ----- */
 
 #add-to-bag-btn {
     background-color: #A40303;
@@ -233,7 +233,15 @@ th {
     transition: 0.3s;
 }
 
-/* -------------------------------- Media Queries */
+/* ----------------------- Checkout.html -----*/
+.shopping-bag-wrapper {
+    padding-right: 20px;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ------------------------ Media Queries -----*/
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
