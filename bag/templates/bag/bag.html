@@ -15,7 +15,9 @@
 {% endblock %}
 
 {% block content %}
+<!----- Overlay ----->
 <div class="overlay"></div>
+<!----- Shopping Bag ----->
 <div class="container bag-container my-5">
     <div class="row">
         <div class="col">
@@ -38,6 +40,7 @@
                         </tr>
                     </thead>
                     {% for item in bag_items %}
+                    <!----- Item Details (Name, Size, SKU, Price, Qty Form, Subtotal) ----->
                     <tr>
                         <td class="w-25 p-4">
                             <a href="{% url 'product_detail' item.product.id %}">
@@ -61,6 +64,7 @@
                             <p class="font-25 my-0 lttr-space">£{{ item.product.price | calc_subtotal:item.quantity  }}
                             </p>
                         </td>
+                        <!----- Remove Item btn ----->
                         <td class="py-4">
                             <a class="remove-item p-1 btt-link" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
                                 <i class="fa-solid fa-trash fa-lg text-red"></i>
@@ -69,6 +73,7 @@
                     </tr>
                     {% endfor %}
                     <tr>
+                        <!----- Grand Total/Delivery Calculation ----->
                         <td colspan="6" class="pt-5 text-right">
                             <hr>
                             <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
@@ -91,6 +96,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!----- Keep Shopping btn ----->
                         <td>
                             <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">
                                 <span class="icon">
@@ -99,6 +105,7 @@
                                 <span class="lttr-space">Keep Shopping</span>
                             </a>
                         </td>
+                        <!----- Secure Checkout btn ----->
                         <td colspan="5" class="text-right">
                             <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg slanted-div bg-earth w-50" id="checkout-btn">
                                 <span class="text-uppercase lttr-space">Secure Checkout</span>
@@ -112,6 +119,7 @@
             </div>
             {% else %}
             <p class="font-25">Your bag is empty</p>
+            <!----- Keep Shopping btn ----->
             <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">
                 <span class="icon">
                     <i class="fas fa-chevron-left text-red"></i>
@@ -130,6 +138,8 @@
 {{ block.super }}
 
 {% include 'bag/includes/quantity-input-script.html' %}
+
+<!----- Update product qty and/or remove products script ----->
 
 <script type="text/javascript">
     // Update quantity on click
