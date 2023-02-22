@@ -24,11 +24,13 @@
         </div>
     </div>
     <div class="row">
+        <!----- Customers Bag Items, Details ----->
         <div class="col-12 col-lg-6 order-lg-last">
             <h3 class="lttr-space mb-4">Your Bag:</h3>
             <div class="shopping-bag-wrapper">
                 {% for item in bag_items %}
                 <div class="row">
+                    <!----- Item Image ----->
                     <div class="col-3 mb-5">
                         <a href="{% url 'product_detail' item.product.id %}">
                             {% if item.product.image %}
@@ -38,6 +40,7 @@
                             {% endif %}
                         </a>
                     </div>
+                    <!---- Item Details (Name, Colour, Size, Qty) ------>
                     <div class="col-6">
                         <p class="h4">{{ item.product.name }}</p>
                         <p class="small">Colour: <span class="text-red">{{ item.product.colour }}</span></p>
@@ -48,9 +51,11 @@
                             {% endif %}</p>
                         <p>Qty: <span class="text-red">{{ item.quantity }}</span></p>
                     </div>
+                    <!----- Item Price Subtotal ----->
                     <div class="col-2 text-right h4 lttr-space">
                         £{{ item.product.price | calc_subtotal:item.quantity }}
                     </div>
+                    <!----- Return to bag link option for editing bag ----->
                     <div class="col-1">
                         <a href="{% url 'view_bag' %}" class="text-red hover-red">
                             <i class="fa-solid fa-pen"></i>
@@ -60,16 +65,19 @@
                 {% endfor %}
             </div>
         </div>
+        <!----- Checkout Form ----->
         <div class="col-12 col-lg-6">
             <p class="text-red">Please fill out the form below to complete your order.</p>
             <form action="{% url 'checkout' %}">
                 {% csrf_token %}
+                <!----- Customer Info ----->
                 <fieldset class="mb-3">
                     <legend class="fieldset-label h3 lttr-space">Customer Information:</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
+                <!------ Delivery Info ----->
                 <fieldset class="mb-3">
                     <legend class="fieldset-label h3 lttr-space">Delivery Information:</legend>
                     {{ order_form.country | as_crispy_field }}
@@ -77,6 +85,7 @@
                     {{ order_form.street_address_2 | as_crispy_field }}
                     {{ order_form.county | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
+                    <!------ Save Delivery Info if signed in ----->
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
