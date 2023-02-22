@@ -63,6 +63,30 @@
                     </div>
                 </div>
                 {% endfor %}
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p>Order Subtotal:</p>
+                        <p>Delivery:</p>
+                    </div>
+                    <div class="col-6">
+                        <p>£{{ total | floatformat:2 }}</p>
+                        <p>£{{ delivery | floatformat:2 }}</p>
+                    </div>
+                </div>
+                <!----- HR ----->
+                <div class="row">
+                    <div class="col-12">
+                        <hr class="mt-0">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="h4">Order Total:</p>
+                    </div>
+                    <div class="col-6 lttr-space">
+                        <p class="h4 lttr-space text-red">£{{ grand_total | floatformat:2 }}</p>
+                    </div>
+                </div>
             </div>
         </div>
         <!----- Checkout Form ----->
@@ -101,7 +125,7 @@
                         {% endif %}
                 </fieldset>
                 <fieldset>
-                    <legend class="fieldset-label text-black w-auto h3">Payment:</legend>
+                    <legend class="fieldset-label text-black w-auto h3 lttr-space">Payment:</legend>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- Used to display form errors -->
