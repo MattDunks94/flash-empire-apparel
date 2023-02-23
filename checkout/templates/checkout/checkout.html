@@ -104,15 +104,15 @@
                 <fieldset class="rounded mb-4">
                     <legend class="h2 text-black w-auto lttr-space">Customer Information:</legend>
                     {{ order_form.first_name | as_crispy_field }}
-                    {{ order_form.second_name | as_crispy_field }}
+                    {{ order_form.last_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded mb-4">
                     <legend class="h2 text-black w-auto lttr-space">Delivery Details:</legend>
                     {{ order_form.country | as_crispy_field }}
-                    {{ order_form.street_address1 | as_crispy_field }}
-                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.street_address_1 | as_crispy_field }}
+                    {{ order_form.street_address_2 | as_crispy_field }}
                     {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
                     {{ order_form.county | as_crispy_field }}

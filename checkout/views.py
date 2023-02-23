@@ -21,14 +21,14 @@ def checkout(request):
 
         form_data = {
             'first_name': request.POST['first_name'],
-            'second_name': request.POST['second_name'],
+            'last_name': request.POST['last_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'country': request.POST['country'],
             'postcode': request.POST['postcode'],
             'town_or_city': request.POST['town_or_city'],
-            'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST['street_address2'],
+            'street_address_1': request.POST['street_address_1'],
+            'street_address_2': request.POST['street_address_2'],
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
