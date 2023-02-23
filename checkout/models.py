@@ -39,7 +39,7 @@ class Order(models.Model):
         Update grand total everytime a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.line_items.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.line_items.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         # Calculating delivery cost if total less than free delivery threshold.
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
@@ -66,8 +66,7 @@ class OrderLineItem(models.Model):
         Order, on_delete=models.CASCADE, null=False, blank=False, related_name='line_items'
         )
     product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, null=False, blank=False, related_name='line_items'
-        )
+        Product, on_delete=models.CASCADE, null=False, blank=False)
     product_size = models.CharField(max_length=2, null=True, blank=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
