@@ -1,38 +1,36 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+
 from .forms import OrderForm
+from .models import Order, OrderLineItem
 from products.models import Product
-from checkout.models import Order, OrderLineItem
+from bag.contexts import bag_contents
 
 import stripe
-from bag.contexts import bag_contents
 
 # Create your views here.
 
 
 def checkout(request):
-
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
+
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'country': request.POST['country'],
-            'town_or_city': request.POST['town_or_city'],
-            'street_address_1': request.POST['street_address_1'],
-            'street_address_2': request.POST['street_address_2'],
-            'county': request.POST['county'],
             'postcode': request.POST['postcode'],
+            'town_or_city': request.POST['town_or_city'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'county': request.POST['county'],
         }
-
-        # Occupy order form with the form_data.
         order_form = OrderForm(form_data)
-        # If form is valid, save form and create line items.
         if order_form.is_valid():
             order = order_form.save()
             for item_id, item_data in bag.items():
@@ -46,7 +44,6 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        # If products have sizes.
                         for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
@@ -54,10 +51,12 @@ def checkout(request):
                                 quantity=quantity,
                                 product_size=size,
                             )
-                except Product.DoesNotExist():
-                    messages.error(request, "One of the items in your bag \
-                        doesn't exist. Please contact us for further details.")
-
+                            order_line_item.save()
+                except Product.DoesNotExist:
+                    messages.error(request, (
+                        "One of the products does not exist. Please contact \
+                        us for more information."
+                        ))
                     order.delete()
                     return redirect(reverse('view_bag'))
 
@@ -66,18 +65,17 @@ def checkout(request):
                 reverse('checkout_success', args=[order.order_number])
                 )
         else:
-            messages.error(request, 'There was an error with your \
-                form details. Please check your details.')
-
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag!")
+            messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
-        order_total = current_bag['grand_total']
-        stripe_total = round(order_total * 100)
+        total = current_bag['grand_total']
+        stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
@@ -87,8 +85,8 @@ def checkout(request):
         order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key not found. Is it set in \
-            your environment?')
+        messages.warning(request, 'Stripe public key is missing. \
+            Please check your environment.')
 
     template = 'checkout/checkout.html'
     context = {
@@ -101,13 +99,14 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """ Handles successful checkouts """
-
+    """
+    Handle successful checkouts
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Your order has been successfully processed!\
-        Your order number is: {order_number}\
-        A confirmation email will be sent to {order.email}.')
+    messages.success(request, f'Order successfull! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']
