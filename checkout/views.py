@@ -1,11 +1,19 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
 from .forms import OrderForm
+
+import stripe
+from bag.contexts import bag_contents
 
 # Create your views here.
 
 
 def checkout(request):
+    current_bag = bag_contents(request)
+    order_total = current_bag['grand_total']
+    stripe_total = round(order_total * 100)
+
     bag = request.session.get('bag', {})
     if not bag:
         messages.error(request, "There's nothing in your bag!")

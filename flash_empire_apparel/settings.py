@@ -176,8 +176,14 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Stripe
 FREE_DELIVERY_THRESHOLD = 40
 STANDARD_DELIVERY_PERCENTAGE = 15
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+STRIPE_CLIENT_SECRET = os.environ.get("STRIPE_CLIENT_SECRET")
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
