@@ -29,7 +29,8 @@
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p class="lttr-space text-black h2 mb-4">Your Bag:</p>
             <!----- Bag Item(s) Images ----->
-            {% for item in bag_items %}
+            <div class="shopping-bag-wrapper">
+                {% for item in bag_items %}
                 <div class="row">
                     <div class="col-2 my-3">
                         <a href="{% url 'product_detail' item.product.id %}">
@@ -45,20 +46,23 @@
                         <p class="font-25">{{ item.product.name }}</p>
                         <p class="my-0">Colour: <span class="text-red">{{ item.product.colour|upper }}</span></p>
                         <p class="my-0">Size: <span
-                                class="text-red">{% if item.product.has_size %}{{ item.size|upper }}{% else %}One
-                                Size{% endif %}</span></p>
+                                class="text-red">{% if item.product.has_size %}{{ item.size|upper }}{% else %}
+                                One Size{% endif %}</span>
+                        </p>
                         <p class="my-0">Qty: <span class="text-red">{{ item.quantity }}</span></p>
                     </div>
                     <div class="col-3 text-right mt-3">
                         <p class="font-25">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                     </div>
+                    <!----- Edit Bag Btn ----->
                     <div class="col-1 my-3">
-                        <a>
-                        <i class="fa-solid fa-pen text-red"></i>
+                        <a href="{% url 'view_bag' %}">
+                            <i class="fa-solid fa-pen text-red"></i>
                         </a>
                     </div>
                 </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
             <hr>
             <!----- Order Subtotal & Delivery ----->
             <div class="row text-black text-right mt-2">
