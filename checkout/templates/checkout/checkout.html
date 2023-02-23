@@ -101,14 +101,14 @@
             <p class="text-red">Please fill out the form below to complete your order.</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="px-2">
                 {% csrf_token %}
-                <fieldset class="rounded mb-5">
+                <fieldset class="rounded mb-4">
                     <legend class="h2 text-black w-auto lttr-space">Customer Information:</legend>
                     {{ order_form.first_name | as_crispy_field }}
                     {{ order_form.second_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
-                <fieldset class="rounded mb-5">
+                <fieldset class="rounded mb-4">
                     <legend class="h2 text-black w-auto lttr-space">Delivery Details:</legend>
                     {{ order_form.country | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
@@ -116,7 +116,7 @@
                     {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
                     {{ order_form.county | as_crispy_field }}
-                    <div class="form-check form-check-inline float-right mr-0">
+                    <div class="form-check form-check-inline float-right">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
                             profile</label>
