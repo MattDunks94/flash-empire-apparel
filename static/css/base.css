@@ -236,7 +236,7 @@ th {
 /* ----------------------- Checkout.html -----*/
 .shopping-bag-wrapper {
     padding-right: 20px;
-    height: 80vh;
+    height: 50vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
