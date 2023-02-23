@@ -155,10 +155,6 @@ body {
     height: 2px;
 }
 
-.checkout-btn {
-    background-color: rgb(62, 198, 62);
-}
-
 /* Turns scrollable when height exceeds 150px */
 .bag-notification-wrapper {
     height: 150px;
@@ -194,7 +190,6 @@ body {
 }
 
 /* ----------- Product-detail.html ----- */
-
 #add-to-bag-btn {
     background-color: #A40303;
     color: #fff;
@@ -234,6 +229,7 @@ th {
 }
 
 /* ----------------------- Checkout.html -----*/
+/* Turns scrollable at max-height of 80vh */
 .shopping-bag-wrapper {
     padding-right: 20px;
     max-height: 80vh;

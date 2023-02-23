@@ -89,7 +89,7 @@
             <!----- Order Total ----->
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="my-0 font-25 text-right">Order Total:</p>
+                    <p class="my-0 font-25 text-right lttr-space">Order Total:</p>
                 </div>
                 <div class="col-3">
                     <p class="font-25 text-right">£{{ grand_total | floatformat:2 }}</p>
@@ -99,7 +99,7 @@
         <!----- Checkout Form ----->
         <div class="col-12 col-lg-6">
             <p class="text-red">Please fill out the form below to complete your order.</p>
-            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="px-2">
                 {% csrf_token %}
                 <fieldset class="rounded mb-5">
                     <legend class="h2 text-black w-auto lttr-space">Customer Information:</legend>
