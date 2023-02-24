@@ -167,6 +167,10 @@ body {
     background-color: #000;
 }
 
+.footer-hr {
+    border: 1px solid #fff;
+}
+
 /* ------------------------ Products.html ----- */
 /* White background overlay */
 .overlay {
