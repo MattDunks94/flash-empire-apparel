@@ -162,6 +162,11 @@ body {
     overflow-y: auto;
 }
 
+/* Footer */
+.footer {
+    background-color: #000;
+}
+
 /* ------------------------ Products.html ----- */
 /* White background overlay */
 .overlay {
