@@ -59,36 +59,31 @@ form.addEventListener('submit', function (ev) {
         'client_secret': clientSecret,
         'save_info': saveInfo,
     }
-    var url = 'checkout/cache_checkout_data/';
+    var url = '/checkout/cache_checkout_data/';
     // Posting the url and postData.
     $.post(url, postData).done(function() {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
                 billing_details: {
-                    first_name: $.trim(form.first_name.value),
-                    last_name: $.trim(form.last_name.value),
+                    name: $.trim(form.first_name.value),
+                    phone: $.trim(form.phone_number.value),
                     email: $.trim(form.email.value),
                     address: {
-                        line_1: $.trim(form.street_address_1.value),
-                        line_2: $.trim(form.street_address_2.value),
-                        town_city: $.trim(form.town_or_city.value),
-                        county: $.trim(form.county.value),
+                        line1: $.trim(form.street_address_1.value),
+                        line2: $.trim(form.street_address_2.value),
                         country: $.trim(form.country.value),
-
                     }
 
                 }
             },
-            shipping_details: {
-                first_name: $.trim(form.first_name.value),
-                last_name: $.trim(form.last_name.value),
+            shipping: {
+                name: $.trim(form.first_name.value),
+                phone: $.trim(form.phone_number.value),
                 address: {
-                    line_1: $.trim(form.street_address_1.value),
-                    line_2: $.trim(form.street_address_2.value),
-                    town_city: $.trim(form.town_or_city.value),
-                    county: $.trim(form.county.value),
-                    postcode: $.trim(form.postcode.value),
+                    line1: $.trim(form.street_address_1.value),
+                    line2: $.trim(form.street_address_2.value),
+                    postal_code: $.trim(form.postcode.value),
                     country: $.trim(form.country.value),
                 }
             }
