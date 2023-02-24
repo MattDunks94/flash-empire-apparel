@@ -55,3 +55,8 @@
   font-size: 60px;
   color: darkgreen;
 }
+
+.order-info-container {
+  border: 1px solid #000;
+  border-radius: 5px;
+}

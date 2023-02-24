@@ -76,7 +76,7 @@
                         <!----- Grand Total/Delivery Calculation ----->
                         <td colspan="6" class="pt-5 text-right">
                             <hr>
-                            <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Bag Total: £{{ total|floatformat:2 }}</h6>
                             <h6><i class="fa-solid fa-truck"></i> Delivery:
                                 {% if free_delivery_delta > 0 %}
                                 £{{ delivery|floatformat:2 }}
