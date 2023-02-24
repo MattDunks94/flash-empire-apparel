@@ -10,6 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
         'colour',
         'category',
         'price',
+        'sku',
     )
 
     list_filter = (
