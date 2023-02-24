@@ -192,6 +192,7 @@ body {
     right: 25px;
     background-color: #000;
     border-radius: 100%;
+    z-index: 999999;
 }
 
 .btt-link {
