@@ -37,7 +37,7 @@ card.addEventListener('change', function (event) {
     }
 });
 
-// Handle form submit
+// Handle form submit + loading overlay
 var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
