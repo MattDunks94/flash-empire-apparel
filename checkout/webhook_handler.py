@@ -1,4 +1,7 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
@@ -12,6 +15,25 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        """ Send the customer a order confirmation email """
+
+        customer_email = order.email
+        email_subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order}
+        )
+        email_body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+        )
+        send_mail(
+            email_subject,
+            email_body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email],
+        )
 
     def handle_event(self, event):
         """ Handles unexpected, unknown webhook event  """
@@ -87,6 +109,8 @@ class StripeWH_Handler:
                 time.sleep(1)
         # If order exists, successful response.
         if order_exists:
+            # Send order confirmation email to customer
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Unhandled webhook received: {event["type"]} | \
                 SUCCESS: Verified order already in database.',
@@ -135,7 +159,8 @@ class StripeWH_Handler:
                     content=f'Unhandled webhook received: {event["type"]} | \
                     ERROR: {e}', status=500
                 )
-
+        # Send order confirmation email to customer
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]} | \
             SUCCESS: Order created in webhook.', status=200

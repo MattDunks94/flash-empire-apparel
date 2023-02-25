@@ -31,7 +31,9 @@
             <form action="{% url 'profile' %}" method="POST" id="profile_update_form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn float-right rounded-0 slanted-div bg-earth font-25 hover-bg-black text-uppercase">Update Profile</button>
+                <button
+                    class="btn float-right rounded-0 slanted-div bg-earth font-25 hover-bg-black text-uppercase">Update
+                    Profile</button>
             </form>
         </div>
         <!----- Order History ----->
@@ -43,27 +45,36 @@
                         <tr>
                             <th>Order no.:</th>
                             <th>Order Date:</th>
-                            <th>Items:</th>
+                            <th>Purchased Items:</th>
                             <th>Order Total:</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for order in order %}
-                        <td>
-                            <!----- Display order_number to 6 digits ----->
-                            <a href="{% url 'order_history' %}" title="{{ order.order_number }}">
-                                {{ order.order_number|truncatechars:6 }}
-                            </a>
-                        </td>
-                        <td>{{ order.date }}</td>
-                        <td>
-                            <ul class="list-unstyled">
-                                {% for item in order.lineitems.all %}
-                                <li class="list-item">Size: <span class="text-red">{% if item.product.has_size %}{{ item.product.size|upper }}{% else %}One Size{% endif %}</span></li>
-                                {% endfor %}
-                            </ul>
-                        </td>
-                        <td>£{{ order.grand_total }}</td>
+                        {% for order in orders %}
+                        <tr>
+                            <td>
+                                <!----- Display order_number to 6 digits ----->
+                                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <td>{{ order.date }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="list-item">
+                                        <a href="{% url 'product_detail' item.product.id %}" class="text-black no-underline hover-red">{{ item.product.name }}</a>
+                                        <span class="text-red">({% if item.product.has_size %}
+                                            {{ item.product_size|upper }}
+                                            {% else %}
+                                            One Size{% endif %})
+                                        </span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>£{{ order.grand_total }}</td>
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>
@@ -71,4 +82,4 @@
         </div>
     </div>
 
-{% endblock %}
+    {% endblock %}

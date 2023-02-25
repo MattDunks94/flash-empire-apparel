@@ -1,0 +1,33 @@
+Thank you for your purchase!
+
+Hi {{ order.first_name }}, we're getting your order ready to be shipped.
+Your purchase(s) will be delivered to the following:
+
+Shipping Details:
+
+{{ order.street_address_1 }}
+{{ order.town_or_city }}
+{{ order.postcode }}
+{{ order.country }}
+
+Order Summary:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Billing Details:
+
+Order Subtotal: £{{ order.order_total }}
+Delivery costs: £{{ order.delivery_cost }}
+Order Total: £{{ order.grand_total }}
+
+If we encounter any problems with your order, we will contact:
+
+via Email: {{ order.email }}
+via Phone Number: {{  order.phone_number}}
+
+If you have any questions regarding your order or anything else, please contact us at: {{ contact_email }}
+
+Thanks again for your order!
+
+Flash Empire Apparel
