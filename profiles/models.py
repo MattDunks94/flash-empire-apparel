@@ -21,8 +21,8 @@ class UserProfile(models.Model):
     default_county = models.CharField(max_length=80, null=True, blank=True) 
 
     def __str__(self):
-        return self.user.username
-    
+        return self.default_user.username
+
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
@@ -30,6 +30,6 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
     if created:
 
-        UserProfile.objects.create(user=instance)
+        UserProfile.objects.create(default_user=instance)
     # Saves the existing profile
-    instance.UserProfile.save()
+    instance.userprofile.save()
