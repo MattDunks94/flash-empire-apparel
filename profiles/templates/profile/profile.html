@@ -27,7 +27,7 @@
     <div class="row">
         <!----- Delivery Details ----->
         <div class="col-12 col-lg-6">
-            <h3 class="lttr-space">Delivery Details:</h3>
+            <h3 class="lttr-space mb-3">Delivery Details:</h3>
             <form action="{% url 'profile' %}" method="POST" id="profile_update_form">
                 {% csrf_token %}
                 {{ form|crispy }}
@@ -36,7 +36,7 @@
         </div>
         <!----- Order History ----->
         <div class="col-12 col-lg-6">
-            <h3 class="lttr-space">Order History:</h3>
+            <h3 class="lttr-space mb-3">Order History:</h3>
             <div class="table-responsive order-history">
                 <table class="table table-sm ">
                     <thead>
@@ -48,7 +48,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for order in orders %}
+                        {% for order in order %}
                         <td>
                             <!----- Display order_number to 6 digits ----->
                             <a href="{% url 'order_history' %}" title="{{ order.order_number }}">
