@@ -13,6 +13,11 @@ body {
     background-color: #000;
 }
 
+/* Search bar placeholder color */
+input[name='q']::placeholder {
+    color: #8A868F;
+}
+
 .brand-titles {
     letter-spacing: 2px;
     font-size: 40px;
@@ -202,6 +207,20 @@ body {
 .hover-bg-black:hover {
     background-color: #000;
     color: #D5A761;
+}
+
+/* ----------------------------------Allauth form formatting */
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 5px;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #8A868F;
 }
 
 /* ----------- Product-detail.html ----- */
