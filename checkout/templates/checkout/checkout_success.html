@@ -196,12 +196,21 @@
             <!----- Keep Shopping Btn ----->
             <div class="row">
                 <div class="col mt-3">
+                    {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left text-red"></i>
+                        </span>
+                        <span class="lttr-space font-25">Back to Profile</span>
+                    </a>
+                    {% else %}
                     <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left text-red"></i>
                         </span>
                         <span class="lttr-space font-25">Keep shopping</span>
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
