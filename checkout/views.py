@@ -115,16 +115,18 @@ def checkout(request):
             try:
                 profile = UserProfile.objects.get(default_user=request.user)
                 order_form = OrderForm(initial={
-                    'first_name': profile.default_user.first_name,
-                    'last_name': profile.default_user.last_name,
-                    'email': profile.default_user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
                     'postcode': profile.default_postcode,
+                    'street_address_1': profile.default_street_address_1,
+                    'street_address_2': profile.default_street_address_2,
+                    'town_or_city': profile.default_town_or_city,
+                    'county': profile.default_county,
                 })
-
-
-        order_form = OrderForm()
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
