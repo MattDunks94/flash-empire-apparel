@@ -256,6 +256,12 @@ th {
     font-size: 20px;
 }
 
+/* ----------------------- addproduct.html */
+#cancel-form-btn {
+    background-color: #A40303;
+    color: #fff;
+}
+
 /* ----- Sale Btn ----- */
 #sale {
     background-color: #A40303;
