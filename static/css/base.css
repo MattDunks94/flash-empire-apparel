@@ -215,6 +215,14 @@ input[name='q']::placeholder {
     border-radius: 5px;
 }
 
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #8A868F;
+}
+
 /* --------------------------------- Profile */
 #profile_update_form input::placeholder {
     color: #8A868F;
@@ -224,13 +232,11 @@ input[name='q']::placeholder {
     color: #000;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
+.order-history {
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-.allauth-form-inner-content input::placeholder {
-    color: #8A868F;
-}
 
 /* ----------- Product-detail.html ----- */
 #add-to-bag-btn {
