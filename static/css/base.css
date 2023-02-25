@@ -162,7 +162,7 @@ body {
     overflow-y: auto;
 }
 
-/* Footer */
+/* ------------------------------------ Footer */
 .footer {
     background-color: #000;
 }
@@ -197,6 +197,11 @@ body {
 
 .btt-link {
     cursor: pointer;
+}
+
+.hover-bg-black:hover {
+    background-color: #000;
+    color: #D5A761;
 }
 
 /* ----------- Product-detail.html ----- */
