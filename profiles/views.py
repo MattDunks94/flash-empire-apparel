@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import UserProfile
@@ -8,6 +9,7 @@ from checkout.models import Order
 # Create your views here.
 
 
+@login_required
 def profile(request):
     """ View for users profile """
 
@@ -42,7 +44,7 @@ def order_history(request, order_number):
     messages.info(request, f'This is a past confirmation order for \
         order number: {order_number}. \
         A confirmation email was sent on the order date.')
-    
+
     template = 'checkout/checkout_success.html'
 
     # variable 'from_profile', indicates whether user came from profile page.

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Colour
@@ -82,8 +83,15 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def add_product(request):
     """ A view for adding products """
+
+    # If not super user, return error, redirect 'home'.
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the gods of the empire have permission!')
+        return redirect(reverse('home'))
+
     # Gather form POST data and save it if valid.
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -106,8 +114,14 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """ A view for editing products """
+
+    # If not super user, return error, redirect 'home'.
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the gods of the empire have permission!')
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     # Collect product form data and save if valid.
@@ -134,8 +148,14 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def remove_product(request, product_id):
     """ Remove product from the store """
+
+    # If not super user, return error, redirect 'home'.
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the gods of the empire have permission!')
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
