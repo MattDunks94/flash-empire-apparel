@@ -258,6 +258,11 @@ th {
 
 /* ----------------------- addproduct.html */
 #cancel-form-btn {
+    background-color: #000;
+    color: #D5A761;
+}
+
+#remove-btn {
     background-color: #A40303;
     color: #fff;
 }

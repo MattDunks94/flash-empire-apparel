@@ -61,7 +61,14 @@
                             {% endif %}
                             <div class="card-body pb-0">
                                 <hr>
-                                <h5 class="lttr-space text-black uppercase">{{ product.name }}</h5>
+                                <h5 class="lttr-space text-black uppercase">{{ product.name }}
+                                    <!----- Edit Product btn ----->
+                                    {%  if request.user.is_superuser %}
+                                    <a href="{% url 'edit_product' product.id %}" class="" aria-label="edit product">
+                                        <i class="fa-solid fa-pen text-red"></i>
+                                    </a>
+                                    {% endif %}
+                                </h5>
                                 <a class="card-link" href="{% url 'products' %}?category={{ product.category }}">
                                     <p class="text-black lttr-space slanted-div bg-earth">
                                         {{ product.category.friendly_name }}
