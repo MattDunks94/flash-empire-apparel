@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -42,3 +43,21 @@ class Colour(models.Model):
 
     def __str__(self):
         return self.colour
+
+
+class ProductReview(models.Model):
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name='product_review'
+        )
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='product_review'
+        )
+    body = models.TextField(max_length=250, null=True, blank=True)
+    rating = models.IntegerField(null=False, blank=False, default=0)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return self.product
