@@ -251,6 +251,13 @@ input[name='q']::placeholder {
     color: #000;
 }
 
+.reviews-wrapper {
+    padding-right: 20px;
+    max-height: 30vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* ----------------------- Bag.html ----- */
 th {
     font-size: 20px;
@@ -290,10 +297,6 @@ th {
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #A40303;
     color: #fff;
-}
-
-#rating-input {
-    color: #A40303;
 }
 
 /* ----- Sale Btn ----- */
