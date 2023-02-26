@@ -10,7 +10,9 @@ from .forms import ProductForm, ProductReviewForm
 
 
 def all_products(request):
-    """ A view for viewing all products, including sorting and search queries """
+    """
+    A view for viewing all products, including sorting and search queries
+    """
 
     products = Product.objects.all()
     colours = Colour.objects.all()
@@ -33,7 +35,7 @@ def all_products(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            
+
             products = products.order_by(sortkey)
 
         if 'category' in request.GET:
@@ -94,7 +96,7 @@ def product_detail(request, product_id):
         else:
             messages.error(request, f'Unable to process your review for\
                 {product.name}. Please ensure the form is valid.')
-        
+
     else:
         form = ProductReviewForm()
 
@@ -170,7 +172,7 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully modified product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Unable to edit product! Please ensure the \
+            messages.error(request, 'Unable to edit product! Please ensure the\
             form is valid.')
     # Return form in original state.
     else:

@@ -395,10 +395,6 @@ th {
     #subtitle h1 {
         font-size: 90px;
     }
-
-    .nav-link:hover {
-        color: #A40303;
-    }
 }
 
 /* For screen width 450px and less  */
