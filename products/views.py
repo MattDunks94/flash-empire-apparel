@@ -76,11 +76,11 @@ def product_detail(request, product_id):
     """ A view for viewing individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    reviews = product.product_review.order_by('created_on')
+    reviews = ProductReview.objects.filter(product=product_id).order_by('created_on')
 
     context = {
         'product': product,
-        'review': reviews, 
+        'review': reviews,
     }
     return render(request, 'products/product_detail.html', context)
 
@@ -89,15 +89,17 @@ def add_review(request, product_id):
     """ A view for adding product reviews """
 
     product = get_object_or_404(Product, pk=product_id)
-    if request.method == 'POST':
-        form = ProductReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save()
-            messages.success(request, f'Your review for {product.name} \
-            has been posted!')
-        else:
-            messages.error(request, f'Unable to post your review for \
-            {product.name}. Please ensure the form is valid.')
+    reviews = product.product_review.order_by('created_on')
+
+    form = ProductReviewForm()
+    if form.is_valid():
+        form.instance.user = request.user.username
+        review = form.save(commit=False)
+        review.product = product
+        product.save()
+        messages.success(
+            request, f'Your review for {product.name} has been posted!'
+            )
     else:
         form = ProductReviewForm()
 
