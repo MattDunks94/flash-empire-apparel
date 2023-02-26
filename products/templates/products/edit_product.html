@@ -24,7 +24,14 @@
         <div class="col-lg-8 col-sm-10 m-auto">
             <form action="{% url 'edit_product' product.id %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form|crispy }}
+                {% for field in form %}
+                    <!----- Removes Image Label ----->
+                    {% if field.name != 'image' %}
+                        {{ field|as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
                 <div class="row">
                     <!----- Remove Product Btn ----->
                     <div class="col-lg-6 col-sm-6 order-last">
@@ -46,4 +53,16 @@
             </form>
         </div>
     </div>
-    {% endblock %}
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!----- Script for displaying new image file name. ----->
+<script type="text/javascript">
+    $('#new-image').change(function() {
+        var file = $('#new-image')[0].files[0];
+        $('#filename').text(`New Image: ${file.name}`);
+    });
+</script>
+
+{% endblock %}

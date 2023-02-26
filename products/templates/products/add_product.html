@@ -24,7 +24,14 @@
         <div class="col-lg-8 col-sm-10 m-auto">
             <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form|crispy }}
+                {% for field in form %}
+                    <!----- Removes Image Label ----->
+                    {% if field.name != 'image' %}
+                        {{ field|as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 order-last">
                         <a href="{% url 'home' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="cancel-form-btn">
@@ -40,4 +47,16 @@
             </form>
         </div>
     </div>
-    {% endblock %}
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!----- Script for displaying new image file name. ----->
+<script type="text/javascript">
+    $('#new-image').change(function() {
+        var file = $('#new-image')[0].files[0];
+        $('#filename').text(`New Image: ${file.name}`);
+    });
+</script>
+
+{% endblock %}
