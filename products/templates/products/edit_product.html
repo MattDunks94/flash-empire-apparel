@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!----- Overlay ----->
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mt-3">
+            <h1 class="logo-font my-4 lttr-space">Product Management</h1>
+            <hr>
+            <h2 class="lttr-space text-center mb-3">Edit Product</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-sm-10 m-auto">
+            <form action="{% url 'edit_product' product.id %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 order-last">
+                        <a href="{% url 'home' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="cancel-form-btn">
+                            Cancel
+                        </a>
+                    </div>
+                    <div class="col-lg-8 col-sm-6 text-right">
+                        <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth" type="submit">
+                            Edit Product
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}

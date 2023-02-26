@@ -29,6 +29,7 @@
         SALE
       </a>
     </li>
+    <!----- Account/Profile Dropdown ----->
     <li class="list-inline-item dropdown d-sm-block d-lg-none my-2 ml-3">
       <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div>
@@ -38,7 +39,7 @@
       <div class="dropdown-menu border-0 font-25" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
-        <a href="" class="dropdown-item">Product Management</a>
+        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
         {% endif %}
         <a href="" class="dropdown-item">My Profile</a>
         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -48,6 +49,7 @@
         {% endif %}
       </div>
     </li>
+    <!----- Search Bar ----->
     <li class="list-inline-item d-sm-block d-lg-none my-2">
       <div class="my-auto py-1">
         <form id="search-bar" method="GET" action="{% url 'products' %}">
