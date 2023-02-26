@@ -22,7 +22,7 @@
                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                     {% else %}
                     <!-- If product has no image -->
-                    <img class="w-100" src="/media/noimage.png" alt="{{ item.product.name }}">
+                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                     {% endif %}
                 </div>
                 <div class="col-9">

@@ -43,9 +43,15 @@
                     <!----- Item Details (Name, Size, SKU, Price, Qty Form, Subtotal) ----->
                     <tr>
                         <td class="w-25 p-4">
+                            {% if item.product.image %}
                             <a href="{% url 'product_detail' item.product.id %}">
                                 <img class="img-fluid" src="{{ item.product.image.url}}" alt="{{ item.product.name }}">
                             </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                            </a>
+                            {% endif %}
                         </td>
                         <td class="py-3">
                             <p class="font-25 my-0 lttr-space">{{ item.product.name }}</p>

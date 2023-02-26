@@ -84,7 +84,20 @@ def product_detail(request, product_id):
 
 def add_product(request):
     """ A view for adding products """
-    form = ProductForm()
+    # Gather form POST data and save it if valid.
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product Successfully Added!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Unable to add product! Please ensure \
+            the form is valid.')
+    # If no method, return empty form.
+    else:
+        form = ProductForm()
+
     template = 'products/add_product.html'
     context = {
         'form': form,

@@ -2,14 +2,14 @@
 <li class="list-inline-item d-lg-none d-none d-sm-block">
     <!----- Brand Name / Logo home links ----->
     <a href="{% url 'home' %}" class="navbar-brand">
-        <img src="/media/FLASH-BADGE-LOGO-WHITE.png" width="50" height="50" class="mb-3 mx-2 d-inline-block " alt="logo">
+        <img src="{{ MEDIA_URL }}FLASH-BADGE-LOGO-WHITE.png" width="50" height="50" class="mb-3 mx-2 d-inline-block " alt="logo">
         <span class="brand-titles">Flash Empire Apparel</span>
     </a>
 </li>
 <!----- Brand logo home link for small screens ----->
 <li class="list-inline-item d-block d-sm-none d-md-none m-auto">
     <a href="{% url 'home' %}">
-        <img src="/media/FLASH-BADGE-LOGO-WHITE.png" width="50" height="50" class="mb-3 mx-2 d-inline-block " alt="logo">
+        <img src="{{ MEDIA_URL }}FLASH-BADGE-LOGO-WHITE.png" width="50" height="50" class="mb-3 mx-2 d-inline-block " alt="logo">
     </a>
 </li>
 <!-- User's shopping basket -->
