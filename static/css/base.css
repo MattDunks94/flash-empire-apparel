@@ -292,6 +292,10 @@ th {
     color: #fff;
 }
 
+#rating-input {
+    color: #A40303;
+}
+
 /* ----- Sale Btn ----- */
 #sale {
     background-color: #A40303;

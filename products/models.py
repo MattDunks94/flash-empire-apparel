@@ -52,8 +52,10 @@ class ProductReview(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='product_review'
         )
-    body = models.TextField(max_length=250, null=True, blank=True)
-    rating = models.IntegerField(null=False, blank=False, default=0)
+    body = models.TextField(
+        max_length=250, null=False, blank=False, default=''
+        )
+    rating = models.IntegerField(null=False, blank=False, default=1)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:

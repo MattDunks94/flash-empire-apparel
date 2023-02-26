@@ -1,6 +1,16 @@
 from django import forms
+from django.forms.widgets import Select
 from .widgets import CustomClearableFileInput
 from .models import Product, Category, ProductReview
+
+# Rating choices for form field rating
+RATING_CHOICES = (
+    ("1", "1"),
+    ("2", "2"),
+    ("3", "3"),
+    ("4", "4"),
+    ("5", "5"),
+)
 
 
 class ProductForm(forms.ModelForm):
@@ -32,3 +42,5 @@ class ProductReviewForm(forms.ModelForm):
             'body',
             'rating',
         )
+    # Changing field to choice field, limits the rating value.
+    rating = forms.ChoiceField(choices=RATING_CHOICES)

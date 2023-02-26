@@ -76,7 +76,7 @@ def product_detail(request, product_id):
     """ A view for viewing individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    reviews = product.product_review.order_by('created_on')
+    reviews = product.product_review.order_by('-created_on')
     form = ProductReviewForm()
 
     if request.method == 'POST':
@@ -93,8 +93,6 @@ def product_detail(request, product_id):
             )
     else:
         form = ProductReviewForm()
-        messages.error(request, f'Unable to process review for {product.name}.\
-        Please ensure the form is valid.')
 
     context = {
         'product': product,
