@@ -26,14 +26,16 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="row">
+                    <!----- Cancel Edit Btn ----->
                     <div class="col-lg-4 col-sm-6 order-last">
-                        <a href="{% url 'home' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="cancel-form-btn">
+                        <a href="{% url 'product_detail' product.id %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="cancel-form-btn">
                             Cancel
                         </a>
                     </div>
+                    <!----- Confirm Edit Btn ----->
                     <div class="col-lg-8 col-sm-6 text-right">
                         <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth" type="submit">
-                            Edit Product
+                         Update Product
                         </button>
                     </div>
                 </div>
