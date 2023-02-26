@@ -83,14 +83,18 @@ def product_detail(request, product_id):
 
         form = ProductReviewForm(data=request.POST)
 
-    if form.is_valid():
-        review = form.save(commit=False)
-        review.user = request.user
-        review.product = product
-        review.save()
-        messages.success(
-            request, f'Your review for {product.name} has been posted!'
-            )
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            messages.success(
+                request, f'Your review for {product.name} has been posted!'
+                )
+        else:
+            messages.error(request, f'Unable to process your review for\
+                {product.name}. Please ensure the form is valid.')
+        
     else:
         form = ProductReviewForm()
 
