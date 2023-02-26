@@ -60,4 +60,4 @@ class ProductReview(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return self.product
+        return f'Review: {self.body} by {self.user}'

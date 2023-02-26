@@ -55,16 +55,18 @@
                         {% if s %}
                         <div class="col-12">
                             <label class="lttr-space text-uppercase" for="product_size">Size:</label>
-                            <select class="form-control rounded-0 w-25 text-center lttr-space mb-3 slanted-div" name="product_size" id='id_product_size'>
+                            <select class="form-control rounded-0 w-25 text-center lttr-space mb-3 slanted-div"
+                                name="product_size" id='id_product_size'>
                                 <option value="xs">XS</option>
                                 <option value="s">S</option>
                                 <option value="m" selected>M</option>
                                 <option value="l">L</option>
                                 <option value="xl">XL</option>
                             </select>
-                        {% else %}
-                        <p class="text-red"><span class="lttr-space text-uppercase text-black">Size:</span> One Size</p>
-                        {% endif %}
+                            {% else %}
+                            <p class="text-red"><span class="lttr-space text-uppercase text-black">Size:</span> One Size
+                            </p>
+                            {% endif %}
                             <input type="submit" id="add-to-bag-btn"
                                 class="btn rounded-0 btn-block font-25 lttr-space text-uppercase slanted-div bg-earth"
                                 value="Add to Bag">
@@ -82,6 +84,32 @@
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 offset-1 mt-3">
+            <h2 class="lttr-space">Product Reviews:</h2>
+            <div class="reviews-wrapper">
+                {% for review in review %}
+                <div class="row">
+                    <div class="col-lg-6 col-12 offset-1 mt-2">
+                        <p><span class="font-25"><em>"{{ review.body }}"</em></span></p>
+                        <h6>Review By: <span class="text-red">{{ review.user }}</span></h6>
+                        <p>Product Rating: <span class="font-25 text-red">{{ review.rating }}/5</span></p>
+                    </div>
+                </div>
+                <hr>
+                {% empty %}
+                <p>No Reviews.</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-2">
+            <a href="{% url 'add_review' product.id %}">
+                <button id="submit-btn" class="btn w-100 font-25 rounded-0 slanted-div bg-earth">
+                    <span class="">Review Product &raquo;</span>
+                </button>
+            </a>
         </div>
     </div>
 </div>

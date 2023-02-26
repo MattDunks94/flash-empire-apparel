@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category, Colour
-from .forms import ProductForm
+from .models import Product, Category, Colour, ProductReview
+from .forms import ProductForm, ProductReviewForm
 
 # Create your views here.
 
@@ -76,11 +76,38 @@ def product_detail(request, product_id):
     """ A view for viewing individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = product.product_review.order_by('created_on')
 
     context = {
         'product': product,
+        'review': reviews, 
     }
     return render(request, 'products/product_detail.html', context)
+
+
+def add_review(request, product_id):
+    """ A view for adding product reviews """
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save()
+            messages.success(request, f'Your review for {product.name} \
+            has been posted!')
+        else:
+            messages.error(request, f'Unable to post your review for \
+            {product.name}. Please ensure the form is valid.')
+    else:
+        form = ProductReviewForm()
+
+    template = 'products/add_review.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
 
 
 @login_required
