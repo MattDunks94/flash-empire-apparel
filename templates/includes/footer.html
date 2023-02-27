@@ -10,12 +10,13 @@
                 <p class="small pl-2">We are a UK based clothing brand, inspired by tattoo culture and self-expression
                     we offer an alternative to the everyday.
                     Check out our range of graphic tees, sweatshirts, joggers, caps and bags.</p>
+                {% include 'includes/mail-chimp.html' %}
             </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 mb-3">
+            <div class="col-sm-12 col-md-3 col-lg-4 mb-3">
                 <a href="https://www.facebook.com/people/Flash-Empire-Apparel/100090384290266/" target="_blank" rel="noopener" class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/flashempireapparel/" target="_blank" rel="noopener" class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-instagram"></i></a>
             </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="col-sm-12 col-md-3 col-lg-2">
                 <h4 class="lttr-space">Shop</h4>
                 <ul class="list-unstyled small lttr-space">
                     <li><a href="{% url 'products' %}?category=t-shirts" class="text-white no-underline">T-Shirts</a></li>
@@ -37,5 +38,4 @@
             <small class="text-white lttr-space">&copy Flash Empire Apparel</small>
         </div>
     </div>
-
 </div>
