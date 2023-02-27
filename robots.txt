@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /checkout/
+Disallow: /products/add/
+Disallow: /products/add/<product_id>/
+Disallow: /products/remove/<product_id>/
+Disallow: /products/add_review/
+
+sitemap: https://flash-empire-apparel.herokuapp.com/sitemap.xml
