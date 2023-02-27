@@ -65,8 +65,8 @@ index.html:
 <img src="/README/images/edit-product.png">
 (Modify product buttons including the 'Remove Product' button)
 <img src="/README/images/edit-product-btns.png">
-(Edit Button on product detail page)
-<img src="/main/README/images/edit-prod-btn.png">
+(Edit Button, alongside product heading, on product detail page)
+<img src="/README/images/edit-prod-btn.png">
 
 ### Secure Payment:
 <p>The site uses a secure payment method. This ensures the user that their payment details and process are secure.</p>
