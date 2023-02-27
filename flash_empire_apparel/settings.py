@@ -200,7 +200,7 @@ if 'USE_AWS' in os.environ:
 
     # Overide static and media URL's in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    MEDIA_URL = f's3://flash-empire-apparel/media/'
 
 
 # Stripe
