@@ -1,6 +1,6 @@
 # Flash Empire Apparel
 
-<a href="">Flash Empire Apparel</a> is a fully working e-commerce site that demonstrates basic/advanced use of the web framework <a href="https://www.djangoproject.com/">django</a>. The site is targeted for people who are interested in streetwear fashion, tattoo designs and shopping. The site allows users to: 
+<a href="https://flash-empire-apparel.herokuapp.com/">Flash Empire Apparel</a> is a fully working e-commerce site that demonstrates basic/advanced use of the web framework <a href="https://www.djangoproject.com/">django</a>. The site is targeted for people who are interested in streetwear fashion, tattoo designs and shopping. The site allows users to: 
 <ul>
   <li>Sign up and register for an account.</li>
   <li>Browse the store as both a non user and registered user.</li>
