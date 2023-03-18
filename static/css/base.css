@@ -182,6 +182,12 @@ input[name='q']::placeholder {
     border: 1px solid #fff;
 }
 
+/* ------------------------ Blog.html ----- */
+.blog-card {
+    background-color: #000;
+    border-radius: 5px;
+}
+
 /* ------------------------ Products.html ----- */
 /* White background overlay */
 .overlay {
