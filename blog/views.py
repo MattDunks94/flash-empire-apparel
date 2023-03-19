@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.template.defaultfilters import slugify
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Post
@@ -31,21 +32,27 @@ def view_post_detail(request, slug):
 
 @login_required
 def add_blog_post(request):
-    """ A view for adding new blog posts """
+    """ A view for adding blog posts """
 
+    # If not super user, return error, redirect 'home'.
     if not request.user.is_superuser:
         messages.error(request, 'Only the gods of the empire have permission!')
         return redirect(reverse('home'))
-    
+
+    # Gather form POST data and save it if valid.
     if request.method == 'POST':
-        form = BlogPostForm(request.POST)
+        form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save()
-            messages.success(request, 'Successfully added blog post!')
-            return redirect(reverse('post_detail', args=[post.slug]))
+            post = form.save(commit=False)
+            post.author = request.user
+            post.slug = slugify(post.title)
+            post.save()
+            messages.success(request, 'Blog post Successfully Added!')
+            return redirect(reverse('view_post_list'))
         else:
             messages.error(request, 'Unable to add blog post! Please ensure \
             the form is valid.')
+    # If no method, return empty form.
     else:
         form = BlogPostForm()
 
