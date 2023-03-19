@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+| All Products
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!----- White background overlay ----->
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row"></div>
+    <div class="row">
+        <div class="product-container col-10 offset-1">
+            <div class="row">
+                <div class="col mt-5">
+                    <h2 class="uppercase h1 lttr-space logo-font text-black">{{ post.title }}</h2>
+                    <hr>
+                    <p class="text-right mb-0">Post By: <span class="font-25 text-red">{{ post.author }}</span></p>
+                    <p class="text-right small">Created On: {{ post.created_on }}</p>
+                </div>
+                <div class="col-12">
+                    {% if post.featured_image %}
+                    <img src="{{ post.featured_image }}" width="100%" alt="Blog Post Image">
+                    {% else %}
+                    <img src="/media/FLASH-BLOG-BANNER.png" width="100%" id="post-featured-img" alt="Blog Post Placeholder Image">
+                    {% endif %}
+                </div>
+                <div class="col-12 my-3">
+                    <p>{{ post.content | safe }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

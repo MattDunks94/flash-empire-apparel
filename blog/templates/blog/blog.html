@@ -31,17 +31,18 @@
                 <div class="col-sm-6 col-lg-4 col-xl-4">
                     <div class="card h-100 border-0 m-3">
                         {% if post.featured_image %}
-                        <a href=""><img class="card-img-top img-fluid"
-                                src="{{ post.featured_image.url }}" alt=""></a>
+                        <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top img-fluid"
+                                src="{{ post.featured_image.url }}" alt="" height="100%" width="100%"></a>
                         {% else %}
-                        <a href="#"><img class="card-img-top img-fluid blog-card p-2"
+                        <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top img-fluid blog-card p-2"
                                 src="{{ MEDIA_URL }}FLASH-BADGE-LOGO-WHITE.png" alt="blog-post"></a>
                         {% endif %}
                         <div class="card-body pb-0">
                             <hr>
-                            <a href="#" class="no-underline text-black hover-red">
+                            <a href="{% url 'post_detail' post.slug %}" class="no-underline text-black hover-red">
                                 <h3 class="uppercase lttr-space text-center">{{ post.title }}</h3>
                             </a>
+                            <p class="text-center small">Created On: {{ post.created_on }}</p>
                         </div>
                     </div>
                 </div>
