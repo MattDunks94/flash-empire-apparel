@@ -19,7 +19,7 @@
 <div class="container-fluid">
     <div class="row"></div>
     <div class="row">
-        <div class="product-container col-10 offset-1">
+        <div class="col-10 offset-1">
             <div class="row">
                 <div class="col mt-5">
                     <h2 class="uppercase h1 lttr-space logo-font text-black">The Blog</h2>
@@ -41,7 +41,12 @@
                         <div class="card-body pb-0">
                             <hr>
                             <a href="{% url 'post_detail' post.slug %}" class="no-underline text-black hover-red">
-                                <h3 class="uppercase lttr-space text-center">{{ post.title }}</h3>
+                                <h3 class="uppercase lttr-space text-center">{{ post.title }}  
+                                    {%  if request.user.is_superuser %}
+                                    <a href="#" class="" aria-label="edit product">
+                                        <i class="fa-solid fa-pen text-red"></i>
+                                    </a>
+                                    {% endif %}</h3>
                             </a>
                             <p class="text-center small">Created On: {{ post.created_on }}</p>
                         </div>
