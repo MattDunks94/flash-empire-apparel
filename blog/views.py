@@ -62,3 +62,37 @@ def add_blog_post(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_blog_post(request, slug):
+    """ A view for editing blog posts """
+
+    # If not super user, return error, redirect 'home'.
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the gods of the empire have permission!')
+        return redirect(reverse('home'))
+
+    post = get_object_or_404(Post, slug=slug)
+    # Collect product form data and save if valid.
+    if request.method == 'POST':
+        form = BlogPostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully edited blog post!')
+            return redirect(reverse('post_detail', args=[post.slug]))
+        else:
+            messages.error(request, 'Unable to edit blog post! Please ensure the\
+            form is valid.')
+    # Return form in original state.
+    else:
+        form = BlogPostForm(instance=post)
+        messages.info(request, f'You are editing post: {post.title}')
+
+    template = 'blog/edit-blog-post.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
