@@ -21,12 +21,15 @@
     <div class="row">
         <div class="col-10 offset-1">
             <div class="row">
-                <div class="col mt-5">
+                <div class="col mt-5 d-flex">
                     <h2 class="uppercase h1 lttr-space logo-font text-black">The Blog</h2>
-                    <a href="{% url 'add_blog_post' %}">Add Blog Post</a>
-                    <hr>
+                    {% if request.user.is_superuser %}
+                    <a href="{% url 'add_blog_post' %}" class="btn rounded-0 slanted-div bg-earth font-25 hover-bg-black ml-auto py-2">
+                        <i class="fa-solid fa-plus"></i> Add Blog Post</a>
+                    {% endif %}
                 </div>
             </div>
+            <hr>
             <div class="row">
                 {% for post in posts %}
                 <div class="col-sm-6 col-lg-4 col-xl-4">
@@ -41,7 +44,7 @@
                         <div class="card-body pb-0">
                             <hr>
                             <a href="{% url 'post_detail' post.slug %}" class="no-underline text-black hover-red">
-                                <h3 class="uppercase lttr-space text-center">{{ post.title }}  
+                                <h3 class="uppercase lttr-space text-center">{{ post.title }}
                                     {%  if request.user.is_superuser %}
                                     <a href="#" class="" aria-label="edit product">
                                         <i class="fa-solid fa-pen text-red"></i>
