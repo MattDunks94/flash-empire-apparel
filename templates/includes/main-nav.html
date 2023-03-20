@@ -38,6 +38,7 @@
       </a>
       <div class="dropdown-menu border-0 font-25" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
+        <p class="small dropdown-item">Signed in as: <span class="text-red">{{ user.username }}</span></p>
         {% if request.user.is_superuser %}
         <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
         {% endif %}

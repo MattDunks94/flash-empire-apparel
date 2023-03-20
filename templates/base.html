@@ -90,7 +90,9 @@
                         </a>
                         <div class="font-25 dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
+                            <p class="small dropdown-item">Signed in as: <span class="text-red">{{ user.username }}</span></p>
                             {% if request.user.is_superuser %}
+                            <!----- Displays username when signed in ----->
                             <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
