@@ -74,7 +74,7 @@ def edit_blog_post(request, slug):
         return redirect(reverse('home'))
 
     post = get_object_or_404(Post, slug=slug)
-    # Collect product form data and save if valid.
+    # Collect blog post form data and save if valid.
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
