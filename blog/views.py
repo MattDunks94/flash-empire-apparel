@@ -82,8 +82,8 @@ def edit_blog_post(request, slug):
             messages.success(request, 'Successfully edited blog post!')
             return redirect(reverse('post_detail', args=[post.slug]))
         else:
-            messages.error(request, 'Unable to edit blog post! Please ensure the\
-            form is valid.')
+            messages.error(request, 'Unable to edit blog post! Please ensure \
+            the form is valid.')
     # Return form in original state.
     else:
         form = BlogPostForm(instance=post)
