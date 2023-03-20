@@ -96,3 +96,21 @@ def edit_blog_post(request, slug):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def remove_blog_post(request, slug):
+    """ Remove blog post from the blog """
+
+    # If not super user, return error, redirect 'home'.
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the gods of the empire have permission!')
+        return redirect(reverse('home'))
+
+    post = get_object_or_404(Post, slug=slug)
+    post.delete()
+    messages.success(
+        request, f'{post.title} successfully removed from the blog!'
+        )
+
+    return redirect(reverse('view_post_list'))
