@@ -25,9 +25,9 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="row">
-                    <!----- Remove Product Btn ----->
+                    <!----- Remove Blog Post Btn ----->
                     <div class="col-lg-6 col-sm-6 order-last">
-                        <a href="#" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="remove-btn">
+                        <a href="{% url 'remove_blog_post' post.slug %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="remove-btn">
                             Remove Blog Post
                         </a>
                     </div>
