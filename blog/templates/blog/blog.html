@@ -49,7 +49,7 @@
                                 <h3 class="uppercase lttr-space text-center">{{ post.title }}
                                     <!----- Edit Blog Post Btn ----->
                                     {%  if request.user.is_superuser %}
-                                    <a href="#" class="" aria-label="edit product">
+                                    <a href="{% url 'edit_blog_post' post.slug %}" class="" aria-label="edit product">
                                         <i class="fa-solid fa-pen text-red"></i>
                                     </a>
                                     {% endif %}</h3>
