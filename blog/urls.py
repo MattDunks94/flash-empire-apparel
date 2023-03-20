@@ -7,5 +7,8 @@ urlpatterns = [
     path(
         'edit_blog_post/<slug:slug>', views.edit_blog_post, name='edit_blog_post'
         ),
+    path(
+        'remove_blog_post/<slug:slug>', views.remove_blog_post, name='remove_blog_post'
+        ),
     path('<slug:slug>/', views.view_post_detail, name='post_detail'),
 ]
