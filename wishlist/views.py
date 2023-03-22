@@ -9,4 +9,9 @@ from django.contrib.auth.decorators import login_required
 def view_wishlist(request):
     """ A view for user's wishlist """
 
-    return render(request, 'wishlist/wishlist.html')
+    wished_product = Wishlist.objects.filter(user=request.user)
+    context = {
+        'wished_product': wished_product,
+    }
+
+    return render(request, 'wishlist/wishlist.html', context)
