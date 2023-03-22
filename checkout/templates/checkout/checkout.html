@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-<!----- Overlay ----->
+<!-- Overlay -->
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
@@ -24,11 +24,11 @@
             <hr>
         </div>
     </div>
-    <!----- Shopping Bag ----->
+    <!-- Shopping Bag -->
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p class="lttr-space text-black h2 mb-4">Your Bag:</p>
-            <!----- Bag Item(s) Images ----->
+            <!-- Bag Item(s) Images -->
             <div class="shopping-bag-wrapper">
                 {% for item in bag_items %}
                 <div class="row">
@@ -41,7 +41,7 @@
                             {% endif %}
                         </a>
                     </div>
-                    <!----- Bag Item(s) Details (Name, Colour, Size, Qty, Price) ----->
+                    <!-- Bag Item(s) Details (Name, Colour, Size, Qty, Price) -->
                     <div class="col-6 my-3">
                         <p class="font-25">{{ item.product.name }}</p>
                         <p class="my-0">Colour: <span class="text-red">{{ item.product.colour|upper }}</span></p>
@@ -54,7 +54,7 @@
                     <div class="col-3 text-right mt-3">
                         <p class="font-25">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                     </div>
-                    <!----- Edit Bag Btn ----->
+                    <!-- Edit Bag Btn -->
                     <div class="col-1 my-3">
                         <a href="{% url 'view_bag' %}">
                             <i class="fa-solid fa-pen text-red"></i>
@@ -64,7 +64,7 @@
                 {% endfor %}
             </div>
             <hr>
-            <!----- Order Subtotal & Delivery ----->
+            <!-- Order Subtotal & Delivery -->
             <div class="row text-black text-right mt-2">
                 <div class="col-7 offset-2">
                     <p class="my-0">Order Subtotal:</p>
@@ -80,13 +80,13 @@
                     </p>
                 </div>
             </div>
-            <!----- HR ----->
+            <!-- HR -->
             <div class="row">
                 <div class="col-12">
                     <hr>
                 </div>
             </div>
-            <!----- Order Total ----->
+            <!-- Order Total -->
             <div class="row">
                 <div class="col-7 offset-2">
                     <p class="my-0 font-25 text-right lttr-space">Order Total:</p>
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <!----- Checkout Form ----->
+        <!-- Checkout Form -->
         <div class="col-12 col-lg-6">
             <p class="text-red">Please fill out the form below to complete your order.</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="px-2">
@@ -138,7 +138,7 @@
 
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                    <!----- Passing the client_secret to the view to get payment intent id  ----->
+                    <!-- Passing the client_secret to the view to get payment intent id  -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                 <div class="row">

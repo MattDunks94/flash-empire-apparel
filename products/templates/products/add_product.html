@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<!----- Overlay ----->
+<!-- Overlay -->
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
@@ -25,7 +25,7 @@
             <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                    <!----- Removes Image Label ----->
+                    <!-- Removes Image Label -->
                     {% if field.name != 'image' %}
                         {{ field|as_crispy_field }}
                     {% else %}
@@ -51,8 +51,8 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<!----- Script for displaying new image file name. ----->
-<script type="text/javascript">
+<!-- Script for displaying new image file name. -->
+<script>
     $('#new-image').change(function() {
         var file = $('#new-image')[0].files[0];
         $('#filename').text(`New Image: ${file.name}`);

@@ -54,7 +54,7 @@
         <button name="btn btn slanted-div bg-earth rounded-0 hover-bg-black w-25 lttr-space font-25 action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
 
-    <!----- Home link ----->
+    <!-- Home link -->
     <a href="{% url 'home' %}" class="btn text-black font-25 lttr-space"><i class="fas fa-chevron-left text-red"></i>
       Home
     </a>
@@ -63,7 +63,7 @@
 
 
 {% block extra_body %}
-<script type="text/javascript">
+<script>
 (function() {
   var message = "{% trans 'Do you really want to remove the selected e-mail address?' %}";
   var actions = document.getElementsByName('action_remove');
