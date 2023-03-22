@@ -7,8 +7,20 @@ from products.models import Product
 
 class Wishlist(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    wished_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    wished_product = models.ManyToManyField(
+        Product, related_name='wishlist_product'
+    )
 
     def __str__(self):
         return self.wished_product.name
+
+
+class WishedProduct(models.Model):
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.product.name
