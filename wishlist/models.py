@@ -8,7 +8,7 @@ from products.models import Product
 class Wishlist(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    wished_product = models.ForeignKey(Product, on_delete=CASCADE)
+    wished_product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.wished_product.name
