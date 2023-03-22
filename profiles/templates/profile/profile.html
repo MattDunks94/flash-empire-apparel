@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-<!----- Overlay ----->
+<!-- Overlay -->
 <div class="overlay"></div>
 <div class="container container-fluid">
     <div class="row">
@@ -23,9 +23,9 @@
             <hr>
         </div>
     </div>
-    <!----- Profile update page ----->
+    <!-- Profile update page -->
     <div class="row">
-        <!----- Delivery Details ----->
+        <!-- Delivery Details -->
         <div class="col-12 col-lg-6">
             <h3 class="lttr-space mb-3">Delivery Details:</h3>
             <form action="{% url 'profile' %}" method="POST" id="profile_update_form">
@@ -36,7 +36,7 @@
                     Profile</button>
             </form>
         </div>
-        <!----- Order History ----->
+        <!-- Order History -->
         <div class="col-12 col-lg-6">
             <h3 class="lttr-space mb-3">Order History:</h3>
             <div class="table-responsive order-history">
@@ -53,7 +53,7 @@
                         {% for order in orders %}
                         <tr>
                             <td>
-                                <!----- Display order_number to 6 digits ----->
+                                <!-- Display order_number to 6 digits -->
                                 <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
                                     {{ order.order_number|truncatechars:6 }}
                                 </a>

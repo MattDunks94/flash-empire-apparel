@@ -28,9 +28,9 @@
         <div class="col-12 text-center">
             <p class="font-25">Hi <span class="text-red">{{ order.first_name }}</span>, thank you for your order, it has
                 been received.</p>
-            <!----- Order Number ----->
+            <!-- Order Number -->
             <p class="h5">Order No.: <span class="text-red">{{ order.order_number }}</span></p>
-            <!----- Order Date ----->
+            <!-- Order Date -->
             <p class="h5">Order Date: {{ order.date }}</p>
         </div>
     </div>
@@ -38,12 +38,12 @@
         <div class="col mb-5">
             <hr>
             <p class="text-black h4">Your order information is below. A confirmation email will be sent to
-                <!----- Customers Email ----->
+                <!-- Customers Email -->
                 <span class="text-red font-25">{{ order.email }}</span>.
             </p>
         </div>
     </div>
-    <!----- Order Details ----->
+    <!-- Order Details -->
     <div class="row">
         <div class="col-12 col-lg-6 mb-5">
             <div class="row">
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <hr>
-            <!----- Billing Details ----->
+            <!-- Billing Details -->
             <div class="row">
                 <div class="col">
                     <h3>Billing Info:</h3>
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <!----- Item(s) Ordered Details ----->
+        <!-- Item(s) Ordered Details -->
         <div class="col-12 col-lg-6">
             <div class="row">
                 <div class="col">
@@ -177,7 +177,7 @@
                             {% endif %}
                         </a>
                     </div>
-                    <!----- Bag Item(s) Details (Name, Colour, Size, Qty, Price) ----->
+                    <!-- Bag Item(s) Details (Name, Colour, Size, Qty, Price) -->
                     <div class="col-6 my-3">
                         <p class="font-25">{{ item.product.name }}</p>
                         <p class="my-0">Colour: <span class="text-red">{{ item.product.colour }}</span></p>
@@ -193,7 +193,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <!----- Keep Shopping Btn ----->
+            <!-- Keep Shopping Btn -->
             <div class="row">
                 <div class="col mt-3">
                     {% if from_profile %}

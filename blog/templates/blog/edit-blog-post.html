@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<!----- Overlay ----->
+<!-- Overlay -->
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
@@ -25,20 +25,20 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="row">
-                    <!----- Remove Blog Post Btn ----->
+                    <!-- Remove Blog Post Btn -->
                     <div class="col-lg-6 col-sm-6 order-last">
                         <a href="{% url 'remove_blog_post' post.slug %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="remove-btn">
                             Remove Blog Post
                         </a>
                     </div>
-                    <!----- Confirm Edit Btn ----->
+                    <!-- Confirm Edit Btn -->
                     <div class="col-lg-6 col-sm-6 text-right">
                         <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth" type="submit">
                          Update Blog Post
                         </button>
                     </div>
                 </div>
-                <!----- Cancel Edit Btn ----->
+                <!-- Cancel Edit Btn -->
                 <a href="{% url 'view_post_list' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="cancel-form-btn">
                    Cancel
                 </a>
