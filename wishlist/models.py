@@ -13,7 +13,7 @@ class Wishlist(models.Model):
     )
 
     def __str__(self):
-        return self.wished_product.name
+        return self.wished_product
 
 
 class WishedProduct(models.Model):
