@@ -13,11 +13,11 @@
   </li>
 
   <li class="dropdown">
-    <a class="nav-link text-black font-25 dropdown-toggle ml-4" href="#" id="clothing-link" data-toggle="dropdown"
+    <a class="nav-link text-black font-25 dropdown-toggle ml-4" href="#" id="product-colour-link" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
       Colour
     </a>
-    <div class="dropdown-menu border-0" id="colour-selector" aria-labelledby="clothing-link">
+    <div class="dropdown-menu border-0" id="colour-selector" aria-labelledby="product-colour">
       {% for colour in colours %}
       <a href="?colour_id={{ colour.id }}" class="dropdown-item">{{ colour.colour }}</a>
       {% endfor %}
