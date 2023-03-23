@@ -31,7 +31,7 @@
                     {% if wishlist %}
                     <p class="font-25">The following wishes are waiting to become reality:</p>
                     {% else %}
-                    <p>There are no desired wishes.</p>
+                    <p class="font-25">There are no desired wishes.</p>
                     <!-- Keep Shopping btn -->
                     <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">
                         <span class="icon">
@@ -91,6 +91,7 @@
             {% endif %}
         </div>
     </div>
+    {% if wishlist %}
     <!-- Keep Shopping btn -->
     <div class="row">
         <div class="col offset-1">
@@ -102,5 +103,6 @@
             </a>
         </div>
     </div>
+    {% endif %}
 
     {% endblock %}
