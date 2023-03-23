@@ -17,7 +17,7 @@ def view_wishlist(request):
         granted a wish. Please login or sign up.')
         return redirect(reverse('account_login'))
 
-    user = get_object_or_404(UserProfile, user=request.user)
+    user = get_object_or_404(UserProfile, default_user=request.user)
     wishlist = Wishlist.objects.filter(user_profile=user)
 
     context = {
