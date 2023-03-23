@@ -28,7 +28,6 @@ def view_wishlist(request):
     return render(request, 'wishlist/wishlist.html', context)
 
 
-@login_required
 def add_to_wishlist(request, product_id):
     """ A view to add product to user's wishlist """
 
@@ -58,3 +57,22 @@ def add_to_wishlist(request, product_id):
         messages.success(request, f'Your wish for {product.name} has been \
         added to your wishlist!')
         return redirect(reverse('product_detail', args=[product_id]))
+
+
+def remove_from_wishlist(request, product_id):
+    """ A view to remove product from user's wishlist """
+
+    if not request.user.is_authenticated:
+        messages.error(request, 'You must be pledged to the empire to be \
+        granted a wish. Please login or sign up.')
+        return redirect(reverse('account_login'))
+
+    user = get_object_or_404(UserProfile, default_user=request.user)
+    product = get_object_or_404(Product, pk=product_id)
+    Wishlist.objects.filter(wished_product=product, user_profile=user).delete()
+
+    messages.success(
+        request, f"{product.name} successfully removed from your wishlist."
+        )
+
+    return redirect(reverse('wishlist'))
