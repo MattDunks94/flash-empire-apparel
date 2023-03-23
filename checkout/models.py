@@ -15,13 +15,16 @@ from profiles.models import UserProfile
 class Order(models.Model):
     order_number = models.CharField(max_length=40, null=False, editable=False)
     user_profile = models.ForeignKey(
-        UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
+        UserProfile, on_delete=models.SET_NULL, null=True,
+        blank=True, related_name='orders'
         )
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
-    country = models.CharField(max_length=200, null=False, blank=False)
+    country = CountryField(
+        blank_label='Country *', null=True, blank=True
+        )
     postcode = models.CharField(max_length=20, null=True, blank=True)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address_1 = models.CharField(max_length=80, null=False, blank=False)
@@ -77,7 +80,8 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
-        Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
+        Order, null=False, blank=False, on_delete=models.CASCADE,
+        related_name='lineitems'
         )
     product = models.ForeignKey(
         Product, null=False, blank=False, on_delete=models.CASCADE
