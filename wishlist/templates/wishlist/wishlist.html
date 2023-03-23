@@ -81,7 +81,7 @@
                             <p class="font-25 my-0 lttr-space">{{ product.wished_product.price }}</p>
                         </td>
                         <td>
-                            <a href="#" class="text-red text-center hover-red font-25 p-3"><i
+                            <a href="{% url 'remove_from_wishlist' product.wished_product.id %}" class="text-red text-center hover-red font-25 p-3"><i
                                     class="fa-sharp fa-solid fa-xmark"></i></a>
                         </td>
                     </tr>
