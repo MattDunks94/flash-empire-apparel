@@ -21,6 +21,8 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6 offset-lg-1 my-5">
             <div class="product-image-container">
+                <!-- Add to wishlist btn -->
+                <a class="float-right font-25 text-black hover-red" href="{% url 'add_to_wishlist' product.id %}"><i class="fa-regular fa-heart"></i></a>
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
