@@ -56,9 +56,12 @@
                             <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid"
                                     src="{{ product.image.url }}" alt="{{ product.name }}"></a>
                             {% else %}
-                            <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                    alt="{{ product.name }}"></a>
+                            <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid"
+                                    src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"></a>
                             {% endif %}
+                            <!-- Add to wishlist btn -->
+                            <a class="text-right justify-content-end text-black hover-red"
+                                href="{% url 'add_to_wishlist' product.id %}"><i class="fa-regular fa-heart"></i></a>
                             <div class="card-body pb-0">
                                 <hr>
                                 <h5 class="lttr-space text-black uppercase">{{ product.name }}
