@@ -54,6 +54,7 @@
                             <th scope="col"></th>
                             <th scope="col">Product</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Date Added</th>
                             <th scope="col">Remove</th>
                         </tr>
                     </thead>
@@ -79,6 +80,9 @@
                         </td>
                         <td>
                             <p class="font-25 my-0 lttr-space">{{ product.wished_product.price }}</p>
+                        </td>
+                        <td>
+                            <p class="font-25 my-0 lttr-space">{{ product.date_added|date:'d M y'  }}</p>
                         </td>
                         <td>
                             <a href="{% url 'remove_from_wishlist' product.wished_product.id %}" class="text-red text-center hover-red font-25 p-3"><i
