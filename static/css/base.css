@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/FLASH-BANNER.png') no-repeat center center fixed;
+    background: url('/media/FLASH-BANNER.png') no-repeat center center;
     background-size: cover;
     height: calc(100vh - 164px);
     font-family: 'Big Shoulders Display', cursive;
@@ -394,7 +394,7 @@ th {
     }
 
     body {
-        background: url('/media/FLASH-SM-BANNER.png') no-repeat center center fixed;
+        background: url('/media/FLASH-SM-BANNER.png') no-repeat center center;
         background-size: cover;
         background-position-y: 70px;
     }
