@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-<!----- White background overlay ----->
+<!-- White background overlay -->
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row"></div>
@@ -29,16 +29,17 @@
                 </div>
                 <div class="col-12">
                     {% if post.featured_image %}
-                    <img src="{{ post.featured_image }}" width="100%" alt="Blog Post Image">
+                    <img src="{{ post.featured_image }}" max-width="100%" alt="Blog Post Image">
                     {% else %}
-                    <img src="{{ MEDIA_URL }}FLASH-BLOG-BANNER.png" width="100%" alt="Blog Post Placeholder Image">
+                    <img src="{{ MEDIA_URL }}FLASH-BLOG-BANNER.png" max-width="100%" alt="Blog Post Placeholder Image">
                     {% endif %}
                 </div>
-                <div class="col-12 my-3">
-                    <p>{{ post.content | safe }}</p>
+                <div class="col-12 my-3 font-25">
+                    {{ post.content | safe }}
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
