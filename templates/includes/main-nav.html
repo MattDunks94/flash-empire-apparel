@@ -1,16 +1,16 @@
-<div class="main-nav collapse navbar-collapse" id="main-nav">
-  <ul class="navbar-nav w-auto mx-auto list-unstyled">
+<div class="main-nav collapse navbar-collapse pr-4" id="main-nav">
+  <ul class="navbar-nav mx-auto list-unstyled pr-5">
     <!-- All Products Dropdown -->
     <!-- Links for all screen sizes. -->
-    <li class="nav-item my-2 font-25 ml-3">
-      <a href="{% url 'products' %}" class="nav-link lttr-space text-red hover-underline-animation mr-5"
+    <li class="nav-item my-2 font-25 mr-5 pr-3">
+      <a href="{% url 'products' %}" class="nav-link lttr-space text-red hover-underline-animation mr-5 p-0"
         id="all-products-link" aria-haspopup="true" aria-expanded="false">
         All Products
       </a>
     </li>
     <!-- Clothing Dropdown -->
-    <li class="nav-item dropdown my-2 font-25 ml-3">
-      <a class="nav-link lttr-space text-red hover-underline-animation mr-5" href="#" id="categories-link"
+    <li class="nav-item dropdown my-2 font-25 mr-5 pr-3">
+      <a class="nav-link lttr-space text-red hover-underline-animation mr-5 p-0" href="#" id="categories-link"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Categories
       </a>
@@ -22,8 +22,8 @@
         <a href="{% url 'products' %}?category=bags" class="dropdown-item">Bags</a>
       </div>
     </li>
-    <!-- Special Offers Dropdown -->
-    <li class="nav-item my-2 font-25 ml-3">
+    <!-- Sale -->
+    <li class="nav-item my-2 font-25 p-0 m-auto">
       <a class="nav-link lttr-space text-center" href="{% url 'products' %}?category=sale" id="sale" aria-haspopup="true"
         aria-expanded="false">
         SALE
