@@ -67,7 +67,7 @@
                                 <h5 class="lttr-space text-black uppercase">{{ product.name }}
                                     <!-- Edit Product btn -->
                                     {%  if request.user.is_superuser %}
-                                    <a href="{% url 'edit_product' product.id %}" class="" aria-label="edit product">
+                                    <a href="{% url 'edit_product' product.id %}" aria-label="edit product">
                                         <i class="fa-solid fa-pen text-red"></i>
                                     </a>
                                     {% endif %}
@@ -94,16 +94,17 @@
             </a>
         </div>
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
 
-    {% block postloadjs %}
-    {{ block.super }}
+{% block postloadjs %}
+{{ block.super }}
 
-    <script>
-        $('.btt-link').click(function (e) {
-            window.scrollTo(0, 0)
-        })
-    </script>
+<script>
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 
-    {% endblock %}
+{% endblock %}
