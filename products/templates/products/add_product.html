@@ -25,21 +25,23 @@
             <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                    <!-- Removes Image Label -->
-                    {% if field.name != 'image' %}
-                        {{ field|as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
+                <!-- Removes Image Label -->
+                {% if field.name != 'image' %}
+                {{ field|as_crispy_field }}
+                {% else %}
+                {{ field }}
+                {% endif %}
                 {% endfor %}
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 order-last">
-                        <a href="{% url 'home' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="cancel-form-btn">
+                        <a href="{% url 'home' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0"
+                            id="cancel-form-btn">
                             Cancel
                         </a>
                     </div>
                     <div class="col-lg-8 col-sm-6 text-right">
-                        <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth" type="submit">
+                        <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth"
+                            type="submit">
                             Add Product
                         </button>
                     </div>
@@ -47,13 +49,14 @@
             </form>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <!-- Script for displaying new image file name. -->
 <script>
-    $('#new-image').change(function() {
+    $('#new-image').change(function () {
         var file = $('#new-image')[0].files[0];
         $('#filename').text(`New Image: ${file.name}`);
     });
