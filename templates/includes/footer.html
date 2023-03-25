@@ -1,45 +1,44 @@
-<div class="container-fluid pt-4 mt-5 footer">
-    <div class="container">
-        <div class="row text-white">
-            <div class="col-sm-12 col-md-6 col-lg-6">
-                <a href="{% url 'home' %}" class="navbar-brand">
-                    <img src="{{ MEDIA_URL }}FLASH-BADGE-LOGO-WHITE.png" width="30" height="30"
-                        class="mb-2 mx-2 d-inline-block " alt="logo">
-                    <span class="h4 mb-5 text-white lttr-space">Flash Empire Apparel</span>
-                </a>
-                <p class="small pl-2">We are a UK based clothing brand, inspired by tattoo culture and self-expression
-                    we offer an alternative to the everyday.
-                    Check out our range of graphic tees, sweatshirts, joggers, caps and bags.</p>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-6 p-0">
-                {% include 'includes/mail-chimp.html' %}
-            </div>
-            <div class="col-sm-12 col-md-2 col-lg-2 mb-3">
-                <h4 class="lttr-space">Social</h4>
-                <a href="https://www.facebook.com/people/Flash-Empire-Apparel/100090384290266/" target="_blank"
-                    rel="noopener" class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/flashempireapparel/" target="_blank" rel="noopener"
-                    class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-2">
-                <h4 class="lttr-space">Shop</h4>
-                <ul class="list-unstyled small lttr-space">
-                    <li><a href="{% url 'products' %}?category=t-shirts" class="text-white no-underline">T-Shirts</a>
-                    </li>
-                    <li><a href="{% url 'products' %}?category=sweatshirts"
-                            class="text-white no-underline">Sweatshirts</a></li>
-                    <li><a href="{% url 'products' %}?category=joggers" class="text-white no-underline">Joggers</a></li>
-                    <li><a href="{% url 'products' %}?category=headwear" class="text-white no-underline">Headwear</a>
-                    </li>
-                    <li><a href="{% url 'products' %}?category=bags" class="text-white no-underline">Bags</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-2 mb-3">
-                <h4 class="lttr-space">Community</h4>
-                <ul class="list-unstyled small lttr-space">
-                    <li><a href="{% url 'view_post_list' %}" class="text-white no-underline">Blog</a></li>
-                </ul>
-            </div>
+<div class="container-fluid p-4 mt-5 footer">
+    <div class="row text-white p-3">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <a href="{% url 'home' %}" class="navbar-brand p-0">
+                <img src="{{ MEDIA_URL }}FLASH-BADGE-LOGO-WHITE.png" width="30" height="30"
+                    class="mb-2 mr-2 d-inline-block " alt="logo">
+                <span class="h4 text-white lttr-space">Flash Empire Apparel</span>
+            </a>
+            <p class="small">We are a UK based clothing brand, inspired by tattoo culture and self-expression
+                we offer an alternative to the everyday.
+                Check out our range of graphic tees, sweatshirts, joggers, caps and bags.</p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 order-last p-0 pl-2" id="mc_embed_signup">
+            <h4 class="lttr-space">Subscribe</h4>
+            {% include 'includes/mail-chimp.html' %}
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2 mb-3 pl-2 pr-0">
+            <h4 class="lttr-space">Social</h4>
+            <a href="https://www.facebook.com/people/Flash-Empire-Apparel/100090384290266/" target="_blank"
+                rel="noopener" class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/flashempireapparel/" target="_blank" rel="noopener"
+                class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 pl-2 pr-0">
+            <h4 class="lttr-space">Shop</h4>
+            <ul class="list-unstyled small lttr-space">
+                <li><a href="{% url 'products' %}?category=t-shirts" class="text-white no-underline">T-Shirts</a>
+                </li>
+                <li><a href="{% url 'products' %}?category=sweatshirts" class="text-white no-underline">Sweatshirts</a>
+                </li>
+                <li><a href="{% url 'products' %}?category=joggers" class="text-white no-underline">Joggers</a></li>
+                <li><a href="{% url 'products' %}?category=headwear" class="text-white no-underline">Headwear</a>
+                </li>
+                <li><a href="{% url 'products' %}?category=bags" class="text-white no-underline">Bags</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 mb-3 pl-2 pr-0">
+            <h4 class="lttr-space">Community</h4>
+            <ul class="list-unstyled small lttr-space">
+                <li><a href="{% url 'view_post_list' %}" class="text-white no-underline">Blog</a></li>
+            </ul>
         </div>
     </div>
     <div class="row">
