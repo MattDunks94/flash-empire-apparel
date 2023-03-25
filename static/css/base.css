@@ -52,6 +52,10 @@ input[name='q']::placeholder {
     background-color: #D5A761;
 }
 
+.bg-black {
+    background-color: #000;
+}
+
 .no-underline:hover {
     text-decoration: none;
 }
@@ -67,10 +71,6 @@ input[name='q']::placeholder {
 .nav-link {
     padding: 2px;
     margin: 2px;
-}
-
-.main-nav {
-    background: #fff;
 }
 
 .font-25 {
@@ -176,6 +176,7 @@ input[name='q']::placeholder {
 /* ------------------------------------ Footer */
 .footer {
     background-color: #000;
+    overflow-x: hidden;
 }
 
 .footer-hr {
