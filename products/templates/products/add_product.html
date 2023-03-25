@@ -14,14 +14,14 @@
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 mt-3">
+        <div class="col-12 mt-3">
             <h1 class="logo-font my-4 lttr-space">Product Management</h1>
             <hr>
             <h2 class="lttr-space text-center mb-3">Add Product</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8 col-sm-10 m-auto">
+        <div class="col-lg-7 col-10 m-auto">
             <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
@@ -39,6 +39,7 @@
                             Cancel
                         </a>
                     </div>
+                    <!-- Add Product Btn -->
                     <div class="col-lg-8 col-sm-6 text-right">
                         <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth"
                             type="submit">

@@ -14,24 +14,26 @@
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 mt-3">
+        <div class="col-12 mt-3">
             <h1 class="logo-font my-4 lttr-space">Product Review</h1>
             <hr>
             <h2 class="lttr-space text-center mb-3">{{ product.name }} Review</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8 col-sm-10 m-auto">
+        <div class="col-lg-7 col-10 m-auto">
             <form action="{% url 'product_detail' product.id %}" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="row">
+                    <!-- Cancel Review btn -->
                     <div class="col-lg-4 col-sm-6 order-last">
                         <a href="{% url 'home' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0"
                             id="cancel-form-btn">
                             Cancel
                         </a>
                     </div>
+                    <!-- Add Review btn -->
                     <div class="col-lg-8 col-sm-6 text-right">
                         <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth"
                             type="submit">
