@@ -81,14 +81,14 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link" href="#" id="user-options-header" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <div class="text-center">
                                 <div class="icon"><i class="fas fa-user fa-lg"></i></div>
                                 <p class="text-earth lttr-space my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="font-25 dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="font-25 dropdown-menu border-0" aria-labelledby="user-options-header">
                             {% if request.user.is_authenticated %}
                             <p class="small dropdown-item">Signed in as: <span class="text-red">{{ user.username }}</span></p>
                             {% if request.user.is_superuser %}

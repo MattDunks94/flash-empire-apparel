@@ -31,12 +31,12 @@
     </li>
     <!-- Account/Profile Dropdown -->
     <li class="list-inline-item dropdown d-sm-block d-lg-none my-2 ml-3">
-      <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link" href="#" id="user-options-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div>
           <p class="font-25 text-earth lttr-space my-0">My Account</p>
         </div>
       </a>
-      <div class="dropdown-menu border-0 font-25" aria-labelledby="user-options">
+      <div class="dropdown-menu border-0 font-25" aria-labelledby="user-options-mobile">
         {% if request.user.is_authenticated %}
         <p class="small dropdown-item">Signed in as: <span class="text-red">{{ user.username }}</span></p>
         {% if request.user.is_superuser %}
