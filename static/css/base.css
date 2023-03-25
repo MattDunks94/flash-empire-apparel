@@ -56,6 +56,10 @@ input[name='q']::placeholder {
     background-color: #000;
 }
 
+.bg-white {
+    background-color: #fff;
+}
+
 .no-underline:hover {
     text-decoration: none;
 }
