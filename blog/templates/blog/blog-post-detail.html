@@ -29,9 +29,9 @@
                 </div>
                 <div class="col-12">
                     {% if post.featured_image %}
-                    <img src="{{ post.featured_image }}" alt="Blog Post Image" id="blog-ft-img">
+                    <img src="{{ post.featured_image }}" alt="Blog Post Image" class="img-fluid">
                     {% else %}
-                    <img src="{{ MEDIA_URL }}FLASH-BLOG-BANNER.png" alt="Blog Post Placeholder Image" id="blog-ft-img">
+                    <img src="{{ MEDIA_URL }}FLASH-BLOG-BANNER.png" alt="Blog Post Placeholder Image" class="img-fluid">
                     {% endif %}
                 </div>
                 <div class="col-12 my-3 font-25">
