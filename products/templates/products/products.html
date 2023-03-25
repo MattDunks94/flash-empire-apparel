@@ -50,7 +50,7 @@
                 <!-- Product Card -->
                 <div class="row">
                     {% for product in products %}
-                    <div class="col-sm-6 col-lg-4 col-xl-4">
+                    <div class="col-6 col-lg-4 col-xl-4">
                         <div class="card h-100 border-0 m-3">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}"><img class="card-img-top img-fluid"
