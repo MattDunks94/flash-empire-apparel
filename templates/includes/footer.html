@@ -10,18 +10,11 @@
                 we offer an alternative to the everyday.
                 Check out our range of graphic tees, sweatshirts, joggers, caps and bags.</p>
         </div>
-        <div class="col-sm-12 col-md-3 col-lg-2 order-last p-0 pl-2" id="mc_embed_signup">
+        <div class="col-6 col-lg-2 order-last p-0 pl-2" id="mc_embed_signup">
             <h4 class="lttr-space">Subscribe</h4>
             {% include 'includes/mail-chimp.html' %}
         </div>
-        <div class="col-sm-12 col-md-2 col-lg-2 mb-3 pl-2 pr-0">
-            <h4 class="lttr-space">Social</h4>
-            <a href="https://www.facebook.com/people/Flash-Empire-Apparel/100090384290266/" target="_blank"
-                rel="noopener" class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/flashempireapparel/" target="_blank" rel="noopener"
-                class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-2 pl-2 pr-0">
+        <div class="col-6 col-lg-2 pl-2 pr-0">
             <h4 class="lttr-space">Shop</h4>
             <ul class="list-unstyled small lttr-space">
                 <li><a href="{% url 'products' %}?category=t-shirts" class="text-white no-underline">T-Shirts</a>
@@ -34,7 +27,14 @@
                 <li><a href="{% url 'products' %}?category=bags" class="text-white no-underline">Bags</a></li>
             </ul>
         </div>
-        <div class="col-sm-12 col-md-3 col-lg-2 mb-3 pl-2 pr-0">
+        <div class="col-6 col-lg-2 mb-3 pl-2 pr-0">
+            <h4 class="lttr-space">Social</h4>
+            <a href="https://www.facebook.com/people/Flash-Empire-Apparel/100090384290266/" target="_blank"
+                rel="noopener" class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/flashempireapparel/" target="_blank" rel="noopener"
+                class="mr-4 nav-item h3 text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="col-6 col-lg-2 mb-3 pl-2 pr-0">
             <h4 class="lttr-space">Community</h4>
             <ul class="list-unstyled small lttr-space">
                 <li><a href="{% url 'view_post_list' %}" class="text-white no-underline">Blog</a></li>
