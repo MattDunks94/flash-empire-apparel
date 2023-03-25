@@ -189,6 +189,10 @@ input[name='q']::placeholder {
     border-radius: 5px;
 }
 
+#blog-ft-img {
+    width: 100%;
+}
+
 /* ------------------------ Products.html ----- */
 /* White background overlay */
 .overlay {
