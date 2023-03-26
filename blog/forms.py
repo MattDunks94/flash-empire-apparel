@@ -15,4 +15,3 @@ class BlogPostForm(forms.ModelForm):
         widgets = {
             'content': SummernoteWidget()
         }
-
