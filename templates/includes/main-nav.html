@@ -1,15 +1,15 @@
 <div class="main-nav collapse navbar-collapse pr-4" id="main-nav">
-  <ul class="navbar-nav mx-auto list-unstyled pr-5">
+  <ul class="navbar-nav mx-auto list-unstyled pr-lg-5">
     <!-- All Products Dropdown -->
     <!-- Links for all screen sizes. -->
-    <li class="nav-item my-2 font-25 mr-5 pr-3">
+    <li class="nav-item my-2 font-25 mr-lg-5 pr-lg-3 ml-3">
       <a href="{% url 'products' %}" class="nav-link lttr-space text-red hover-underline-animation mr-5 p-0"
         id="all-products-link" aria-haspopup="true" aria-expanded="false">
         All Products
       </a>
     </li>
     <!-- Clothing Dropdown -->
-    <li class="nav-item dropdown my-2 font-25 mr-5 pr-3">
+    <li class="nav-item dropdown my-2 font-25 mr-lg-5 pr-lg-3 ml-3">
       <a class="nav-link lttr-space text-red hover-underline-animation mr-5 p-0" href="#" id="categories-link"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Categories
@@ -23,7 +23,7 @@
       </div>
     </li>
     <!-- Sale -->
-    <li class="nav-item my-2 font-25 p-0 m-auto">
+    <li class="nav-item my-2 font-25 p-lg-0 m-lg-auto ml-3">
       <a class="nav-link lttr-space text-center" href="{% url 'products' %}?category=sale" id="sale" aria-haspopup="true"
         aria-expanded="false">
         SALE
@@ -53,9 +53,9 @@
     </li>
     <!-- Search Bar -->
     <li class="list-inline-item d-sm-block d-lg-none my-2">
-      <div class="my-auto py-1">
-        <form id="search-bar" method="GET" action="{% url 'products' %}">
-          <div class="input-group w-100">
+      <div class="m-auto py-1">
+        <form class="w-75" id="search-bar" method="GET" action="{% url 'products' %}">
+          <div class="input-group">
             <input class="lttr-space form-control rounded-3" type="text" name="q" placeholder="Search Flash Empire">
             <div class="input-group-append">
               <button class="form-control btn bg-none border-white" type="submit">
