@@ -30,12 +30,14 @@
                 {{ form|crispy }}
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 order-last">
-                        <a href="{% url 'view_post_list' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0" id="cancel-form-btn">
+                        <a href="{% url 'view_post_list' %}" class="btn w-100 mt-3 font-25 slanted-div rounded-0"
+                            id="cancel-form-btn">
                             Cancel
                         </a>
                     </div>
                     <div class="col-lg-8 col-sm-6 text-right">
-                        <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth" type="submit">
+                        <button class="btn font-25 mt-3 w-100 rounded-0 slanted-div hover-bg-black bg-earth"
+                            type="submit">
                             Add Blog Post
                         </button>
                     </div>
@@ -43,13 +45,14 @@
             </form>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <!-- Script for displaying new image file name. -->
 <script>
-    $('#new-image').change(function() {
+    $('#new-image').change(function () {
         var file = $('#new-image')[0].files[0];
         $('#filename').text(`New Image: ${file.name}`);
     });
