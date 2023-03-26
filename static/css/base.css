@@ -303,7 +303,7 @@ th {
 }
 
 .custom-checkbox .custom-control-label::before {
-    border-radius: 5;
+    border-radius: 5px;
     border-color: #A40303;
 }
 

@@ -151,7 +151,7 @@
     $('.update-qty').click(function (e) {
         var form = $('.update-form');
         form.submit();
-    })
+    });
 
     // Remove item on click
     $('.remove-item').click(function (e) {
@@ -167,9 +167,8 @@
         $.post(url, data)
             .done(function () {
                 location.reload();
-            })
-
-    })
+            });
+    });
 </script>
 
 {% endblock %}
