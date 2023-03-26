@@ -7,7 +7,8 @@ from checkout.webhook_handler import StripeWH_Handler
 
 import stripe
 
-# This class method saves us from having to write if statements for each webhook.
+# This class method saves us from having to write
+# if statements for each webhook.
 # There are 'hundreds' of webhook events.
 # Can reuse this code for other projects!
 
@@ -54,7 +55,7 @@ def webhook(request):
 
     # If there's a handler for it, get it from the event map
     # Use the generic one by default
-    # This looks up the 'key' within the event_map dic. (as seen above) 
+    # This looks up the 'key' within the event_map dic. (as seen above)
     event_handler = event_map.get(event_type, handler.handle_event)
 
     # Call the event handler with the event

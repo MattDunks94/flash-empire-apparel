@@ -1,10 +1,24 @@
 User-agent: *
 Disallow: /accounts/
 Disallow: /bag/
+Disallow: /bag/add/<item_id>/
+Disallow: /bag/adjust/<item_id>/
+Disallow: /bag/remove/<item_id>/
 Disallow: /checkout/
+Disallow: /checkout/checkout_success/<order_number>/
+Disallow: /checkout/cache_checkout_data/
+Disallow: /checkout/wh/
 Disallow: /products/add/
-Disallow: /products/add/<product_id>/
-Disallow: /products/remove/<product_id>/
-Disallow: /products/add_review/
+Disallow: /products/edit/<int:product_id>/
+Disallow: /products/remove/<int:product_id>/
+Disallow: /products/add_review/<int:product_id>/
+Disallow: /profile/
+Disallow: /profile/order_history/<order_number>
+Disallow: /blog/add_blog_post/
+Disallow: /blog/edit_blog_post/<slug:slug>/
+Disallow: /blog/remove_blog_post/<slug:slug>
+Disallow: /wishlist/
+Disallow: /wishlist/add_to_wishlist/<int:product_id>
+Disallow: /wishlist/remove_from_wishlist/<int:product_id>
 
 sitemap: https://flash-empire-apparel.herokuapp.com/sitemap.xml
