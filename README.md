@@ -1,6 +1,58 @@
 # Flash Empire Apparel
 
-<a href="https://flash-empire-apparel.herokuapp.com/">Flash Empire Apparel</a> is a fully working e-commerce site that demonstrates basic/advanced use of the web framework <a href="https://www.djangoproject.com/">django</a>. The site is targeted for people who are interested in streetwear fashion, tattoo designs and shopping. The site allows users to: 
+<a href="https://flash-empire-apparel.herokuapp.com/">Flash Empire Apparel</a> is a fictional B2C e-commerce store that is designed and created using the <a href="https://www.djangoproject.com/">Django</a> web framework. The site's main purpose is selling tattoo inspired streetwear to online customers. 
+
+<img src="/documentation/README/images/amiresponsive.png">
+
+### Business Model
+
+Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells tattoo inspired streetwear. We sell a range of products including:
+- T-shirts
+- Sweatshirts
+- Joggers
+- Headwear
+- Bags
+
+
+## User Experience (UX)
+
+### User stories
+#### As Admin:
+<ul>
+  <li>As a Site Admin I can add new products to the site so that I can keep customers interested.</li>
+  <li>As a Site Admin I can edit products so that I can update products price, name and image.</li>
+  <li>As a Site Admin I can remove products from the store so that when stock runs out and/or product isn't selling well I can remove product from the site.</li>
+  <li>As a Site Admin I can create a blog post so that I can show site users what our brand/business has been up to.</li>
+  <li>As a Site Admin I can edit a posted blog post so that I can alter any spelling mistakes and/or add content, images etc.</li>
+  <li>As a Site Admin I can remove a posted blog post so that I can remove any out of date posts.</li>
+</ul>
+
+#### As Site User / Shopper:
+<ul>
+  <li>As a Site User I can register for an account so that I have a personal account and can view my profile.</li>
+  <li>As a Site User I can receive an account registration confirmation Email so that I can verify my account was successfully created.</li>
+  <li>As a Site User I can login and logout with ease so that I can access my personal information.</li>
+  <li>As a Site User / Shopper I can view a list of all products so that I can select some to purchase.</li>
+  <li>As a Site User / Shopper I can sort all products so that I can identify the desired products through category type and price.</li>
+  <li>As a Site User / Shopper I can sort products of a certain category type so that I can view products by name and by price.</li>
+  <li>As a Site User / Shopper I can search for products so that I can identify exactly what product I'd like to purchase.</li>
+  <li>As a Site User I can save delivery information so that going through checkout will be quicker.</li>
+  <li>As a Site User / Shopper I can edit items in my basket so that I can change size, quantity and/or remove item(s).</li>
+  <li>As a Site User / Shopper I can securely pay for products so that my order is processed.</li>
+</ul>
+
+## Database Design
+
+### Database ERD:
+![](/documentation/README/images/erd.jpg)
+
+
+
+
+
+
+
+
 <ul>
   <li>Sign up and register for an account.</li>
   <li>Browse the store as both a non user and registered user.</li>
