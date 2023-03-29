@@ -570,26 +570,9 @@ I used [Google Chrome DevTools Lighthouse](https://developer.chrome.com/docs/lig
    ![](documentation/README/images/wishlist-lighthouse.png)
    </details>
    
-
-
-
-
-
-
-
-
+   
 
 The site is fully responsive on most handheld and desktop devices.
-
-### Messages / Toasts:
-<ul>
-  <li>Added meassages/toasts to indicate a successful operation. For example, when a shopper adds an item to their bag, or edits their shopping bag a pop-up message appears indicating the users operation and their details.</li>
-  <li>Other messages/toasts include errors, info and warnings. These occur when the user/shopper searches for a product that isn't recognised or when their payment is unsuccessfull.</li>
-</ul>
-(Successfull message.)
-<img src="/README/images/successfull-alert.png">
-(Info Alert)
-<img src="/README/images/info-alert.png">
 
 ## Features For The Future
 <ul>
@@ -621,18 +604,6 @@ The site is fully responsive on most handheld and desktop devices.
     <li>Firefox</li>
     <li>Safari</li>
   </ul>
-</ul>
-
-### Lighthouse Validator Results:
-<ul>
-  <li>Homepage Results:
-  <img src="/README/images/homepage-lighthouse.png"></li>
-  <br>
-  <li>All Product Page Results:
-  <img src="/README/images/all-products-lighthouse.png"></li>
-  <br>
-  <li>Product Detail Page Results:
-  <img src="/README/images/product-detail-lighthouse.png"></li>
 </ul>
 
 ### Bugs & Errors:
