@@ -327,7 +327,52 @@ The successful checkout page contains:
 - Order successful alert (visible in the top right of the window), when the order has successfully been processed.
 
 #### Add Product (For super users only):
-![]()
+![](documentation/README/images/add-new-product.png)
+The add product page contains:
+- Add product form, super users fill out this form with new product details.
+- Select image button, allows admin users to upload new product image.
+- Add product, adds the new product to the database and store.
+- Cancel button, cancels the add new product operation, returns to homepage.
+
+#### Edit Product (For super users only):
+![](documentation/README/images/edit-product.png)
+The edit product page contains:
+- Pre-filled product form with current product details.
+- Current product image, which can be removed via the remove checkbox.
+- Select image button, allows admin users to upload new product image.
+- Update product button, successfully updates products details.
+- Remove product button, removes product from the store.
+- Cancel button, cancels the edit product operation, returns back to homepage.
+- Editing product info alert, when editing a product an alert is displayed in the top right corner telling the user what product they are editing.
+  - <details>
+      <summary>Editing product info alert</summary>
+  
+     ![](documentation/README/images/edit-product-alert.png)
+     </details>
+     
+#### Footer:
+![](documentation/README/images/footer.png)
+The footer contains:
+- Brand logo banner, which is also a homepage link.
+- A brief company description.
+- Shop links, links to individual product categories.
+- Social section, links to Flash Empire's [Facebook](https://www.facebook.com/) and [Instagram](https://www.instagram.com/) pages.
+- Community section, contains a link to the blog page.
+- [Mail Chimp](https://mailchimp.com/en-gb/?currency=GBP) subscribe newsletter email input, allows users to subscribe to Flash Empire Apparel's newsletter.
+- Copyright details.
+
+#### Facebook Page:
+![](documentation/README/images/facebook.png)
+
+#### Instagram Page:
+![](documentation/README/images/instagram.png)
+
+#### My Profile Page (For reigstered users):
+![](documentation/README/images/profile-page.png)
+The my profile page contains:
+- The user's saved delivery information.
+- The user's order history, contains the order number, date of purchase, purchased items and order total.
+- Update profile button, for when the user modifies their delivery information, when clicked will update their details.
 
 
 
