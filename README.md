@@ -362,10 +362,12 @@ The footer contains:
 - Copyright details.
 
 #### Facebook Page:
+[Flash Empire Apparel Facebook Page](https://www.facebook.com/people/Flash-Empire-Apparel/100090384290266/)
 ![](documentation/README/images/facebook.png)
 
 #### Instagram Page:
-![](documentation/README/images/instagram.png)
+[Flash Empire Apparel Instagram Pofile](https://www.instagram.com/flashempireapparel/)
+![](documentation/README/images/instagram-profile.png)
 
 #### My Profile Page (For reigstered users):
 ![](documentation/README/images/profile-page.png)
@@ -380,149 +382,7 @@ The my profile page contains:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<ul>
-  <li>Sign up and register for an account.</li>
-  <li>Browse the store as both a non user and registered user.</li>
-  <li>Filter products via category and/or product colour.</li>
-  <li>Sort products via price ascending/descending and product name ascending/descending.</li>
-  <li>Securely Purchase products as both a non user and registered user.</li>
-  <li>Leave product reviews as a registered user.</li>
-  <li>Add, remove or edit products as a site administrator.</li>
-</ul>
-
 The site is fully responsive on most handheld and desktop devices.
-
-index.html:
-<img src="/README/images/homepage.png"> 
-
-## Site Features
-
-### Store Browsing:
-<p>Users of the site are able to browse all products in the store. They have access to all products details.</p>
-
-### Filter by Product Category and/or Product Colour:
-<ul>
-  <li>Category Filter Feature:</li>
-  <p>This feature can sort products via category.<br>
-      Users can find this category dropdown feature in the main nav.</p>
-  <img src="/README/images/categories-dropdwn.png">
-  <li>Colour Filter Feature:</li>
-  <p>This feature can sort products via product colour.</p>
-  <img src="/README/images/colour-filter.png">
-</ul>
-
-### Product Sorting:
-
-<ul>
-  <li>The users have the ability to sort/filter products and categories using the following features:
-    <ul>
-      <li>Sort By Feature:</li>
-      <p>This feature can sort products via price ascending/descending and product name ascending/descending.<br>
-      When a sort by option is selected, it is highlighted in red to notify the user has chosen that sort by method.</p>
-      (Sort by 'Price High to Low' selected)
-      <br>
-      <img src="/README/images/sort-by.png">
-      <br>
-    </ul>
-   </li>
-</ul>
-
-### Product Reviews (Site User):
-<p>As a registered site user, you can write product reviews.</p>
-(Review product form)
-<img src="/README/images/product-review-form.png">
-<br>
-(Product Review whithin the products detail page.)
-<img src="/README/images/product-review.png">
-
-### Add, Remove or Modify Products (Site Admin):
-<p>As site admin, you can add or modify existing products.</p>
-(Add New Product form)
-<img src="/README/images/add-product.png">
-<br>
-(Edit Existing Product Form)
-<img src="/README/images/edit-product.png">
-(Modify product buttons including the 'Remove Product' button)
-<img src="/README/images/edit-product-btns.png">
-(Edit Button, alongside product heading, on product detail page)
-<img src="/README/images/edit-prod-btn.png">
-
-### Secure Payment:
-<p>The site uses a secure payment method. This ensures the user that their payment details and process are secure.</p>
-<br>
-
-### Creating Account / Signing In:
-<p>Shoppers are able to sign up and register an account.</p>
-<br>
-<p>Sign Up page:</p>
-<img src="/README/images/sign-up.png">
-<br>
-<p>Login page:</p>
-<img src="/README/images/sign-in.png">
-
-### Secure Payment:
-<p>The site uses a secure payment method. This ensures the user that their payment details and process are secure.</p>
-<br>
-(Successfull Payment)
-<img src="/README/images/payment-successfull.png">
-
-### Profile Page:
-<p>Once shoppers have registered an account, they can access their profile.<br>
-Their profile contains delivery details and order history.</p>
-<br>
-<p>Profile page:</p>
-<img src="/README/images/profile-page.png">
-
-## Other Features
-
-### Branding:
-<ul>
-<li>A logo and banner is provided to make the app look more efficient.</li>
-<li>Homepage background image also contains a simplified brand logo, alongside it are products from the site.</li>
-</ul>
-<p>(Logo and Banner in top header.)</p>
-<img src="/README/images/nav-header.png">
-
-### Navbar Features:
-<ul>
-  <li>Responsive nav. When operating the site on a small device, the nav condenses down to a 'burger' menu.</li>
-  <li>Contains all products link which directs the user to all of the stores products.</li>
-  <li>A dropwdown menu for all product categories, with each link directing the user to the desired category page.</li>
-  <li>Sale link. Takes the user to products that are on offer.</li>
-  <li>Also, when logged in, username is displayed within the navbar.</li>
-</ul>
-<img src="/README/images/nav-header.png">
-
-### Footer:
-<ul>
-  <li>The footer contains homepage link, social links, shop category links and a subscribe input field</li>
-</ul>
-<img src="/README/images/footer.png">
-
-### Social Media Pages:
-<ul>
-  <li>I created two social media pages for my site.<br>
-  Both these links can be found in the footer.</li>
-  (Facebook Page)
-  <img src="/README/images/facebook.png">
-  (Instagram Account)
-  <img src="/README/images/instagram.png">
-</ul>
-<img src="/README/images/footer.png">
 
 ### Messages / Toasts:
 <ul>
@@ -533,10 +393,6 @@ Their profile contains delivery details and order history.</p>
 <img src="/README/images/successfull-alert.png">
 (Info Alert)
 <img src="/README/images/info-alert.png">
-
-### Back To Top Button:
-<p>Added back to top button for when users/shoppers are scrolling through the stores products, saves them having to scroll back to the top.</p>
-<img src="/README/images/btt-btn.png">
 
 ## Features For The Future
 <ul>
@@ -601,25 +457,6 @@ Their profile contains delivery details and order history.</p>
   <li>No Media Files:</li>
   <ul>
   <li>Unfortunately, my final deployed site, on <a href="https://www.heroku.com/">Heroku</a>, does not have any media files. This includes all product           files.<br> Tried to overcome this by altering the AWS media path but unfortunately no luck.</li>
-  </ul>
-</ul>
-
-
-## User Experience (UX)
-
-### Design:
-<ul>
-  <li>Colour Scheme:</li>
-  <ul>
-    <li>The colour scheme is quite powerful and attractive to the user. The palette consists of black, earth yellow, white and dark red. All four colours create a strong yet vulnerable combination. I wanted colours that represented the name of the brand, Flash Empire, as much as possible. The black and dark red are seen as strong and powerful (Empire), the earth yellow is almost like a gold that represents royalty, wealth (Empire) and the white is used to create a sense of light (Flash) and vulnerability.</li>
-  </ul>
-    <li>Navigation:</li>
-  <ul>
-    <li>The navigation is very modern and efficient. There's very little content within the nav, this makes it easy for the user to navigate round the site.</li>
-  </ul>
-    <li>Icons:</li>
-  <ul>
-    <li>There are many icons on the app. Icons indicate what the content consists of and/or what it carries out (ex.trash bin indicates remove).</li>
   </ul>
 </ul>
 
