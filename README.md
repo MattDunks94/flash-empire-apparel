@@ -189,8 +189,129 @@ The all products page contains:
      </details>
 - Product count, total number of products available (as annotated).
 - Back to top button, when user scrolls down page a 'BTT' button appears and when clicked take users back to top of page (as annotated).
+- Wishlist button, for adding products to registered users wishlist, visible within the product card (see below).
+- Edit product button, when signed in as Site Admin, super user, a edit product button is displayed within the product card.
+   - <details>
+      <summary>Product Card with Edit Button (for super user only) & Wishlist button</summary>
+  
+     ![](documentation/README/images/product-card.png)
+     </details>
 
 #### Product Detail:
+![](documentation/README/images/product-detail.png)
+The product detail page contains:
+- product image (as annotated).
+- Product name and category, which is also a link to the specified category page (as annotated).
+- Product price (as annotated).
+- Product colour (as annotated).
+- Product description, a brief description of the product and it's features (as annotated).
+- Size selector, where users/shoppers can select their desired size (as annotated).
+- Add to Bag button, add product to users/shoppers shopping bag (as annotated).
+  - <details>
+      <summary>Add to bag alert</summary>
+  
+     ![](documentation/README/images/add-to-bag-alert.png)
+     </details>
+- Add to wishlist button, if users are registered they can add products to a wishlist (as annotated).
+- Product reviews, can be viewed just underneath the product image.
+- Review Product button, when users are signed in a 'Review Product' button is visible (see below).
+  - <details>
+      <summary>Review section</summary>
+  
+     ![](documentation/README/images/product-review.png)
+     </details>
+  - <details>
+      <summary>Review section for registered users</summary>
+  
+     ![](documentation/README/images/product-review-signed-in.png)
+     </details>
+     
+#### Add Product Review (For registered users):
+![](documentation/README/images/add-review.png)
+The add product review page contains:
+- Name of product the users are reviewing.
+- Review form, for users to add their comments and product rating.
+- Add Review button, posts the users review to the reviewed product detail page.
+- Cancel button, for when the users want to cancel the operation, returns back to homepage. 
+
+#### Wishlist (For registered users):
+![](documentation/README/images/wishlist.png)
+The wishlist page contains:
+- Product image, image of the wished product which is also a link to the product detail page.
+- Product name.
+- Product SKU.
+- Product Price.
+- Date added (d/m/y), the date the user added the wished item to their wishlist.
+  - <details>
+      <summary>Added to wishlist alert</summary>
+  
+     ![](documentation/README/images/added-to-wishlist-alert.png)
+     </details>
+- Remove button, removes the chosen wished item from users wishlist.
+  - <details>
+      <summary>Removed form wishlist alert</summary>
+  
+     ![](documentation/README/images/removed-from-wishlist.png)
+     </details>
+- Keep shopping link, positioned at the bottom of the wishlist page, takes users to all products page.
+
+If users wishlist is empty.
+![](documentation/README/images/empty-wishlist.png)
+
+When non-registered users click on the 'add to wishlist' button, they are taken to the sign in page and are prompted by an alert to sign in or sign up.
+![](documentation/README/images/not-authorised-wishlist.png)
+
+#### Blog:
+Blog page for users/shoppers:
+![](documentation/README/images/blog-for-users.png)
+Blog page for super users:
+![](documentation/README/images/blog-for-admin.png)
+The blog page for users/shoppers contains:
+- Blog post featured image, also a link to the post detail page.
+- Blog post title, also a link to the post detail page.
+- Post created on date.
+
+The blog page for super users additional features:
+- Edit blog post button, allows admin to edit blog post (as annotated above).
+- Add blog post button, allows admin to add new blog post (as annotated above).
+
+#### Blog Post Detail:
+![](documentation/README/images/blog-post-detail.png)
+The blog post detail page contains:
+- Blog post title.
+- Blog post author, the admins username.
+- Created on date, the date the post was created.
+- Blog post featured image.
+- Post content.
+
+#### Users / Shoppers Shopping Bag:
+![](documentation/README/images/shopping-bag.png)
+(Shopping bag page continued)
+![](documentation/README/images/shopping-bag-2.png)
+The shopping bag page contains:
+- Product info, includes product name, shoppers desired product size and sku.
+- Product individual price.
+- Product quantity, user can also update quantity from the shopping bag page using the minus and plus buttons.
+- Order subtotal, the total price of one product.
+- Remove from bag button, using [Font Awesome](https://fontawesome.com/) trash can icon, users can remove items from their bag when selected.
+  - <details>
+      <summary>Removed from shopping bag alert</summary>
+  
+     ![](documentation/README/images/removed-from-bag-alert.png)
+     </details>
+- Bag total, the total of the users/shoppers shopping bag, excluding delivery.
+- Delivery info, delivery charge.
+- Total, order grand total, including delivery.
+- Secure checkout button, takes shoppers to the checkout page to continue with their purchase.
+- Keep shopping link, takes users back to all products page.  
+
+
+
+
+
+
+
+
 
 
 
