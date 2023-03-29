@@ -4,6 +4,13 @@
 
 <img src="/documentation/README/images/amiresponsive.png">
 
+## Table of Contents:
+- [Business Model](#business-model)
+- [User Experience (UX)](#user-experience-ux)
+  - [User Stories](#user-stories)
+  - [Database Design](#database-design)
+  - [Design](#design)
+
 ### Business Model
 
 Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells tattoo inspired streetwear. We sell a range of products including:
@@ -17,7 +24,7 @@ Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells
 ## User Experience (UX)
 
 ### User stories
-#### As Admin:
+#### - As Admin:
 <ul>
   <li>As a Site Admin I can add new products to the site so that I can keep customers interested.</li>
   <li>As a Site Admin I can edit products so that I can update products price, name and image.</li>
@@ -27,7 +34,7 @@ Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells
   <li>As a Site Admin I can remove a posted blog post so that I can remove any out of date posts.</li>
 </ul>
 
-#### As Site User / Shopper:
+#### - As Site User/ Shopper:
 <ul>
   <li>As a Site User I can register for an account so that I have a personal account and can view my profile.</li>
   <li>As a Site User I can receive an account registration confirmation Email so that I can verify my account was successfully created.</li>
@@ -39,12 +46,63 @@ Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells
   <li>As a Site User I can save delivery information so that going through checkout will be quicker.</li>
   <li>As a Site User / Shopper I can edit items in my basket so that I can change size, quantity and/or remove item(s).</li>
   <li>As a Site User / Shopper I can securely pay for products so that my order is processed.</li>
+  <li>As a Site User I can leave a product review so that I can share my opinion on the product and add a rating.</li>
 </ul>
 
-## Database Design
+### Database Design
 
-### Database ERD:
+#### - Database ERD:
 ![](/documentation/README/images/erd.jpg)
+
+### Design
+#### - Mockup Diagrams:
+Prior to writing any sort of code, I made a few mockup diagrams based on the sites layout.<br>
+Diagrams were created using [Wireframe.cc](https://wireframe.cc/)
+<details>
+<summary>Homepage Mockup Diagram</summary>
+
+![](/documentation/diagrams/homepage.png)
+</details>
+
+<details>
+<summary>All Products Page Mockup Diagram</summary>
+
+![](/documentation/diagrams/all-products-page.png)
+</details>
+
+<details>
+<summary>Product Detail Page Mockup Diagram</summary>
+
+![](/documentation/diagrams/product-detail.png)
+</details>
+
+<details>
+<summary>Blog Page Mockup Diagram</summary>
+
+![](/documentation/diagrams/blog-page.png)
+</details>
+
+<details>
+<summary>Blog Post Detail Page Mockup Diagram</summary>
+
+![](/documentation/diagrams/blog-post-detail.png)
+</details>
+
+#### - Colour Palette:
+![](/documentation/README/images/colour-palette.png) <br>
+The colour scheme is quite powerful and attractive to the user. The palette consists of black, dark red, earth yellow and white. <br>All four colours create a strong yet vulnerable combination. I wanted colours that represented the name of the brand, Flash Empire, as much as possible. The black and dark red are seen as strong and powerful (Empire), the earth yellow is almost like a gold that represents royalty, wealth (Empire) and the white is used to create a sense of light (Flash) and vulnerability.
+
+#### - Typography:
+![](/documentation/README/images/google-font.png)
+The font used throughout the site is 'Big Shoulder Display' from [Google Fonts](https://fonts.google.com/) with 'cursive' as the fallback font if the google font fails to load correctly.<br>
+I wanted a font that represented the brands name and 'Big Shoulders Display' does exactly that. It is bold and strong, especially using the 600 weight, these attributes makes it an appealling font for the user.
+
+#### - Imagery:
+In e-commerce, imagery is very important. Not just product images, but background images, brand banners and brand logos. And the quality of these images is equally as important.<br>
+I used [Vistaprint](https://www.vistaprint.co.uk/) product design to upload, royalty free, vector images from [Vecteezy](https://www.vecteezy.com/) onto clothing templates to create my product images. I got the brand logo design from [Smashing Logo](https://smashinglogo.com/en/). I edited, modified all images using [Pixelmator](https://www.pixelmator.com/pro/).
+
+
+
 
 
 
