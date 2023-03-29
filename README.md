@@ -121,6 +121,78 @@ I used [Vistaprint](https://www.vistaprint.co.uk/) product design to upload, roy
   ![](documentation/README/images/banner.png)
 </details>
 
+### Features 
+#### Header & Navigation:
+![](/documentation/README/images/nav-header.png)
+The header contains:
+- Brand logo and name
+- Product search input so the shoppers can search for a specific product
+- Account dropdown menu so Site Users can view profile, order history and wishlist. If user is superuser a product management option is available, where admin can add, edit or delete products. Also displays user's username.<br>
+  - <details>
+      <summary>Site User Account Dropdown</summary>
+  
+    ![](/documentation/README/images/account-drpdwn-user.png)
+    </details>
+   - <details>
+      <summary>Super User Account Dropdown</summary>
+  
+     ![](/documentation/README/images/account-drpdwn-admin.png)
+    </details>
+ - User's shopping bag, where users/shoppers can view what they've added to their bag.
+ 
+The navigation contains:
+- All products link, takes the user to all products page.
+- Categories dropwdown menu, gives the user the ability to filter products via their category.
+  - <details>
+      <summary>Categories Dropdown</summary>
+  
+     ![](/documentation/README/images/categories-drpdwn.png)
+      </details>
+- Sale link, takes users/shoppers to the stores discounted product.
+
+#### The Homepage:
+![](documentation/README/images/homepage.png)
+The homepage contains:
+- Background hero image.
+- A short tagline summary of what the site offers.
+- A shop now link, takes users/shoppers to all products page.
+
+#### Register Account:
+![](documentation/README/images/register-account.png)
+Shoppers can register an account which will enable them access to further features such as profile details, order history and wishlist.
+<details>
+  <summary>Verify User's Email</summary>
+  
+  ![](documentation/README/images/registering-new-user.png)
+</details>
+
+#### Signing In:
+![](documentation/README/images/account-sign-in.png)
+
+#### Signing Out:
+![](documentation/README/images/logout.png)
+
+#### All Products:
+![](documentation/README/images/all-products.png)
+The all products page contains:
+- All products page description.
+- Products sort by and colour filter feature (as annotated). Sorts product by name (ascending, descending), users selected choice changes red when clicked. Filters products via product colour.
+  - <details>
+      <summary>Sort By Dropdown</summary>
+  
+    ![](documentation/README/images/sort-by.png)
+    </details>
+   - <details>
+      <summary>Colour Dropdown</summary>
+  
+     ![](documentation/README/images/colour-filter.png)
+     </details>
+- Product count, total number of products available (as annotated).
+- Back to top button, when user scrolls down page a 'BTT' button appears and when clicked take users back to top of page (as annotated).
+
+#### Product Detail:
+
+
 
 
 
