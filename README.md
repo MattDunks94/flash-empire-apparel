@@ -8,9 +8,51 @@
 - [Business Model](#business-model)
 - [User Experience (UX)](#user-experience-ux)
   - [User Stories](#user-stories)
+    - [As Admin](#--as-admin)
+    - [As Site User / Shopper](#--as-site-user--shopper)
   - [Database Design](#database-design)
+  - [Interaction Design](#interaction-design)
   - [Design](#design)
+    - [Mockup Diagrams](#--mockup-diagrams)
+    - [Colour Palette](#--colour-palette)
+    - [Typography](#--typography)
+    - [Imagery](#--imagery)
   - [Features](#features)
+    - [Header & Navigation](#header--navigation)
+    - [The Homepage](#the-homepage)
+    - [Register Account](#register-account)
+    - [Signing In](#signing-in)
+    - [Signing Out](#signing-out)
+    - [All Products](#all-products)
+    - [Product Detail](#product-detail)
+    - [Add Product Review (For registered users)](#add-product-review-for-registered-users)
+    - [Wishlist (For registered users)](#wishlist-for-registered-users)
+    - [Blog](#blog)
+    - [Blog Post Detail](#blog-post-detail)
+    - [Users / Shoppers Shopping Bag](#users--shoppers-shopping-bag)
+    - [Checkout](#checkout)
+    - [Successful Checkout](#successful-checkout)
+    - [Add Product (For super users only)](#add-product-for-super-users-only)
+    - [Edit Product (For super users only)](#edit-product-for-super-users-only)
+    - [Footer](#footer)
+    - [Facebook Page](#facebook-page)
+    - [Instagram Page](#instagram-page)
+    - [My Profile Page (For registered users)](#my-profile-page-for-registered-users)
+- [Testing](#testing)
+  - [HTML Validation](#html-validation)
+  - [CSS Validation](#css-validation)
+  - [Python Validation](#python-validation)
+  - [Lighthouse Report](#lighthouse-report)
+    - [Homepage Lighthouse Report](#homepage-lighthouse-report)
+    - [All Products Page Lighthouse Report](#all-products-lighthouse-report)
+    - [Product Detail Page Lighthouse Report](#product-detail-lighthouse-report)
+    - [Add Product Page Lighthouse Report](#add-product-lighthouse-report)
+    - [Edit Product Page Lighthouse Report](#edit-product-lighthouse-report)
+    - [Blog Page Lighthouse Report](#blog-lighthouse-report)
+    - [Blog Post Detail Page Lighthouse Report](#blog-post-detail-lighthouse-report)
+    - [Bag Page Lighthouse Report](#bag-lighthouse-report)
+    - [My Profile Page Lighthouse Report](#profile-page-lighthouse-report)
+    - [Wishlist Page Lighthouse Report](#wishlist-page-lighthouse-report)
 
 ### Business Model
 
@@ -35,7 +77,7 @@ Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells
   <li>As a Site Admin I can remove a posted blog post so that I can remove any out of date posts.</li>
 </ul>
 
-#### - As Site User/ Shopper:
+#### - As Site User / Shopper:
 <ul>
   <li>As a Site User I can register for an account so that I have a personal account and can view my profile.</li>
   <li>As a Site User I can receive an account registration confirmation Email so that I can verify my account was successfully created.</li>
@@ -52,8 +94,19 @@ Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells
 
 ### Database Design
 
-#### - Database ERD:
+<details>
+<summary>Database ERD</summary>
+
 ![](/documentation/README/images/erd.jpg)
+</details>
+
+### Interaction Design
+
+<details>
+<summary>Super Users & Site Users Accessibility & Functionality Flowchart</summary>
+
+![](documentation/README/images/accessibility_functionality_flowchart.jpeg)
+</details>
 
 ### Design
 #### - Mockup Diagrams:
@@ -265,13 +318,13 @@ When non-registered users click on the 'add to wishlist' button, they are taken 
 #### Blog:
 Blog page for users/shoppers:
 ![](documentation/README/images/blog-for-users.png)
-Blog page for super users:
-![](documentation/README/images/blog-for-admin.png)
 The blog page for users/shoppers contains:
 - Blog post featured image, also a link to the post detail page.
 - Blog post title, also a link to the post detail page.
 - Post created on date.
 
+Blog page for super users:
+![](documentation/README/images/blog-for-admin.png)
 The blog page for super users additional features:
 - Edit blog post button, allows admin to edit blog post (as annotated above).
 - Add blog post button, allows admin to add new blog post (as annotated above).
@@ -369,12 +422,156 @@ The footer contains:
 [Flash Empire Apparel Instagram Pofile](https://www.instagram.com/flashempireapparel/)
 ![](documentation/README/images/instagram-profile.png)
 
-#### My Profile Page (For reigstered users):
+#### My Profile Page (For registered users):
 ![](documentation/README/images/profile-page.png)
 The my profile page contains:
 - The user's saved delivery information.
 - The user's order history, contains the order number, date of purchase, purchased items and order total.
 - Update profile button, for when the user modifies their delivery information, when clicked will update their details.
+
+## Testing
+### HTML Validation
+I used [W3C Markup Validation Service](https://validator.w3.org/) to test all HTML files.
+
+| File | Result | Test Screenshot |
+| ---- | ------ | ----------------|
+| bag/templates/bag/bag.html | Pass | ![](documentation/html-validation/bag.png) |
+| blog/templates/blog/blog.html | Pass | ![](documentation/html-validation/blog.png) |
+| blog/templates/blog/blog-post-detail.html | Pass | ![](documentation/html-validation/blog-post-detail.png)|
+| checkout/templates/checkout/checkout.html | Pass | ![](documentation/html-validation/checkout.png) |
+| checkout/templates/checkout/checkout_success.html | Pass | ![](documentation/html-validation/successful-checkout.png) |
+| home/templates/home/index.html | Pass | ![](documentation/html-validation/index.png) |
+| templates/allauth/account/login.html | Pass | ![](documentation/html-validation/login.png) |
+| templates/allauth/account/logout.html | Pass | ![](documentation/html-validation/logout.png) |
+| templates/allauth/account/signup.html | Pass | ![](documentation/html-validation/register.png) |
+| profiles/templates/profile/profile.html | Pass | ![](documentation/html-validation/profile.png) |
+| products/templates/products/edit_product.html | Pass | ![](documentation/html-validation/edit-product.png) |
+| products/templates/products/add_product.html | Pass | ![](documentation/html-validation/add-product.png) |
+| products/templates/products/add_review.html | Pass | ![](documentation/html-validation/add-review.png) |
+| products/templates/products/products.html | Pass | ![](documentation/html-validation/all-products.png) |
+| products/templates/products/add_review.html | Pass | ![](documentation/html-validation/add-review.png) |
+| wishlist/templates/wishlist/wishlist.html | Pass | ![](documentation/html-validation/wishlist.png) |
+
+### CSS Validation
+I used [W3C Markup Validation Service](https://validator.w3.org/) to test all CSS files via direct input.
+| File | Result | Test Screenshot |
+| ---- | ------ | --------------- |
+| static/css/base.css | Pass<br>(8 Warnings) | ![](documentation/css-validation/base-css.png) |
+| checkout/static/css/checkout.css | Pass<br>(1 Warning) | ![](documentation/css-validation/checkout-css.png) |
+| profiles/static/css/profile.css | Pass | ![](documentation/css-validation/profiles-css.png) |
+
+### JS Validation
+I used [jshint](https://jshint.com/) to test all JS files via direct input.
+| File | Result | Test Screenshot |
+| ---- | ------ | --------------- |
+| products/templates/products/products.html (Bottom of file) | No Errors | ![](documentation/js-validation/btt-btn-js.png) |
+| profiles/static/js/countryfield.js | No Errors<br>(1 Warning) | ![](documentation/js-validation/countryfield-js.png) |
+| products/templates/products/add_product.html (Bottom of file) | No Errors<br>(1 Warning) | ![](documentation/js-validation/new-img-file-js.png) |
+| bag/templates/bag/includes/quantity-input-script.html | No Errors<br>(3 Warnings)| ![](documentation/js-validation/qty-input-js.png) |
+| bag/templates/bag/bag.html (Bottom of file) | No Erros<br>(1 Warning) | ![](documentation/js-validation/update-qty-remove-js.png) |
+
+### Python Validation
+I used [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to lint my Python code.
+| File | Result | Test Screenshot |
+| ---- | ------ | --------------- |
+| bag/apps.py | No Errors | ![](documentation/python-validation/bag-apps-py.png) |
+| bag/templatetags/bag_tools.py | No Errors | ![](documentation/python-validation/bag-bagtools-py.png) |
+| bag/contexts.py | No Errors | ![](documentation/python-validation/bag-contexts-py.png) | 
+| bag/urls.py | No Errors | ![](documentation/python-validation/bag-urls-py.png) |
+| bag/views.py | No Errors | ![](documentation/python-validation/bag-views-py.png) |
+| blog/admin.py | No Errors | ![](documentation/python-validation/blog-admin-py.png) |
+| blog/forms.py | No Errors | ![](documentation/python-validation/blog-forms-py.png) |
+| blog/models.py | No Errors | ![](documentation/python-validation/blog-models-py.png) |
+| blog/views.py | No Errors | ![](documentation/python-validation/blog-views-py.png) |
+| checkout/forms.py | No Errors | ![](documentation/python-validation/checkout-forms-py.png) |
+| checkout/models.py | 1 Error | ![](documentation/python-validation/checkout-models-py.png) |
+| checkout/signals.py | No Errors | ![](documentation/python-validation/checkout-signals-py.png) |
+| checkout/views.py | No Errors | ![](documentation/python-validation/checkout-views-py.png) |
+| checkout/webhook_handler.py | 2 Errors | ![](documentation/python-validation/checkout-wh-handler-py.png) |
+| checkout/webhooks.py | 1 Error | ![](documentation/python-validation/checkout-wh-py.png) |
+| flash_empire_apparel/urls.py | No Errors | ![](documentation/python-validation/main-urls.png) |
+| products/admin.py | No Errors | ![](documentation/python-validation/products-admin-py.png) |
+| products/forms.py | No Errors | ![](documentation/python-validation/products-forms-py.png) |
+| products/models.py | No Errors | ![](documentation/python-validation/products-models-py.png) |
+| products/views.py | No Errors | ![](documentation/python-validation/products-views-py.png) |
+| wishlist/models.py | No Errors | ![](documentation/python-validation/wishlist-models-py.png) |
+| wishlist/views.py | No Errors | ![](documentation/python-validation/wishlist-views-py.png) |
+
+### Lighthouse Report 
+I used [Google Chrome DevTools Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to test performance, accessibility, best practises and SEO of selected pages.
+
+#### Homepage Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/homepage-lighthouse.png)
+   </details>
+
+#### All Products Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/all-products-lighthouse.png)
+   </details>
+
+#### Product Detail Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/product-detail-lighthouse.png)
+   </details>
+   
+#### Add Product Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/add-product-lighthouse.png)
+   </details>
+   
+#### Edit Product Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/edit-product-lighthouse.png)
+   </details>
+
+#### Blog Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/blog-lighthouse.png)
+   </details>
+   
+#### Blog Post Detail Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/blog-detail-lighthouse.png)
+   </details>
+
+#### Bag Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/bag-lighthouse.png)
+   </details>
+   
+#### Profile Page Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/profile-lighthouse.png)
+   </details>
+   
+#### Wishlist Page Lighthouse Report:
+   <details>
+   <summary>Test Screenshot</summary>
+  
+   ![](documentation/README/images/wishlist-lighthouse.png)
+   </details>
+   
+
+
 
 
 
