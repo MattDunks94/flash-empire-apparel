@@ -10,6 +10,7 @@
   - [User Stories](#user-stories)
   - [Database Design](#database-design)
   - [Design](#design)
+  - [Features](#features)
 
 ### Business Model
 
@@ -285,9 +286,7 @@ The blog post detail page contains:
 - Post content.
 
 #### Users / Shoppers Shopping Bag:
-![](documentation/README/images/shopping-bag.png)
-(Shopping bag page continued)
-![](documentation/README/images/shopping-bag-2.png)
+![](documentation/README/images/bag-page.png)
 The shopping bag page contains:
 - Product info, includes product name, shoppers desired product size and sku.
 - Product individual price.
@@ -304,6 +303,32 @@ The shopping bag page contains:
 - Total, order grand total, including delivery.
 - Secure checkout button, takes shoppers to the checkout page to continue with their purchase.
 - Keep shopping link, takes users back to all products page.  
+
+#### Checkout:
+![](documentation/README/images/checkout-page.png)
+The checkout page contains:
+- Customer information form, includes shoppers details.
+- Delivery details form, includes shoppers delivery information.
+- A save info checkbox, users can save all details to make future checkout processes alot quicker.
+- [Stripe](https://stripe.com/gb) payment input, for shoppers payment method.
+- The shoppers bag, displayed to the right of the customer info form, includes the shoppers bag and it's contents details.
+- Order subtotal and total, the amount the shopper will be charged.
+- Complete payment button, completes the shoppers order process.
+
+#### Successful Checkout:
+![](documentation/README/images/successfull-checkout.png)
+The successful checkout page contains:
+- Thank you message from Flash Empire Apparel, assuring the shopper that their order has been received.
+- Order no.
+- Order date, the date of purchase.
+- Order Details, includes delivery info and billing info.
+- The shoppers purchases and product details.
+- Keep shopping button, takes shoppers to all products page.
+- Order successful alert (visible in the top right of the window), when the order has successfully been processed.
+
+#### Add Product (For super users only):
+![]()
+
 
 
 
