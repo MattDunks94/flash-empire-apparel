@@ -100,6 +100,26 @@ I wanted a font that represented the brands name and 'Big Shoulders Display' doe
 #### - Imagery:
 In e-commerce, imagery is very important. Not just product images, but background images, brand banners and brand logos. And the quality of these images is equally as important.<br>
 I used [Vistaprint](https://www.vistaprint.co.uk/) product design to upload, royalty free, vector images from [Vecteezy](https://www.vecteezy.com/) onto clothing templates to create my product images. I got the brand logo design from [Smashing Logo](https://smashinglogo.com/en/). I edited, modified all images using [Pixelmator](https://www.pixelmator.com/pro/).
+<details>
+  <summary>Background Hero Image</summary>
+  
+  ![](media/FLASH-BANNER.png)
+</details>
+<details>
+  <summary>Mobile Background Hero Image</summary>
+  
+  ![](media/FLASH-SM-BANNER.png)
+</details>
+<details>
+  <summary>Brand Logo</summary>
+  
+  ![](documentation/README/images/FLASH-BADGE-LOGO.jpg)
+</details>
+<details>
+  <summary>Brand Banner</summary>
+  
+  ![](documentation/README/images/banner.png)
+</details>
 
 
 
