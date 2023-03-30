@@ -67,7 +67,7 @@
 - [Credits](#credits)
   - [Code](#code)
   - [Media](#media)
-- [Acknowledgment & Support](#acknowledgment--support)
+- [Acknowledgement & Support](#acknowledgement--support)
 
 ### Business Model
 
@@ -785,5 +785,5 @@ I then created a database for my project for all project data to be stored:
 - The clothing product images are from [VistaPrint](https://www.vistaprint.co.uk/) design template feature.
   - I used their upload design feature to add the my graphic print designs onto their apparel products, and print screened the resulting images.
 
-## Acknowledgment & Support:
+## Acknowledgement & Support:
 - My mentor Dario Carrasquel for supplying me with links for sitemaps, robots.txt, creating an ERD and using MailChimp. And for also giving advice on what to include for this README file.
