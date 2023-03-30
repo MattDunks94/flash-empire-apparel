@@ -597,7 +597,9 @@ Footer | Brand Banner Home Link<br>![](documentation/README/images/footer-brand-
 "" | Social Links<br>![](documentation/README/images/footer-social-links.png) | Click Individual Elements | Opens new tab to social pages | Pass |
 "" | Blog Link<br>![](documentation/README/images/footer-blog-link.png) | Click Element | Takes user to blog page | Pass |
 "" | Subscribe Element<br>![](documentation/README/images/footer-subscribe.png) | Enter email address, click subscribe btn | Adds user to subscription service | Pass |
-All Products | Sort By Dropdown<br>![](documentation/README/images/sort-by-dropdown.png) | Click Element | Reveals sorting choices, select choice, sorts products in desired way | Pass | 
+All Products | Sort By Dropdown<br>![](documentation/README/images/sort-by-dropdown.png) | Click Element, Select Choice | Sorts products in desired way | Pass | 
+"" | Colour Filter Dropdown<br>![](documentation/README/images/colour-dropdown.png) | Click Element, Select Choice | Filters products via colour choice | Pass |
+
    
    
 
