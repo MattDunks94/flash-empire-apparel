@@ -67,6 +67,7 @@
 - [Credits](#credits)
   - [Code](#code)
   - [Media](#media)
+  - [Inspiration](#inspiration)
 - [Acknowledgement & Support](#acknowledgement--support)
 
 ### Business Model
@@ -784,6 +785,11 @@ I then created a database for my project for all project data to be stored:
 - The product graphic print designs are from [Vecteezy.com](https://www.vecteezy.com/).
 - The clothing product images are from [VistaPrint](https://www.vistaprint.co.uk/) design template feature.
   - I used their upload design feature to add the my graphic print designs onto their apparel products, and print screened the resulting images.
+
+### Inspiration:
+- [Bad Monday](https://badmonday.com/) was a big inspiration during designing the project, especially with it's site layout design and product design. 
+- I gathered some product description examples from [Next](https://www.next.co.uk/nextsale) to use in my site, I modified these descriptions to describe my products. 
+- I got inspiration from [ASOS](https://www.asos.com/) for their order success page. 
 
 ## Acknowledgement & Support:
 - My mentor Dario Carrasquel for supplying me with links for sitemaps, robots.txt, creating an ERD and using MailChimp. And for also giving advice on what to include for this README file.
