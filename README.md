@@ -730,7 +730,9 @@ I then created a database for my project for all project data to be stored:
 - Adjust Product Quantity:
   - When editing shopping bag I noticed, when adjusting product quantity, you could only adjust the quantity of the  latest product added to the shopping bag. Think this maybe a Javascript glitch?
 - Error in database:
-  - I came upon errors involving the database and objects created but then didn't exist. This happened a couple of times and couldn't find any way around it other than to create a new database. I learned from the first time this happened and created a table of my [Site Data](documentation/PRO-5-DB-DATA.pdf) just in case it happened again, which it did. Having a copy of my site data made it that much quicker to import the data to the new database. 
+  - I came upon errors involving the database and objects created but then didn't exist. This happened a couple of times and couldn't find any way around it other than to create a new database. I learned from the first time this happened and created a table of my [Site Data](documentation/PRO-5-DB-DATA.pdf) just in case it happened again, which it did. Having a copy of my site data made it that much quicker to import the data to the new database.
+- Not receiving order confirmation email:
+  - Whenever I tested the checkout order process I never received an order confirmation email. Think this might have something to do with my webhook in stripe as I followed the 'Boutique Ado' videos step by step for this feature but unfortunately I have had issues with it.
 
 ## Technologies Used:
 
