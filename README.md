@@ -733,6 +733,8 @@ I then created a database for my project for all project data to be stored:
   - I came upon errors involving the database and objects created but then didn't exist. This happened a couple of times and couldn't find any way around it other than to create a new database. I learned from the first time this happened and created a table of my [Site Data](documentation/PRO-5-DB-DATA.pdf) just in case it happened again, which it did. Having a copy of my site data made it that much quicker to import the data to the new database.
 - Not receiving order confirmation email:
   - Whenever I tested the checkout order process I never received an order confirmation email. Think this might have something to do with my webhook in stripe as I followed the 'Boutique Ado' videos step by step for this feature but unfortunately I have had issues with it.
+- Media files were not displaying when deployed to Heroku.
+  - When deployed to Heroku static files were collected but not media files. I went back over the AWS videos in the 'Boutique Ado' walkthrough project to make sure I done everything correctly, which I did. I also looked at AWS' guide on how to link your bucket with projects but none of this helped the situation. Last resort was looking at YouTube videos on how to connect S3 bucket to Heroku projects and whilst following one I noticed the 'Read' checkbox, for Everyone(Public Access) was not checked within the permission tab. Once I ticked this checkbox media files finally appeared on my deployed site.     
 
 ## Technologies Used:
 
