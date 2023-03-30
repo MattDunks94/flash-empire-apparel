@@ -29,6 +29,8 @@
     - [Wishlist (For registered users)](#wishlist-for-registered-users)
     - [Blog](#blog)
     - [Blog Post Detail](#blog-post-detail)
+    - [Add Blog Post (For super users only)](#add-blog-post-for-super-users-only)
+    - [Edit Blog Post(For super users only)](#edit-blog-post-for-super-users-only)
     - [Users / Shoppers Shopping Bag](#users--shoppers-shopping-bag)
     - [Checkout](#checkout)
     - [Successful Checkout](#successful-checkout)
@@ -42,7 +44,7 @@
   - [HTML Validation](#html-validation)
   - [CSS Validation](#css-validation)
   - [Python Validation](#python-validation)
-  - [Lighthouse Report](#lighthouse-report)
+  - [Lighthouse Reports](#lighthouse-reports)
     - [Homepage Lighthouse Report](#homepage-lighthouse-report)
     - [All Products Page Lighthouse Report](#all-products-lighthouse-report)
     - [Product Detail Page Lighthouse Report](#product-detail-lighthouse-report)
@@ -53,6 +55,19 @@
     - [Bag Page Lighthouse Report](#bag-lighthouse-report)
     - [My Profile Page Lighthouse Report](#profile-page-lighthouse-report)
     - [Wishlist Page Lighthouse Report](#wishlist-page-lighthouse-report)
+   - [Manual Testing](#manual-testing)
+   - [Device Testing](#device-testing)
+   - [Browser Testing](#browser-testing)
+- [Deployment](#deployment)
+- [Features for the Future](#features-for-the-future)
+- [Bugs & Errors](#bugs--errors)
+- [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used) 
+  - [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
+- [Credits](#credits)
+  - [Code](#code)
+  - [Media](#media)
+- [Acknowledgment & Support](#acknowledgment--support)
 
 ### Business Model
 
@@ -346,6 +361,21 @@ The blog post detail page contains:
 - Blog post featured image.
 - Post content.
 
+#### Add Blog Post (For super users only):
+![](documentation/README/images/add-blog-post.png)
+The add blog post page contains:
+- Blog post form, for super users to populate with blog post details.
+- Add blog post button, adds created blog post to blog page.
+- Cancel button, cancels add blog post operation, returns user to blog page.
+
+#### Edit Blog Post (For super users only):
+![](documentation/README/images/edit-blog-post.png)
+The edit blog post page contains:
+- Pre-populated blog post form, form with current blog post details.
+- Update blog post button, updates blog post details.
+- Remove blog post button, removes chosen blog post.
+- Cancel button, cancels the edit blog post operation, returns user back to blog page.
+
 #### Users / Shoppers Shopping Bag:
 ![](documentation/README/images/bag-page.png)
 The shopping bag page contains:
@@ -510,7 +540,7 @@ I used [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to lint m
 | wishlist/models.py | No Errors | ![](documentation/python-validation/wishlist-models-py.png) |
 | wishlist/views.py | No Errors | ![](documentation/python-validation/wishlist-views-py.png) |
 
-### Lighthouse Report 
+### Lighthouse Reports
 I used [Google Chrome DevTools Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to test performance, accessibility, best practises and SEO of selected pages.
 
 #### Homepage Lighthouse Report:
@@ -586,186 +616,170 @@ I used [Google Chrome DevTools Lighthouse](https://developer.chrome.com/docs/lig
 ### Manual Testing:
 Location | Element/Feature | Operation | Expected Result | Test Result |
 | ------ | --------------- | --------- | --------------- | --------------- |
-Header | Brand Banner Home Link<br>![](documentation/README/images/brand-banner-home-link.png) | Click Element | Returns to homepage | Pass |
+[Header](#header--navigation) | Brand Banner Home Link<br>![](documentation/README/images/brand-banner-home-link.png) | Click Element | Returns to homepage | Pass |
 "" | Search Bar<br>![](documentation/README/images/search-bar.png) | Search for product | Displays desired search result, If nothing entered display error message | Pass |
 "" | Account Dropdown Links<br>![](documentation/README/images/account-links.png) | Click Desired Element | Takes user to desired page links | Pass |
 "" | Shopping Bag Link<br>![](documentation/README/images/shopping-bag-link.png) | Click Element | Takes user to their shopping bag page | Pass |
 "" | All Products Nav Link<br>![](documentation/README/images/all-products-link.png) | Click Element | Takes user to all products page | Pass |
 "" | Categories Nav Link<br>![](documentation/README/images/categories-link.png) | Click Element | Reveals dropdown of available product categories | Pass |
 "" | Sale Nav Link<br>![](documentation/README/images/sale-link.png) | Click Element | Takes user to the sale page | Pass | 
-Home | Shop Now Btn<br>![](documentation/README/images/shop-now-btn.png) | Click Element | Takes user to all products page | Pass | 
-Footer | Brand Banner Home Link<br>![](documentation/README/images/footer-brand-banner.png) | Click Element | Returns to homepage | Pass | 
+[Home](#the-homepage) | Shop Now Btn<br>![](documentation/README/images/shop-now-btn.png) | Click Element | Takes user to all products page | Pass | 
+[Footer](#footer) | Brand Banner Home Link<br>![](documentation/README/images/footer-brand-banner.png) | Click Element | Returns to homepage | Pass | 
 "" | Shop Links<br>![](documentation/README/images/footer-shop-links.png) | Click Individual Elements | Takes user to desired product categories page | Pass | 
 "" | Social Links<br>![](documentation/README/images/footer-social-links.png) | Click Individual Elements | Opens new tab to social pages | Pass |
 "" | Blog Link<br>![](documentation/README/images/footer-blog-link.png) | Click Element | Takes user to blog page | Pass |
-"" | Subscribe Element<br>![](documentation/README/images/footer-subscribe.png) | Enter email address, click subscribe btn | Adds user to subscription service | Pass |
-All Products | Sort By Dropdown<br>![](documentation/README/images/sort-by-dropdown.png) | Click Element, Select Choice | Sorts products in desired way | Pass | 
+"" | Subscribe Element<br>![](documentation/README/images/footer-subscribe.png) | Enter email address, click subscribe btn | Adds user to subscription service, user receives [subscription email](#footer) | Pass |
+[All Products](#all-products) | Sort By Dropdown<br>![](documentation/README/images/sort-by-dropdown.png) | Click Element, Select Choice | Sorts products in desired way | Pass | 
 "" | Colour Filter Dropdown<br>![](documentation/README/images/colour-dropdown.png) | Click Element, Select Choice | Filters products via colour choice | Pass |
 "" | Product Image Link<br>![](documentation/README/images/product-image-link.png) | Click Element | Takes user to product detail page | Pass |
 "" | Category Link<br>![](documentation/README/images/category-link.png) | Click Element | Takes user to the product category page | Pass |
 "" | Wishlist Btn<br>![](documentation/README/images/wishlist-btn.png) | Click Element | If signed in, add product to wishlist, if not registered display error take user to sign in page | Pass |
 "" | Edit Product Btn (For Admin)<br>![](documentation/README/images/edit-product-btn.png) | Click Element | Takes super user to edit product page, displays info alert | Pass |
 "" | Back To Top Btn<br>![](documentation/README/images/btt-btn-link.png) | Click Element | Returns user to top of page | Pass |
-Product Detail | Category Link<br>![](documentation/README/images/category-link.png) | Click Element | Takes user to the product category page | Pass |
+[Product Detail](#product-detail) | Category Link<br>![](documentation/README/images/category-link.png) | Click Element | Takes user to the product category page | Pass |
 "" | Edit Product Btn (For Admin)<br>![](documentation/README/images/edit-product-btn.png) | Click Element | Takes super user to edit product page, displays info alert | Pass |
 "" | Wishlist Btn<br>![](documentation/README/images/wishlist-btn.png) | Click Element | If signed in, add product to wishlist, if not registered display error take user to sign in page | Pass |
 "" | Add To Bag Btn<br>![](documentation/README/images/add-to-bag-btn.png) | Click Element | Adds product to users/shoppers bag, displays shopping bag toast | Pass |
 "" | Add Review Btn (For registered users)<br>![](documentation/README/images/add-review-btn.png) | Click Element | Takes user to add review form page | Pass |
 "" | Keep Shopping Btn<br>![](documentation/README/images/keep-shopping-btn.png) | Click Element | Takes user to all products page | Pass |
-Add Product | Select Image Btn<br>![](documentation/README/images/select-img-btn.png) | Click Element | Allows super user to upload image file, if no image uploaded display product placeholder image | Pass |
+[Add Product](#add-product-for-super-users-only) | Select Image Btn<br>![](documentation/README/images/select-img-btn.png) | Click Element | Allows super user to upload image file, if no image uploaded display product placeholder image | Pass |
 "" | Add Product Btn<br>![](documentation/README/images/add-product-btn.png) | Click Element | Adds new product to store, displays successful alert, takes super user to new product detail page | Pass |
 "" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels add product operation, returns super user back to homepage | Pass |
-Edit Product | Remove Product Image<br>![](documentation/README/images/remove-img-box.png) | Click Element | Removes image when updated product | Pass |
+[Edit Product](#edit-product-for-super-users-only) | Remove Product Image<br>![](documentation/README/images/remove-img-box.png) | Click Element | Removes image when updated product | Pass |
 "" | Update Product Btn<br>![](documentation/README/images/update-product-btn.png) | Click Element | Updated product detail, takes super user to product detail page, displays successfull update product alert | Pass |
 "" | Remove Product Btn<br>![](documentation/README/images/remove-product-btn.png) | Click Element | Removes product from store, displays successfull remove product alert  | Pass |
-Blog | Blog Post Links<br>![](documentation/README/images/blog-post-links.png) | Click blog post featured image or title element | Takes user to blog post detail page | Pass |
+[Blog](#blog) | Blog Post Links<br>![](documentation/README/images/blog-post-links.png) | Click blog post featured image or title element | Takes user to blog post detail page | Pass |
 "" | Add Blog Post Btn (For Admin)<br>![](documentation/README/images/add-blog-post-btn.png) | Click Element | Takes super user to add blog post form page | Pass |
 "" | Edit Blog Post Btn (For Admin)<br>![](documentation/README/images/edit-blog-post-btn.png) | Click Element | Takes super user to edit blog post form, displays info alert | Pass |
-Add Blog Post | Upload Feat. Image Btn<br>![](documentation/README/images/blog-ft-image-upload.png) | Click Element | Allows user to upload a featured image for blog post, if no image uploaded display placeholder featured image | Pass | 
+[Add Blog Post]() | Upload Feat. Image Btn<br>![](documentation/README/images/blog-ft-image-upload.png) | Click Element | Allows user to upload a featured image for blog post, if no image uploaded display placeholder featured image | Pass | 
 "" | Add Blog Post Btn<br>![](documentation/README/images/blog-post-add-btn.png) | Click Element | Adds new blog post to blog page, displays successful alert | Pass |
 "" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels add product operation, returns super user back to blog page | Pass |
-Edit Blog Post | Update Blog Post Btn<br>![](documentation/README/images/update-blog-post-btn.png) | Click Element | Updates blog post details, displays successfull blog post alert, returns super user back to blog post detail | Pass |
+[Edit Blog Post](#edit-blog-post-for-super-users-only) | Update Blog Post Btn<br>![](documentation/README/images/update-blog-post-btn.png) | Click Element | Updates blog post details, displays successfull blog post alert, returns super user back to blog post detail | Pass |
 "" | Remove Blog Post Btn<br>![](documentation/README/images/remove-blog-post-btn.png) | Click Element | Removes blog post from blog, displays successfull remove blog post alert, returns super user to blog page | Pass | 
 "" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels edit blog post operation, returns super user back to blog page | Pass |
-Wishlist | Wished Item Links<br>![](documentation/README/images/wished-item-links.png) | Click Element | Product img and name links takes user to product detail page | Pass |
-"" | Remove From Wishlist Btn<br>![](documentation/README/images/remove-wished-item-btn.png) | Click Element | Removes wished item form users wishlist, displays successfull removed item from wishlist alert | Pass |  
-
-
-
-   
-   
-
-The site is fully responsive on most handheld and desktop devices.
-
-## Features For The Future
-<ul>
-  <li>Add a remove review feature when signed in as admin</li>
-  <ul>
-    <li>This allows the admin control over all customer reviews and can remove them if any explicit content is used.</li>
-    <li>Creates a more safe environment for the user.</li>
-  </ul>
-  <li>Image Carousel</li>
-  <ul>
-    <li>Add a bootstrap carousel to product detail images. This allows the opportunity to really show off the products and their details.</li>
-  </ul>
-</ul>
-
-
-## Testing
+[Wishlist](#wishlist-for-registered-users) | Wished Item Links<br>![](documentation/README/images/wished-item-links.png) | Click Element | Product img and name links takes user to product detail page | Pass |
+"" | Remove From Wishlist Btn<br>![](documentation/README/images/remove-wished-item-btn.png) | Click Element | Removes wished item form users wishlist, displays successfull removed item from wishlist alert | Pass |
+[Shopping Bag](#users--shoppers-shopping-bag) | Product Image<br>![](documentation/README/images/bag-product-img-link.png) | Click Element | Directs users to the product detail page | Pass |
+"" | Item Quantity Btns<br>![](documentation/README/images/bag-qty-btns.png) | Click Element | Adjusts the quantity of items in users bag, displays shopping bag toast alerting updated item quantity | Pass |
+"" | Remove From Bag Btn<br>![](documentation/README/images/remove-from-bag-btn.png) | Click Element | Removes desired item from bag, displays alert indicating removed product | Pass |
+"" | Secure Checkout Btn<br>![](documentation/README/images/secure-checkout-btn.png) | Click Element | Directs user to checkout page | Pass |
+"" | Keep Shopping Btn<br>![](documentation/README/images/keep-shopping-btn.png) | Click Element | Takes user to all products page | Pass |
 
 ### Device Testing:
-<ul>
-  <li>Tested the application on several different devices, such as iPhone (11, SE), iPad air and Google nest hub (2nd gen).</li>
-  <li>No bugs or errors returned when testing on these devices.</li>
-</ul>
+Tested the application on several different devices, such as iPhone (11, SE), iPad air and Google nest hub (2nd gen).
+No bugs or errors returned when testing on these devices. Only certain elements didn't respond that all well (see [Features for the Future](#features-for-the-future)).
 
 ### Browser Testing:
-<ul>
-  <li>No bugs or errors occurred when testing on the following browsers:</li>
-  <ul>
-    <li>Google Chrome</li>
-    <li>Firefox</li>
-    <li>Safari</li>
-  </ul>
-</ul>
+No bugs or errors occurred when testing on the following browsers:
+- Google Chrome
+- Firefox
+- Safari
 
-### Bugs & Errors:
-<ul>
-  <li>Adjust Product Quantity:</li>
-  <ul>
-    <li>When editing shopping bag I noticed, when adjusting product quantity, you could only adjust the latest product added quantity.<br>
-    Think this maybe a Javascript glitch?</li>
-    <img src="/README/images/qty-bug.png">
-  </ul>
-  <li>Value too long error:
-    <ul>
-      <li>One error I came up against was this 'value too long' error (as seen below).<br>
-      I overcame this error by removing my database and creating new one.</li>
-      <img src="/README/images/value-too-long-error.png">
-      <br>
-    </ul>
-  </li>
-  <li>No Media Files:</li>
-  <ul>
-  <li>Unfortunately, my final deployed site, on <a href="https://www.heroku.com/">Heroku</a>, does not have any media files. This includes all product           files.<br> Tried to overcome this by altering the AWS media path but unfortunately no luck.</li>
-  </ul>
-</ul>
+## Deployment
+I developed this project on GitHub, using Git for version control. I then deployed to Heroku using the following steps:
+- Log in to [Heroku](https://id.heroku.com/login) account.
+- Click 'New' and create new app.
+- I selected Europe as my region.
+- Click 'Create App'.
+
+I then created a database for my project for all project data to be stored:
+- Log in to [ElephantSQL](https://customer.elephantsql.com/login) account.
+- Select 'Create new instance'.
+- Give database a name.
+- Select plan (Tiny Turtle Free).
+- Select region (europe-west2).
+- Click 'Review'.
+- Click 'Create Instance'.
+- Redirected to ElephantSQL dashboard. 
+- Select newly created database.
+- Copy database URL link.
+- Return to Heroku.
+- Navigate to created app settings.
+- Select 'Reveal config vars'.
+- Add config var DATABASE_URL along with the value of the database URL from ElephantSQL.
+- In Gitpod workspace console terminal, install dj-database_url and psycopg2 to connect to your database (pip3 install dj-database-url psycopg2).
+- Freeze requirements.txt (pip3 freeze --local>requirements.txt).
+- In project settings.py file, import dj_database_url.
+- In the workspace terminal make migrations (python3 manage.py makemigrations).
+- Then also in terminal, migrate changes (python3 manage.py migrate).
+- In workspace terminal, create super user (python3 manage.py createsuperuser)
+- Follow the steps to create super user (Name, email(optional), password x2)
+- In the workspace terminal install gunicorn server (pip3 install gunicorn)
+- Update requirements.txt file (pip3 freeze --local > requirements.txt).
+- Create Procfile (touch Procfile).
+- Go back to created app settings in Heroku.
+- Add new config var DIASABLE_COLLECTSTATIC with a value of 1. 
+- In Github workspace terminal, commit and push changes to Github.
+- Back in Heroku created app, go to 'Deploy' and connect Github repository by searching for it and click connect.
+- Selected 'Automatic Deploys', so whenever I push changes to Github it'll deploy in Heroku.
+- Clicked deploy branch manually to deploy there and then.
+- Once build is complete, click view to view deployed app.
+
+## Features For The Future
+
+- Add 'Delete Review' Button.
+  - This feature would be for site users and superusers. If users want to remove their product review from the site, or if the superuser wants to remove them due to explicit content used by the site user.
+- Product Image Carousel Feature.
+  - This would be a good feature to have as you can add as many product images as you would like and allows the opportunity to show the users/shoppers more details of the product.
+- Order Confirmation Email.
+  - Already have the code for this but unfortunately does not work. This will give the shoppers/users assurance that their order has been processed.
+- Better site responsiveness.
+  - Although the site is responsive on many devices, there are certain elements that need to be modified manually in media queries, especially on XS/S screens.    
+
+## Bugs & Errors:
+- Adjust Product Quantity:
+  - When editing shopping bag I noticed, when adjusting product quantity, you could only adjust the quantity of the  latest product added to the shopping bag. Think this maybe a Javascript glitch?
+- Error in database:
+  - I came upon errors involving the database and objects created but then didn't exist. This happened a couple of times and couldn't find any way around it other than to create a new database. I learned from the first time this happened and created a table of my [Site Data](documentation/PRO-5-DB-DATA.pdf) just in case it happened again, which it did. Having a copy of my site data made it that much quicker to import the data to the new database. 
 
 ## Technologies Used:
 
 ### Languages Used:
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/CSS">CSS3</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></li>
-</ul>
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/)
+
 
 ### Frameworks, Libraries and Programs Used:
-<ul>
-  <li><a href="https://fonts.google.com/">Google Fonts</a></li>
-  <ul>
-    <li>Google fonts was used to import the '' font.</li>
-  </ul>
-    <li><a href="https://fontawesome.com/">FontAwesome</a></li>
-  <ul>
-    <li>Fontawesome was used to add icons to several elements.</li>
-  </ul>
-    <li><a href="https://git-scm.com/">Git</a></li>
-  <ul>
-    <li>Git was used for version control and using the Gitpod terminal to commit and push to GitHub.</li>
-  </ul>
-  <li><a href="https://github.com/">GitHub</a></li>
-    <ul>
-    <li>GitHub is used to store the projects code after being pushed from Git.</li>
-  </ul>
-  <li><a href="https://www.pixelmator.com/pro/">Pixelmator</a></li>
-  <ul>
-    <li>I used Pixelmator to edit logo, homepage image and product images.</li>
-  </ul>
-  <li><a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/">Bootstrap4</a></li>
-  <ul>
-    <li>Bootstrap framework is used for styling, structuring and reponsive development.</li>
-  </ul>
-  <li><a href="https://en.wikipedia.org/wiki/JQuery">jQuery</a></li>
-  <ul>
-    <li>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling and       animation much simpler with an easy-to-use API that works across a multitude of browsers.</li>
-  </ul>
-    <li><a href="https://www.djangoproject.com/">Django</a></li>
-  <ul>
-    <li>Django framework was used to create the app/project.</li>
-  </ul>
-    <li><a href="https://en.wikipedia.org/wiki/Stripe,_Inc.">Stripe</a></li>
-  <ul>
-    <li>Stripe was used for the payment process integration.</li>
-  </ul>
-    <li><a href="https://www.heroku.com/">Heroku</a></li>
-  <ul>
-    <li>Heroku is used for creating my app.</li>
-  </ul>
-    <li><a href="https://aws.amazon.com/">AWS</a></li>
-  <ul>
-    <li>AWS is used for storing my static and media files.</li>
-  </ul>
-</ul>
+- [Google Fonts](https://fonts.google.com/)
+  - Google fonts was used to import the '' font.
+- [FontAwesome](https://fontawesome.com/)
+  - Fontawesome was used to add icons to several elements.
+- [Git](https://git-scm.com/)
+  - Git was used for version control and using the Gitpod terminal to commit and push to GitHub.
+- [GitHub](https://github.com/)
+  - GitHub is used to store the projects code after being pushed from Git.
+- [Pixelmator](https://www.pixelmator.com/pro/)
+  - I used Pixelmator to edit logo, homepage image and product images.
+- [Bootstrap4](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+  - Bootstrap framework is used for styling, structuring and reponsive development.
+- [jQuery](https://en.wikipedia.org/wiki/JQuery)
+  - jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling and       animation much simpler with an easy-to-use API that works across a multitude of browsers.
+- [Django](https://www.djangoproject.com/)
+  - Django framework was used to create the app/project.
+- [Stripe](https://en.wikipedia.org/wiki/Stripe,_Inc.)
+  - Stripe was used for the payment process integration.
+- [Heroku](https://www.heroku.com/)
+  - Heroku is used for creating my app.
+- [AWS](https://aws.amazon.com/)
+  - AWS is used for storing my static and media files.
 
 ## Credits:
 
 ### Code:
-<ul>
-  <li>The hover underline effect is from <a href="30secondsofcode.org/css/s/hover-underline-animation/">30secondsofcode.org</a>.</li>
-  <li>The slanted div effect is from <a href="html-css-js.com/css/generator/transform/">html-css-js.com</a>.</li>
-  <li>I gathered my colour palette from <a href="https://coolors.co">html-css-js.com</a>.</li>
-  <li>I followed the <a href="https://codeinstitute.net/">Code Institutes</a> walkthrough project 'Boutique Ado'. This project was a big help, especially,    with the stripe payment backend code.</li>
-  <li>The colour filter code was from <a href="https://www.youtube.com/watch?v=exN6RdC_xbE">Youtube</a>.</li>
-  <li>I occasionally referenced to <a href="https://stackoverflow.com/">StackOverFlow</a> to overcome any issues.</li>
-  
-</ul>
+- The hover underline effect is from [30secondsofcode.org](https://www.30secondsofcode.org/css/s/hover-underline-animation/).
+- The slanted div effect is from [html-css-js.com](https://html-css-js.com/css/generator/transform/).
+- I generated my colour palette from [Coolors.co](https://coolors.co).
+- I followed the [Code Institutes](https://codeinstitute.net/) walkthrough project 'Boutique Ado'. This project was a big help, especially with the stripe payment backend code.
+- The colour filter code was from [Youtube](https://www.youtube.com/watch?v=exN6RdC_xbE).
+- I occasionally referenced to [StackOverFlow](https://stackoverflow.com/) to overcome any issues.
 
 ### Media:
-<ul>
-  <li>The logo and branding are from <a href="https://smashinglogo.com/en/">smashinglogo</a>.</li>
-  <li>The product graphic print designs are from <a href="https://www.vecteezy.com/">Vecteezy.com</a></li>
-  <li>The clothing product images are from <a href="https://www.vistaprint.co.uk/">VistaPrint</a>.<br>
-  I used their upload design feature to add the my graphic print designs onto their apparel products, and print screened the resulting images.</li>
-</ul>
+- The logo and branding are from [smashinglogo](https://smashinglogo.com/en/).
+- The product graphic print designs are from [Vecteezy.com](https://www.vecteezy.com/).
+- The clothing product images are from [VistaPrint](https://www.vistaprint.co.uk/) design template feature.
+  - I used their upload design feature to add the my graphic print designs onto their apparel products, and print screened the resulting images.
+
+## Acknowledgment & Support:
+- My mentor Dario Carrasquel for supplying me with links for sitemaps, robots.txt, creating an ERD and using MailChimp. And for also giving advice on what to include for this README file.
