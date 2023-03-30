@@ -653,7 +653,7 @@ Location | Element/Feature | Operation | Expected Result | Test Result |
 "" | Edit Blog Post Btn (For Admin)<br>![](documentation/README/images/edit-blog-post-btn.png) | Click Element | Takes super user to edit blog post form, displays info alert | Pass |
 [Add Blog Post]() | Upload Feat. Image Btn<br>![](documentation/README/images/blog-ft-image-upload.png) | Click Element | Allows user to upload a featured image for blog post, if no image uploaded display placeholder featured image | Pass | 
 "" | Add Blog Post Btn<br>![](documentation/README/images/blog-post-add-btn.png) | Click Element | Adds new blog post to blog page, displays successful alert | Pass |
-"" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels add product operation, returns super user back to blog page | Pass |
+"" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels add blog post operation, returns super user back to blog page | Pass |
 [Edit Blog Post](#edit-blog-post-for-super-users-only) | Update Blog Post Btn<br>![](documentation/README/images/update-blog-post-btn.png) | Click Element | Updates blog post details, displays successfull blog post alert, returns super user back to blog post detail | Pass |
 "" | Remove Blog Post Btn<br>![](documentation/README/images/remove-blog-post-btn.png) | Click Element | Removes blog post from blog, displays successfull remove blog post alert, returns super user to blog page | Pass | 
 "" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels edit blog post operation, returns super user back to blog page | Pass |
