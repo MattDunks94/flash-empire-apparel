@@ -586,12 +586,14 @@ I used [Google Chrome DevTools Lighthouse](https://developer.chrome.com/docs/lig
 ### Manual Testing:
 Location | Element/Feature | Operation | Expected Result | Test Result |
 | ------ | --------------- | --------- | --------------- | --------------- |
-Home | Brand Banner Home Link<br>![](documentation/README/images/brand-banner-home-link.png) | Click Element | Returns to homepage | Pass |
-"" | Search Bar<br>![](documentation/README/images/search-bar.png) | Search for product | Displays desired search result | Pass |
+Header | Brand Banner Home Link<br>![](documentation/README/images/brand-banner-home-link.png) | Click Element | Returns to homepage | Pass |
+"" | Search Bar<br>![](documentation/README/images/search-bar.png) | Search for product | Displays desired search result, If nothing entered display error message | Pass |
+"" | Account Dropdown Links<br>![](documentation/README/images/account-links.png) | Click Desired Element | Takes user to desired page links | Pass |
+"" | Shopping Bag Link<br>![](documentation/README/images/shopping-bag-link.png) | Click Element | Takes user to their shopping bag page | Pass |
 "" | All Products Nav Link<br>![](documentation/README/images/all-products-link.png) | Click Element | Takes user to all products page | Pass |
 "" | Categories Nav Link<br>![](documentation/README/images/categories-link.png) | Click Element | Reveals dropdown of available product categories | Pass |
 "" | Sale Nav Link<br>![](documentation/README/images/sale-link.png) | Click Element | Takes user to the sale page | Pass | 
-"" | Shop Now Btn<br>![](documentation/README/images/shop-now-btn.png) | Click Element | Takes user to all products page | Pass | 
+Home | Shop Now Btn<br>![](documentation/README/images/shop-now-btn.png) | Click Element | Takes user to all products page | Pass | 
 Footer | Brand Banner Home Link<br>![](documentation/README/images/footer-brand-banner.png) | Click Element | Returns to homepage | Pass | 
 "" | Shop Links<br>![](documentation/README/images/footer-shop-links.png) | Click Individual Elements | Takes user to desired product categories page | Pass | 
 "" | Social Links<br>![](documentation/README/images/footer-social-links.png) | Click Individual Elements | Opens new tab to social pages | Pass |
@@ -599,6 +601,36 @@ Footer | Brand Banner Home Link<br>![](documentation/README/images/footer-brand-
 "" | Subscribe Element<br>![](documentation/README/images/footer-subscribe.png) | Enter email address, click subscribe btn | Adds user to subscription service | Pass |
 All Products | Sort By Dropdown<br>![](documentation/README/images/sort-by-dropdown.png) | Click Element, Select Choice | Sorts products in desired way | Pass | 
 "" | Colour Filter Dropdown<br>![](documentation/README/images/colour-dropdown.png) | Click Element, Select Choice | Filters products via colour choice | Pass |
+"" | Product Image Link<br>![](documentation/README/images/product-image-link.png) | Click Element | Takes user to product detail page | Pass |
+"" | Category Link<br>![](documentation/README/images/category-link.png) | Click Element | Takes user to the product category page | Pass |
+"" | Wishlist Btn<br>![](documentation/README/images/wishlist-btn.png) | Click Element | If signed in, add product to wishlist, if not registered display error take user to sign in page | Pass |
+"" | Edit Product Btn (For Admin)<br>![](documentation/README/images/edit-product-btn.png) | Click Element | Takes super user to edit product page, displays info alert | Pass |
+"" | Back To Top Btn<br>![](documentation/README/images/btt-btn-link.png) | Click Element | Returns user to top of page | Pass |
+Product Detail | Category Link<br>![](documentation/README/images/category-link.png) | Click Element | Takes user to the product category page | Pass |
+"" | Edit Product Btn (For Admin)<br>![](documentation/README/images/edit-product-btn.png) | Click Element | Takes super user to edit product page, displays info alert | Pass |
+"" | Wishlist Btn<br>![](documentation/README/images/wishlist-btn.png) | Click Element | If signed in, add product to wishlist, if not registered display error take user to sign in page | Pass |
+"" | Add To Bag Btn<br>![](documentation/README/images/add-to-bag-btn.png) | Click Element | Adds product to users/shoppers bag, displays shopping bag toast | Pass |
+"" | Add Review Btn (For registered users)<br>![](documentation/README/images/add-review-btn.png) | Click Element | Takes user to add review form page | Pass |
+"" | Keep Shopping Btn<br>![](documentation/README/images/keep-shopping-btn.png) | Click Element | Takes user to all products page | Pass |
+Add Product | Select Image Btn<br>![](documentation/README/images/select-img-btn.png) | Click Element | Allows super user to upload image file, if no image uploaded display product placeholder image | Pass |
+"" | Add Product Btn<br>![](documentation/README/images/add-product-btn.png) | Click Element | Adds new product to store, displays successful alert, takes super user to new product detail page | Pass |
+"" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels add product operation, returns super user back to homepage | Pass |
+Edit Product | Remove Product Image<br>![](documentation/README/images/remove-img-box.png) | Click Element | Removes image when updated product | Pass |
+"" | Update Product Btn<br>![](documentation/README/images/update-product-btn.png) | Click Element | Updated product detail, takes super user to product detail page, displays successfull update product alert | Pass |
+"" | Remove Product Btn<br>![](documentation/README/images/remove-product-btn.png) | Click Element | Removes product from store, displays successfull remove product alert  | Pass |
+Blog | Blog Post Links<br>![](documentation/README/images/blog-post-links.png) | Click blog post featured image or title element | Takes user to blog post detail page | Pass |
+"" | Add Blog Post Btn (For Admin)<br>![](documentation/README/images/add-blog-post-btn.png) | Click Element | Takes super user to add blog post form page | Pass |
+"" | Edit Blog Post Btn (For Admin)<br>![](documentation/README/images/edit-blog-post-btn.png) | Click Element | Takes super user to edit blog post form, displays info alert | Pass |
+Add Blog Post | Upload Feat. Image Btn<br>![](documentation/README/images/blog-ft-image-upload.png) | Click Element | Allows user to upload a featured image for blog post, if no image uploaded display placeholder featured image | Pass | 
+"" | Add Blog Post Btn<br>![](documentation/README/images/blog-post-add-btn.png) | Click Element | Adds new blog post to blog page, displays successful alert | Pass |
+"" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels add product operation, returns super user back to blog page | Pass |
+Edit Blog Post | Update Blog Post Btn<br>![](documentation/README/images/update-blog-post-btn.png) | Click Element | Updates blog post details, displays successfull blog post alert, returns super user back to blog post detail | Pass |
+"" | Remove Blog Post Btn<br>![](documentation/README/images/remove-blog-post-btn.png) | Click Element | Removes blog post from blog, displays successfull remove blog post alert, returns super user to blog page | Pass | 
+"" | Cancel Btn<br>![](documentation/README/images/cancel-btn.png) | Click Element | Cancels edit blog post operation, returns super user back to blog page | Pass |
+Wishlist | Wished Item Links<br>![](documentation/README/images/wished-item-links.png) | Click Element | Product img and name links takes user to product detail page | Pass |
+"" | Remove From Wishlist Btn<br>![](documentation/README/images/remove-wished-item-btn.png) | Click Element | Removes wished item form users wishlist, displays successfull removed item from wishlist alert | Pass |  
+
+
 
    
    
