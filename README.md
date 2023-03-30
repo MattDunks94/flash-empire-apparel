@@ -93,6 +93,7 @@ Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells
 </ul>
 
 ### Database Design
+I used [LucidChart](https://www.lucidchart.com/pages/) to create the ERD.
 
 <details>
 <summary>Database ERD</summary>
@@ -101,6 +102,7 @@ Flash Empire Apparel is a business to consumer (B2C) fashion retailer that sells
 </details>
 
 ### Interaction Design
+I used [LucidChart](https://www.lucidchart.com/pages/) to create the following user accessibility / functionality flowchart.
 
 <details>
 <summary>Super Users & Site Users Accessibility & Functionality Flowchart</summary>
@@ -143,6 +145,7 @@ Diagrams were created using [Wireframe.cc](https://wireframe.cc/)
 </details>
 
 #### - Colour Palette:
+I used [Coolors](https://coolors.co/) to generate my colour palette.
 ![](/documentation/README/images/colour-palette.png) <br>
 The colour scheme is quite powerful and attractive to the user. The palette consists of black, dark red, earth yellow and white. <br>All four colours create a strong yet vulnerable combination. I wanted colours that represented the name of the brand, Flash Empire, as much as possible. The black and dark red are seen as strong and powerful (Empire), the earth yellow is almost like a gold that represents royalty, wealth (Empire) and the white is used to create a sense of light (Flash) and vulnerability.
 
@@ -173,6 +176,11 @@ I used [Vistaprint](https://www.vistaprint.co.uk/) product design to upload, roy
   <summary>Brand Banner</summary>
   
   ![](documentation/README/images/banner.png)
+</details>
+<details>
+  <summary>Blog Post Placeholder Image</summary>
+  
+  ![](media/FLASH-BLOG-BANNER.png)
 </details>
 
 ### Features 
@@ -412,6 +420,11 @@ The footer contains:
 - Social section, links to Flash Empire's [Facebook](https://www.facebook.com/) and [Instagram](https://www.instagram.com/) pages.
 - Community section, contains a link to the blog page.
 - [Mail Chimp](https://mailchimp.com/en-gb/?currency=GBP) subscribe newsletter email input, allows users to subscribe to Flash Empire Apparel's newsletter.
+  - <details>
+      <summary>Subscription Email</summary>
+  
+     ![](documentation/README/images/newsletter.png)
+     </details> 
 - Copyright details.
 
 #### Facebook Page:
@@ -569,6 +582,22 @@ I used [Google Chrome DevTools Lighthouse](https://developer.chrome.com/docs/lig
   
    ![](documentation/README/images/wishlist-lighthouse.png)
    </details>
+   
+### Manual Testing:
+Location | Element/Feature | Operation | Expected Result | Test Result |
+| ------ | --------------- | --------- | --------------- | --------------- |
+Home | Brand Banner Home Link<br>![](documentation/README/images/brand-banner-home-link.png) | Click Element | Returns to homepage | Pass |
+"" | Search Bar<br>![](documentation/README/images/search-bar.png) | Search for product | Displays desired search result | Pass |
+"" | All Products Nav Link<br>![](documentation/README/images/all-products-link.png) | Click Element | Takes user to all products page | Pass |
+"" | Categories Nav Link<br>![](documentation/README/images/categories-link.png) | Click Element | Reveals dropdown of available product categories | Pass |
+"" | Sale Nav Link<br>![](documentation/README/images/sale-link.png) | Click Element | Takes user to the sale page | Pass | 
+"" | Shop Now Btn<br>![](documentation/README/images/shop-now-btn.png) | Click Element | Takes user to all products page | Pass | 
+Footer | Brand Banner Home Link<br>![](documentation/README/images/footer-brand-banner.png) | Click Element | Returns to homepage | Pass | 
+"" | Shop Links<br>![](documentation/README/images/footer-shop-links.png) | Click Individual Elements | Takes user to desired product categories page | Pass | 
+"" | Social Links<br>![](documentation/README/images/footer-social-links.png) | Click Individual Elements | Opens new tab to social pages | Pass |
+"" | Blog Link<br>![](documentation/README/images/footer-blog-link.png) | Click Element | Takes user to blog page | Pass |
+"" | Subscribe Element<br>![](documentation/README/images/footer-subscribe.png) | Enter email address, click subscribe btn | Adds user to subscription service | Pass |
+All Products | Sort By Dropdown<br>![](documentation/README/images/sort-by-dropdown.png) | Click Element | Reveals sorting choices, select choice, sorts products in desired way | Pass | 
    
    
 
