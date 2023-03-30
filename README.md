@@ -735,7 +735,11 @@ I then created a database for my project for all project data to be stored:
 - Not receiving order confirmation email:
   - Whenever I tested the checkout order process I never received an order confirmation email. Think this might have something to do with my webhook in stripe as I followed the 'Boutique Ado' videos step by step for this feature but unfortunately I have had issues with it.
 - Media files were not displaying when deployed to Heroku.
-  - When deployed to Heroku static files were collected but not media files. I went back over the AWS videos in the 'Boutique Ado' walkthrough project to make sure I done everything correctly, which I did. I also looked at AWS' guide on how to link your bucket with projects but none of this helped the situation. Last resort was looking at YouTube videos on how to connect S3 bucket to Heroku projects. Whilst following one I noticed the 'Read' checkbox, for Everyone(Public Access) was not checked within the permission tab, under Access control list (ACL). Once I ticked this checkbox media files finally appeared on my deployed site.     
+  - When deployed to Heroku static files were collected but not media files. I went back over the AWS videos in the 'Boutique Ado' walkthrough project to make sure I done everything correctly, which I did. I also looked at AWS' guide on how to link your bucket with projects but none of this helped the situation. Last resort was looking at YouTube videos on how to connect S3 bucket to Heroku projects. Whilst following one I noticed the 'Read' checkbox, for Everyone(Public Access) was not checked within the permission tab, under Access control list (ACL). Once I ticked this checkbox media files finally appeared on my deployed site.
+- Slug field was not pre-populating with the post title when creating new blog post. This resulted in receiving an error when clicking on newly created blog post.
+  - I managed to fix this error by importing slugify from django.template.defaultfilters and assigning the post slug with slugify.
+- Came upon a 'page not found' error for 'add blog post' page, in blog app.
+  - I eventually found out that the order of the, blog apps, URL's were key to overcoming this error.
 
 ## Technologies Used:
 
@@ -779,6 +783,7 @@ I then created a database for my project for all project data to be stored:
 - I followed the [Code Institutes](https://codeinstitute.net/) walkthrough project 'Boutique Ado'. This project was a big help, especially with the stripe payment backend code.
 - The colour filter code was from [Youtube](https://www.youtube.com/watch?v=exN6RdC_xbE).
 - I occasionally referenced to [StackOverFlow](https://stackoverflow.com/) to overcome any issues.
+- I also referred to [Slack](https://slack.com/intl/en-gb/) for any troubleshooting I came upon and quick fixes. 
 
 ### Media:
 - The logo and branding are from [smashinglogo](https://smashinglogo.com/en/).
